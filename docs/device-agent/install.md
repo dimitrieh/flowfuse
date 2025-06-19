@@ -76,6 +76,28 @@ services:
       - /path/to/device.yml:/opt/flowfuse-device/device.yml
 ```
 
+In case you have Node-RED itself also running in a docker container on the same host that already exposed:
+
+```bash
+docker run --add-host host.docker.internal:host-gateway -e FF_DEVICE_AGENT_NODERED_URL=http://host.docker.internal:1880 --mount type=bind,src=/path/to/device.yml,target=/opt/flowfuse-device/device.yml flowfuse/device-agent:latest
+```
+
+Or run the equivalent Docker-Compose.yml file:
+
+```yaml
+version: '3.9'
+
+services:
+  device:
+    image: flowfuse/device-agent:latest
+    environment:
+      - FF_DEVICE_AGENT_NODERED_URL=http://host.docker.internal:1880
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - /path/to/device.yml:/opt/flowfuse-device/device.yml
+```
+
 #### Time Zone
 
 In order to ensure that the device agent runs with the correct timezone environment variable is set with the `-e` option
