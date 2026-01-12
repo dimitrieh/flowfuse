@@ -104,6 +104,13 @@
     height: 24px;
   }
 
+  &.ff-btn-medium {
+    padding: $ff-unit-xs $ff-unit-sm;
+    font-size: $ff-funit-xs;
+    line-height: 18px;
+    height: 26px;
+  }
+
   &.ff-btn-fwidth {
     justify-content: center;
   }
@@ -765,6 +772,7 @@ li.ff-list-item {
       }
     }
     thead {
+      background: white; // hides td borders when header is sticky
       .ff-data-table--row .ff-data-table--cell {
         &:first-child {
           border-top-left-radius: 6px;

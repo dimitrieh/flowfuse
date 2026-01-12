@@ -35,12 +35,12 @@
 const fs = require('node:fs')
 const path = require('node:path')
 const localCacheFiles = [
-    { path: '/vendor/monaco/dist/editor.js', type: 'application/json; charset=UTF-8' }, // ~4.1MB
-    { path: '/vendor/monaco/dist/ts.worker.js', type: 'application/json; charset=UTF-8' }, // ~4.7MB
-    { path: '/vendor/monaco/dist/css.worker.js', type: 'application/json; charset=UTF-8' }, // ~1.1MB
-    { path: '/vendor/vendor.js', type: 'application/json; charset=UTF-8' }, // ~1.1MB
-    { path: '/vendor/mermaid/mermaid.min.js', type: 'application/json; charset=UTF-8' }, // ~2.5MB
-    { path: '/red/red.min.js', type: 'application/json; charset=UTF-8' },
+    { path: '/vendor/monaco/dist/editor.js', type: 'application/javascript; charset=UTF-8' }, // ~4.1MB
+    { path: '/vendor/monaco/dist/ts.worker.js', type: 'application/javascript; charset=UTF-8' }, // ~4.7MB
+    { path: '/vendor/monaco/dist/css.worker.js', type: 'application/javascript; charset=UTF-8' }, // ~1.1MB
+    { path: '/vendor/vendor.js', type: 'application/javascript; charset=UTF-8' }, // ~1.1MB
+    { path: '/vendor/mermaid/mermaid.min.js', type: 'application/javascript; charset=UTF-8' }, // ~2.5MB
+    { path: '/red/red.min.js', type: 'application/javascript; charset=UTF-8' },
     { path: '/red/style.min.css', type: 'text/css; charset=UTF-8' }
 ]
 
@@ -169,7 +169,7 @@ class DeviceTunnelManager {
         if (tunnel.socket) {
             tunnel.socket.close()
         }
-        tunnel.socket = inboundDeviceConnection.socket
+        tunnel.socket = inboundDeviceConnection
         // Set it on the local model instance
         device.editorConnected = true
         await device.save()
@@ -321,7 +321,7 @@ class DeviceTunnelManager {
                 url: '/comms'
             }))
             /** @type {WebSocket} */
-            const wsToDevice = connection.socket
+            const wsToDevice = connection
             tunnel.forwardedWS[requestId] = wsToDevice
 
             this.app.log.info(`Device ${device.hashid} tunnel id:${tunnel.id} - new editor connection req:${requestId} `)

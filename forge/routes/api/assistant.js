@@ -31,27 +31,25 @@ module.exports = async function (app) {
     const requestTimeout = app.config.assistant?.service?.requestTimeout || 60000
 
     app.addHook('preHandler', app.verifySession)
+    app.addHook('preHandler', app.needsPermission('assistant:call'))
+
     app.addHook('preHandler', async (request, reply) => {
         if (!serviceEnabled) {
             return reply.code(501).send({ code: 'service_disabled', error: 'Assistant service is not enabled' })
         }
-        // Only permit requests made by a valid device or instance token
-        if (!request.session || request.session.provisioning) {
-            reply.code(401).send({ code: 'unauthorized', error: 'unauthorized' })
-        } else if (request.session.ownerType !== 'device' && request.session.ownerType !== 'project') {
-            reply.code(401).send({ code: 'unauthorized', error: 'unauthorized' })
-        } else {
-            // get the owner object and team
-            if (request.session.ownerType === 'device') {
-                request.owner = await app.db.models.Device.byId(+request.session.ownerId)
-                request.ownerType = 'device'
-                request.ownerId = request.owner.hashid
-            } else {
-                request.owner = await app.db.models.Project.byId(request.session.ownerId)
-                request.ownerType = 'project'
-                request.ownerId = request.owner.id
-            }
+        if (request.session.ownerType === 'device') {
+            request.owner = await app.db.models.Device.byId(+request.session.ownerId)
+            request.ownerType = 'device'
+            request.ownerId = request.owner.hashid
             request.team = await app.db.models.Team.byId(request.owner.Team.id)
+        } else if (request.session.ownerType === 'project') {
+            request.owner = await app.db.models.Project.byId(request.session.ownerId)
+            request.ownerType = 'project'
+            request.ownerId = request.owner.id
+            request.team = await app.db.models.Team.byId(request.owner.Team.id)
+        } else if (request.session.ownerType === 'user') {
+            request.ownerType = 'user'
+            request.ownerId = request.session.ownerId
         }
     })
 
@@ -148,8 +146,11 @@ module.exports = async function (app) {
         schema: {
             hide: true, // dont show in swagger
             params: {
-                nodeModule: { type: 'string' },
-                nodeType: { type: 'string' }
+                type: 'object',
+                properties: {
+                    nodeModule: { type: 'string' },
+                    nodeType: { type: 'string' }
+                }
             },
             body: {
                 type: 'object',
@@ -177,12 +178,12 @@ module.exports = async function (app) {
     async (request, reply) => {
         const inlineDisabled = app.config.assistant?.completions?.inlineEnabled === false
         const featureEnabled = app.config.features.enabled('assistantInlineCompletions')
-        const featureEnabledForTeam = request.team.TeamType.getFeatureProperty('assistantInlineCompletions', false)
-        if (inlineDisabled || !featureEnabled || !featureEnabledForTeam) {
+        const featureEnabledForTeam = request.team?.getFeatureProperty('assistantInlineCompletions', false)
+        const isStandaloneSessionUser = request.session.ownerType === 'user'
+        if (inlineDisabled || !featureEnabled || !(isStandaloneSessionUser || featureEnabledForTeam)) {
             reply.code(404).send({ code: 'not_found', error: 'Not Found - feature not enabled for team' })
             return
         }
-
         const nodeModule = request.params.nodeModule
         const nodeType = request.params.nodeType
         const supported = [
@@ -198,7 +199,7 @@ module.exports = async function (app) {
         // if this is a `flowfuse-tables-query` lets see if tables are enabled and try to get the schema hints
         let tablesCacheKey = null
         if (nodeModule === '@flowfuse/nr-tables-nodes' && nodeType === 'tables-query') {
-            const tablesFeatureEnabled = app.config.features.enabled('tables') && request.team.TeamType.getFeatureProperty('tables', false)
+            const tablesFeatureEnabled = !isStandaloneSessionUser && app.config.features.enabled('tables') && request.team.getFeatureProperty('tables', false)
             tablesCacheKey = tablesFeatureEnabled && request.team.hashid + '/tables/schema'
             if (tablesCacheKey) {
                 if (!tablesSchemaCache.has(tablesCacheKey)) {
@@ -220,10 +221,17 @@ module.exports = async function (app) {
 
         // post to the assistant service /fim/:nodeModule/:nodeType endpoint
         try {
-            let isTeamOnTrial
-            if (app.billing && request.team.getSubscription) {
-                const subscription = await request.team.getSubscription()
-                isTeamOnTrial = subscription ? subscription.isTrial() : null
+            const requestMetadata = {
+                instanceType: request.ownerType,
+                instanceId: request.ownerId,
+                additionalHeaders: request.headers
+            }
+            if (request.team) {
+                requestMetadata.teamHashId = request.team.hashid
+                if (app.billing && request.team.getSubscription) {
+                    const subscription = await request.team.getSubscription()
+                    requestMetadata.isTeamOnTrial = subscription ? subscription.isTrial() : null
+                }
             }
             const data = { ...request.body }
             if (tablesCacheKey) {
@@ -232,14 +240,7 @@ module.exports = async function (app) {
             }
 
             const method = `fim/${encodeURIComponent(nodeModule)}/${encodeURIComponent(nodeType)}`
-            const response = await app.db.controllers.Assistant.invokeLLM(method, data, {
-                teamHashId: request.team.hashid,
-                instanceType: request.ownerType,
-                instanceId: request.ownerId,
-                additionalHeaders: request.headers,
-                isTeamOnTrial
-            })
-
+            const response = await app.db.controllers.Assistant.invokeLLM(method, data, requestMetadata)
             reply.send(response.data)
         } catch (error) {
             reply.code(error.response?.status || 500).send({ code: error.response?.data?.code || 'unexpected_error', error: error.response?.data?.error || error.message })
@@ -296,9 +297,9 @@ module.exports = async function (app) {
         }
 
         // if this is a `flowfuse-tables-query` lets see if tables are enabled and try to get the schema hints
-        const tablesFeatureEnabled = app.config.features.enabled('tables') && request.team.TeamType.getFeatureProperty('tables', false)
+        const tablesFeatureEnabled = app.config.features.enabled('tables') && request.team?.getFeatureProperty('tables', false)
         const isTablesQuery = tablesFeatureEnabled && method === 'flowfuse-tables-query'
-        const tablesCacheKey = request.team.hashid + '/tables/schema'
+        const tablesCacheKey = request.team?.hashid + '/tables/schema'
         if (isTablesQuery) {
             const { getTablesHints } = require('../../lib/assistant.js')
             if (!tablesSchemaCache.has(tablesCacheKey)) {
@@ -319,7 +320,7 @@ module.exports = async function (app) {
         // post to the assistant service
         try {
             let isTeamOnTrial
-            if (app.billing && request.team.getSubscription) {
+            if (app.billing && request.team?.getSubscription) {
                 const subscription = await request.team.getSubscription()
                 isTeamOnTrial = subscription ? subscription.isTrial() : null
             }
@@ -331,7 +332,7 @@ module.exports = async function (app) {
 
             const response = await app.db.controllers.Assistant.invokeLLM(
                 method, data, {
-                    teamHashId: request.team.hashid,
+                    teamHashId: request.team?.hashid,
                     instanceType: request.ownerType,
                     instanceId: request.ownerId,
                     additionalHeaders: request.headers,
@@ -348,7 +349,7 @@ module.exports = async function (app) {
         const headers = {
             'ff-owner-type': request.ownerType,
             'ff-owner-id': request.ownerId,
-            'ff-team-id': request.team.hashid
+            'ff-team-id': request.team?.hashid
         }
         // include license information, team id and trial status so that we can make decisions in the assistant service
         const isLicensed = app.license?.active() || false
@@ -357,7 +358,7 @@ module.exports = async function (app) {
         headers['ff-license-active'] = isLicensed
         headers['ff-license-type'] = licenseType
         headers['ff-license-tier'] = tier
-        if (app.billing && request.team.getSubscription) {
+        if (app.billing && request.team?.getSubscription) {
             const subscription = await request.team.getSubscription()
             headers['ff-team-trial'] = subscription ? subscription.isTrial() : null
         }

@@ -57,7 +57,14 @@ export default {
                 breaks: true,
                 gfm: true
             })
-            return this.sanitize(html)
+            return this.sanitize(html, {
+                targetBlank: true,
+                appendQueryParameters: {
+                    utm_source: 'flowfuse-expert',
+                    utm_medium: 'assistant',
+                    utm_campaign: 'expert-chat'
+                }
+            })
         }
     }
 }
@@ -114,19 +121,6 @@ export default {
         }
     }
 
-    &.is-streaming .message-bubble {
-        position: relative;
-
-        &::after {
-            content: '';
-            display: inline-block;
-            width: 3px;
-            height: 1em;
-            background-color: currentColor;
-            margin-left: 2px;
-            animation: blink 1s infinite;
-        }
-    }
 }
 
 .message-bubble {
@@ -200,12 +194,4 @@ export default {
     }
 }
 
-@keyframes blink {
-    0%, 49% {
-        opacity: 1;
-    }
-    50%, 100% {
-        opacity: 0;
-    }
-}
 </style>

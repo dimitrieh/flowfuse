@@ -19,12 +19,12 @@
             </template>
             <template v-if="canEditUser" #context-menu="{row}">
                 <ff-list-item
-                    v-if="hasPermission('team:user:change-role') && !requiresBilling"
+                    v-if="(hasPermission('team:user:change-role') && !requiresBilling) || isAdminUser"
                     data-action="member-change-role"
                     label="Change Role" @click="changeRoleDialog(row)"
                 />
                 <ff-list-item
-                    v-if="hasPermission('team:user:remove')"
+                    v-if="hasPermission('team:user:remove') || isAdminUser"
                     data-action="member-remove-from-team"
                     label="Remove From Team"
                     kind="danger"
@@ -102,9 +102,9 @@ export default {
     },
     computed: {
         ...mapState('account', ['user', 'team']),
-        ...mapGetters('account', ['requiresBilling', 'featuresCheck']),
+        ...mapGetters('account', ['requiresBilling', 'featuresCheck', 'isAdminUser']),
         canEditUser: function () {
-            return this.hasPermission('team:user:remove') || this.hasPermission('team:user:change-role')
+            return this.hasPermission('team:user:remove') || this.hasPermission('team:user:change-role') || this.isAdminUser
         },
         teamUserLimitReached () {
             if (this.requiresBilling) {
@@ -145,11 +145,9 @@ export default {
             ]
         },
         collapsibleRow () {
-            if (
-                !this.featuresCheck.isRBACApplicationFeatureEnabled ||
-                !this.hasPermission('application:access-control')
-            ) return null
-
+            if (!this.featuresCheck.isRBACApplicationFeatureEnabled && (!this.isAdminUser || !this.hasPermission('application:access-control'))) {
+                return null
+            }
             return {
                 is: markRaw(ApplicationPermissionRow),
                 props: {
