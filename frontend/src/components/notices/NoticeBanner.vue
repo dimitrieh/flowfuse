@@ -35,15 +35,15 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .notice {
-    border: 1px solid var(--ff-yellow-100);
-    background-color: var(--ff-yellow-10);
-    border-radius: var(--ff-unit-sm);
-    padding: var(--ff-unit-md);
+    border: 1px solid var(--color-yellow-100);
+    background-color: var(--color-yellow-10);
+    border-radius: var(--spacing-sm);
+    padding: var(--spacing-md);
+}
 
-    .icon-wrapper {
-        min-width: 40px;
-    }
+.notice .icon-wrapper {
+    min-width: 40px;
 }
 </style>

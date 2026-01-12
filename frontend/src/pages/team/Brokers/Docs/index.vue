@@ -72,27 +72,30 @@ export default {
     }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .ff-return-link {
     padding: 9px 12px;
     border-radius: 6px;
-    border: 1px solid var(--ff-grey-200);
+    border: 1px solid var(--color-gray-200);
     transition: border-color 0.3s;
     display: inline-flex;
     align-items: center;
     gap: 9px;
-    &:hover {
-        border-color: var(--ff-indigo-50)0;
-        color: var(--ff-indigo-50)0;
-        cursor: pointer;
-    }
 }
+
+.ff-return-link:hover {
+    border-color: var(--color-indigo-500);
+    color: var(--color-indigo-500);
+    cursor: pointer;
+}
+
 .ff-schema-docs-hierarchy {
     margin: 24px 0;
     display: flex;
     gap: 12px;
     flex-direction: column;
 }
+
 h1 {
     display: flex;
     justify-content: space-between;

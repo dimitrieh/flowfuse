@@ -115,41 +115,39 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 .ff-flows-step {
     height: 100%;
+}
 
-    .ff-blueprints {
-        overflow: auto;
-        min-width: 400px;
-        padding-right: 15px;
+.ff-flows-step .ff-blueprints {
+    overflow: auto;
+    min-width: 400px;
+    padding-right: 15px;
+}
 
-        .ff-blueprint-tiles {
-            .ff-blueprint-tile {
-                max-width: 280px;
-                width: 100%;
-                height: 100%;
-            }
-        }
-    }
+.ff-flows-step .ff-blueprints .ff-blueprint-tiles .ff-blueprint-tile {
+    max-width: 280px;
+    width: 100%;
+    height: 100%;
+}
 
-    .ff-blueprint-categories {
-        min-width: 300px;
-        height: 100%;
-        overflow: auto;
-        display: flex;
-        flex-direction: column;
+.ff-flows-step .ff-blueprint-categories {
+    min-width: 300px;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
 
-        ul {
-            flex: 1;
-            height: 100%;
-            overflow: auto;
+.ff-flows-step .ff-blueprint-categories ul {
+    flex: 1;
+    height: 100%;
+    overflow: auto;
+}
 
-            li:hover {
-                cursor: pointer;
-                color: var(--ff-blue-600);
-            }
-        }
-    }
+.ff-flows-step .ff-blueprint-categories ul li:hover {
+    cursor: pointer;
+    color: var(--color-blue-600);
 }
 </style>

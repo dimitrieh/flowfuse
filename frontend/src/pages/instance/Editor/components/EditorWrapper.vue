@@ -101,7 +101,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .editor-wrapper {
   height: 100%;
   width: 100%;

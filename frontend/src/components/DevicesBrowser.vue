@@ -964,7 +964,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .ff-dialog-content .ff-devices-ul {
     list-style-type: disc;
     list-style-position: inside;
@@ -976,90 +976,90 @@ export default {
     white-space: nowrap;
 }
 
-// Viewport-based responsive behavior (matches Tailwind sm: breakpoint)
-// Hide button text on narrow viewports (< 640px)
+/* Viewport-based responsive behavior (matches Tailwind sm: breakpoint) */
+/* Hide button text on narrow viewports (< 640px) */
 @media (max-width: 639px) {
-  .target-snapshot-text,
-  .add-remote-instance-text,
-  .bulk-actions-text {
-    display: none;
-  }
+    .target-snapshot-text,
+    .add-remote-instance-text,
+    .bulk-actions-text {
+        display: none;
+    }
 }
 
-// Show button text on wider viewports (>= 640px)
+/* Show button text on wider viewports (>= 640px) */
 @media (min-width: 640px) {
-  .target-snapshot-text,
-  .add-remote-instance-text,
-  .bulk-actions-text {
-    display: inline;
-  }
+    .target-snapshot-text,
+    .add-remote-instance-text,
+    .bulk-actions-text {
+        display: inline;
+    }
 }
 
-// Container query for drawer context - responsive button behavior
-// Breakpoint matches DRAWER_MOBILE_BREAKPOINT constant in Editor/index.vue
-// These override viewport-based rules when inside the drawer
+/* Container query for drawer context - responsive button behavior */
+/* Breakpoint matches DRAWER_MOBILE_BREAKPOINT constant in Editor/index.vue */
+/* These override viewport-based rules when inside the drawer */
 @container drawer (max-width: 639px) {
-  // Hide text when drawer is narrow - icon-only mode
-  .target-snapshot-text,
-  .add-remote-instance-text,
-  .bulk-actions-text {
-    display: none;
-  }
+    /* Hide text when drawer is narrow - icon-only mode */
+    .target-snapshot-text,
+    .add-remote-instance-text,
+    .bulk-actions-text {
+        display: none;
+    }
 
-  // Adjust button padding for icon-only mode to prevent excessive spacing
-  .ff-btn[data-action="change-target-snapshot"],
-  .ff-btn[data-action="register-device"] {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
+    /* Adjust button padding for icon-only mode to prevent excessive spacing */
+    .ff-btn[data-action="change-target-snapshot"],
+    .ff-btn[data-action="register-device"] {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
 }
 
 @container drawer (min-width: 640px) {
-  // Show text when drawer is wide enough
-  .target-snapshot-text,
-  .add-remote-instance-text,
-  .bulk-actions-text {
-    display: inline;
-  }
+    /* Show text when drawer is wide enough */
+    .target-snapshot-text,
+    .add-remote-instance-text,
+    .bulk-actions-text {
+        display: inline;
+    }
 }
 
-// Status bars layout - responsive to both viewport and container
+/* Status bars layout - responsive to both viewport and container */
 .devices-status-bars-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-// On wider viewports (>= 640px), show side-by-side
-@media (min-width: 640px) {
-  .devices-status-bars-container {
-    flex-direction: row;
-
-    > * {
-      flex: 1;
-    }
-  }
-}
-
-// Container query for drawer context
-// Breakpoint matches DRAWER_MOBILE_BREAKPOINT constant in Editor/index.vue
-@container drawer (max-width: 639px) {
-  .devices-status-bars-container {
+    display: flex;
     flex-direction: column;
+    gap: 0.5rem;
+}
 
-    > * {
-      flex: none;
+/* On wider viewports (>= 640px), show side-by-side */
+@media (min-width: 640px) {
+    .devices-status-bars-container {
+        flex-direction: row;
     }
-  }
+
+    .devices-status-bars-container > * {
+        flex: 1;
+    }
+}
+
+/* Container query for drawer context */
+/* Breakpoint matches DRAWER_MOBILE_BREAKPOINT constant in Editor/index.vue */
+@container drawer (max-width: 639px) {
+    .devices-status-bars-container {
+        flex-direction: column;
+    }
+
+    .devices-status-bars-container > * {
+        flex: none;
+    }
 }
 
 @container drawer (min-width: 640px) {
-  .devices-status-bars-container {
-    flex-direction: row;
-
-    > * {
-      flex: 1;
+    .devices-status-bars-container {
+        flex-direction: row;
     }
-  }
+
+    .devices-status-bars-container > * {
+        flex: 1;
+    }
 }
 </style>

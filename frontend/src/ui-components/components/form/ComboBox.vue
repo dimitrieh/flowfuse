@@ -250,71 +250,71 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 .ff-combobox {
     min-width: 200px;
+}
 
-    &[data-headlessui-state="open"] {
-        input {
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-    }
+.ff-combobox[data-headlessui-state="open"] input {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
 
-    .ff-combobox-input {
-        padding: 5px 2.5rem 5px 10px;
-        border: 1px solid var(--ff-grey-300);
-        font-size: var(--ff-funit-md);
-        line-height: 1.5;
-        &:focus {
-            border-color: var(--ff-grey-300);
-            outline: none;
-        }
-    }
+.ff-combobox .ff-combobox-input {
+    padding: 5px 2.5rem 5px 10px;
+    border: 1px solid var(--color-gray-300);
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+}
 
-    .ff-options {
-        background: var(--ff-grey-50);
-        box-shadow: 0 6px 9px 0 #00000038;
-        max-height: 14rem;
-        z-index: 100;
-        overflow-y: auto;
-        padding: 0;
-        border-left: 1px solid var(--ff-grey-200);
-        border-right: 1px solid var(--ff-grey-200);
-        border-bottom: 1px solid var(--ff-grey-200);
-    }
+.ff-combobox .ff-combobox-input:focus {
+    border-color: var(--color-gray-300);
+    outline: none;
+}
 
-    .ff-option {
-        cursor: pointer;
-        border-bottom: 1px solid var(--ff-grey-200);
+.ff-combobox .ff-options {
+    background: var(--color-gray-50);
+    box-shadow: 0 6px 9px 0 #00000038;
+    max-height: 14rem;
+    z-index: 100;
+    overflow-y: auto;
+    padding: 0;
+    border-left: 1px solid var(--color-gray-200);
+    border-right: 1px solid var(--color-gray-200);
+    border-bottom: 1px solid var(--color-gray-200);
+}
 
-        &:last-of-type {
-            border-bottom: none;
-        }
+.ff-combobox .ff-option {
+    cursor: pointer;
+    border-bottom: 1px solid var(--color-gray-200);
+}
 
-        .ff-option-content {
-            padding: var(--ff-unit-sm) var(--ff-unit-md);
-            border: 1px solid transparent;
+.ff-combobox .ff-option:last-of-type {
+    border-bottom: none;
+}
 
-            &.selected {
-                background-color: var(--ff-grey-200);
-            }
+.ff-combobox .ff-option .ff-option-content {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid transparent;
+}
 
-            &.active {
-                border: 1px solid var(--ff-indigo-300);
-            }
+.ff-combobox .ff-option .ff-option-content.selected {
+    background-color: var(--color-gray-200);
+}
 
-            &.selected.active {
-                border-color: transparent;
-            }
-        }
+.ff-combobox .ff-option .ff-option-content.active {
+    border: 1px solid var(--color-indigo-300);
+}
 
-        &:hover {
-            background-color: var(--ff-grey-200);
-            .ff-option-content.active {
-                border-color: transparent;
-            }
-        }
-    }
+.ff-combobox .ff-option .ff-option-content.selected.active {
+    border-color: transparent;
+}
+
+.ff-combobox .ff-option:hover {
+    background-color: var(--color-gray-200);
+}
+
+.ff-combobox .ff-option:hover .ff-option-content.active {
+    border-color: transparent;
 }
 </style>

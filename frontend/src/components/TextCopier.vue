@@ -95,16 +95,19 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .ff-text-copier {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  position: relative;
-  &:hover {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    position: relative;
+}
+
+.ff-text-copier:hover {
     cursor: pointer;
-  }
-  .ff-icon-button {
+}
+
+.ff-text-copier .ff-icon-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -114,26 +117,27 @@ export default {
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.2s ease;
-    color: var(--ff-grey-600);
+    color: var(--color-gray-600);
+}
 
-    &:hover {
-      color: var(--ff-indigo-600);
-      background-color: var(--ff-indigo-50);
-    }
+.ff-text-copier .ff-icon-button:hover {
+    color: var(--color-indigo-600);
+    background-color: var(--color-indigo-50);
+}
 
-    &:active {
-      background-color: var(--ff-indigo-100);
-    }
+.ff-text-copier .ff-icon-button:active {
+    background-color: var(--color-indigo-100);
+}
 
-    .ff-icon {
-      pointer-events: none;
-    }
+.ff-text-copier .ff-icon-button .ff-icon {
+    pointer-events: none;
+}
 
-    .ff-icon-check {
-      color: var(--ff-green-600);
-    }
-  }
-  .ff-copied {
+.ff-text-copier .ff-icon-button .ff-icon-check {
+    color: var(--color-green-600);
+}
+
+.ff-text-copier .ff-copied {
     background-color: black;
     color: white;
     padding: 3px;
@@ -144,10 +148,10 @@ export default {
     display: none;
     z-index: 100;
     left: 100%;
-  }
-  .ff-copied-left {
+}
+
+.ff-text-copier .ff-copied-left {
     left: inherit;
     right: 100%;
-  }
 }
 </style>

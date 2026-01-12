@@ -54,24 +54,25 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
+<style>
 .role-row-cell {
     display: flex;
     flex-direction: column;
     min-height: 40px;
+}
 
-    .actual-role {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-    }
+.role-row-cell .actual-role {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 
-    .team-role {
-        flex: 1;
-    }
-    .role {
-        font-weight: bold;
-    }
+.role-row-cell .team-role {
+    flex: 1;
+}
+
+.role-row-cell .role {
+    font-weight: bold;
 }
 </style>

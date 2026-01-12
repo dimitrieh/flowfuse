@@ -295,35 +295,30 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.ff-duplication-step {
-    .form-group {
-        .title {
-            margin-bottom: 5px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid var(--ff-grey-200);
-            display: flex;
-            justify-content: space-between;
+<style>
+.ff-duplication-step .form-group .title {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--color-gray-200);
+    display: flex;
+    justify-content: space-between;
+}
 
-            label {
+.ff-duplication-step .form-group .title label {
+    font-weight: 500;
+}
 
-                font-weight: 500;
-            }
+.ff-duplication-step .form-group .title .actions {
+    display: flex;
+    gap: 5px;
+}
 
-            .actions {
-                display: flex;
-                gap: 5px;
-            }
-        }
+.ff-duplication-step .form-group p {
+    margin-top: 5px;
+}
 
-        p {
-            margin-top: 5px;
-
-            &:nth-of-type(2) {
-                color: var(--ff-grey-50)0;
-                font-style: italic;
-            }
-        }
-    }
+.ff-duplication-step .form-group p:nth-of-type(2) {
+    color: var(--color-gray-50)0;
+    font-style: italic;
 }
 </style>

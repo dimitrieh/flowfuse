@@ -766,11 +766,11 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .instance-name-confirmation {
   margin: 5px 0;
   display: flex;
   gap: 5px;
-  color: var(--ff-green-600);
+  color: var(--color-green-600);
 }
 </style>

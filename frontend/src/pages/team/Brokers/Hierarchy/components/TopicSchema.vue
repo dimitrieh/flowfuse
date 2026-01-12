@@ -82,45 +82,42 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .topic-schema {
-    background-color: var(--ff-indigo-50);
-    color: var(--ff-indigo-600);
+    background-color: var(--color-indigo-50);
+    color: var(--color-indigo-600);
     border-radius: 6px;
-    border: 1px solid var(--ff-indigo-100);
+    border: 1px solid var(--color-indigo-100);
     padding: 10px 6px;
     font-size: 0.875rem;
     line-height: 1.25rem;
     overflow: auto;
     position: relative;
+}
 
-    .topic-schema-unknown {
-        color: var(--ff-grey-50)0;
-        text-align: center;
-        font-style: italic;
-    }
+.topic-schema .topic-schema-unknown {
+    color: var(--color-gray-500);
+    text-align: center;
+    font-style: italic;
+}
 
-    .schema-container {
-        .show-more {
-            position: absolute;
-            bottom: 0;
-            left: 45%;
-        }
+.topic-schema .schema-container .show-more {
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+}
 
-    }
+.topic-schema.collapsed {
+    overflow: hidden;
+    box-shadow: inset 0 -30px 20px -20px rgba(49, 46, 129, 0.2);
+    padding-bottom: 35px;
+}
 
-    &.collapsed {
-        overflow: hidden;
-        box-shadow: inset 0 -30px 20px -20px rgba(49, 46, 129, 0.2);
-        padding-bottom: 35px;
+.topic-schema.collapsed .schema-container {
+    max-height: 400px;
+}
 
-        .schema-container {
-            max-height: 400px;
-        }
-
-        .show-more {
-            padding: 10px;
-        }
-    }
+.topic-schema.collapsed .show-more {
+    padding: 10px;
 }
 </style>

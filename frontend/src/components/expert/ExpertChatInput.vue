@@ -133,22 +133,22 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .ff-expert-input {
     display: flex;
     flex-direction: column;
     gap: 0;
-    padding: 1rem; // p-4
-    border-top: 1px solid #E5E7EB; // border-gray-200
+    padding: 1rem; /* p-4 */
+    border-top: 1px solid #E5E7EB; /* border-gray-200 */
     background: white;
-    flex-shrink: 0; // Prevent input area from shrinking
+    flex-shrink: 0; /* Prevent input area from shrinking */
 }
 
 .action-buttons {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem; // pb-4
+    margin-bottom: 1rem; /* pb-4 */
 }
 
 .right-buttons {
@@ -157,87 +157,87 @@ export default {
 }
 
 button {
-    padding: 0.5rem 0.75rem; // py-2 px-3
-    border-radius: 9999px; // rounded-full
-    font-size: 0.875rem; // text-sm
+    padding: 0.5rem 0.75rem; /* py-2 px-3 */
+    border-radius: 9999px; /* rounded-full */
+    font-size: 0.875rem; /* text-sm */
     cursor: pointer;
     transition: colors 0.2s ease;
     border: 1px solid transparent;
+}
 
-    &:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-    }
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .btn-start-over {
     background-color: white;
     color: inherit;
-    border-color: #C7D2FE; // indigo-300
+    border-color: #C7D2FE; /* indigo-300 */
+}
 
-    &:hover:not(:disabled) {
-        background-color: #F9FAFB; // gray-50
-    }
+.btn-start-over:hover:not(:disabled) {
+    background-color: #F9FAFB; /* gray-50 */
 }
 
 .btn-send {
-    background-color: var(--ff-indigo-600);
+    background-color: var(--color-indigo-600);
     color: white;
-    border-color: var(--ff-indigo-600);
+    border-color: var(--color-indigo-600);
+}
 
-    &:hover:not(:disabled) {
-        background-color: var(--ff-indigo-700);
-    }
+.btn-send:hover:not(:disabled) {
+    background-color: var(--color-indigo-700);
 }
 
 .btn-stop {
     background-color: white;
     color: inherit;
-    border-color: #C7D2FE; // indigo-300
+    border-color: #C7D2FE; /* indigo-300 */
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
 
-    &::before {
-        content: '';
-        width: 0.75rem; // w-3
-        height: 0.75rem; // h-3
-        background-color: #1F2937; // gray-800
-        border-radius: 0.125rem; // rounded-xs
-    }
+.btn-stop::before {
+    content: '';
+    width: 0.75rem; /* w-3 */
+    height: 0.75rem; /* h-3 */
+    background-color: #1F2937; /* gray-800 */
+    border-radius: 0.125rem; /* rounded-xs */
+}
 
-    &:hover {
-        background-color: #F9FAFB; // gray-50
-    }
+.btn-stop:hover {
+    background-color: #F9FAFB; /* gray-50 */
 }
 
 .chat-input {
     width: 100%;
-    height: 6rem; // h-24
-    padding: 1rem; // p-4
-    border: 2px solid #D1D5DB; // border-2 border-gray-300
-    border-radius: 0.5rem; // rounded-md
-    font-size: 0.875rem; // text-sm
+    height: 6rem; /* h-24 */
+    padding: 1rem; /* p-4 */
+    border: 2px solid #D1D5DB; /* border-2 border-gray-300 */
+    border-radius: 0.5rem; /* rounded-md */
+    font-size: 0.875rem; /* text-sm */
     line-height: 1.5;
-    color: #111827; // text-gray-900
+    color: #111827; /* text-gray-900 */
     resize: none;
     outline: none;
     font-family: inherit;
     background: white;
+}
 
-    &:focus {
-        border-color: var(--ff-indigo-50)0; // focus:border-indigo-500
-        outline: none;
-    }
+.chat-input:focus {
+    border-color: var(--color-indigo-500); /* focus:border-indigo-500 */
+    outline: none;
+}
 
-    &:disabled {
-        cursor: not-allowed;
-        background-color: #F9FAFB; // bg-gray-50
-        color: #6B7280; // text-gray-500
-    }
+.chat-input:disabled {
+    cursor: not-allowed;
+    background-color: #F9FAFB; /* bg-gray-50 */
+    color: #6B7280; /* text-gray-500 */
+}
 
-    &::placeholder {
-        color: #9CA3AF; // placeholder gray
-    }
+.chat-input::placeholder {
+    color: #9CA3AF; /* placeholder gray */
 }
 </style>

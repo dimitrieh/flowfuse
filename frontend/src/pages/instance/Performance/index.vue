@@ -267,7 +267,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 .ff-socket-status {
     display: flex;
     align-items: center;
@@ -278,15 +278,15 @@ export default {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: var(--ff-grey-50)0;
+    background-color: var(--color-gray-500);
 }
 
 .ff-socket-status-icon-connected {
-    background-color: var(--ff-green-500);
+    background-color: var(--color-green-500);
 }
 
 .ff-socket-status-icon-disconnected {
-    background-color: var(--ff-red-50)0;
+    background-color: var(--color-red-500);
 }
 
 .ff-chart-section {

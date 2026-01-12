@@ -96,26 +96,26 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .flow-categories-wrapper {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     gap: 20px;
+}
 
-  .category {
+.flow-categories-wrapper .category {
     margin-bottom: 20px;
+}
 
-    .blueprint-tile {
-      max-width: 250px;
-      min-width: 200px;
-    }
+.flow-categories-wrapper .category .blueprint-tile {
+    max-width: 250px;
+    min-width: 200px;
+}
 
-    .tiles-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-  }
+.flow-categories-wrapper .category .tiles-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 </style>

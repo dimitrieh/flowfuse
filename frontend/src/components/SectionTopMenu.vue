@@ -87,31 +87,29 @@ export default {
 
 </script>
 
-<style lang="scss">
+<style>
 .wrapper {
     flex: 1;
-
-    .info {
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-        align-self:center;
-    }
-
-    .actions {
-        display: flex;
-        justify-content: flex-end;
-    }
+}
+.wrapper .info {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    align-self: center;
+}
+.wrapper .actions {
+    display: flex;
+    justify-content: flex-end;
 }
 
-// Hide info icon on small viewports (below 640px)
+/* Hide info icon on small viewports (below 640px) */
 @media (max-width: 639px) {
     .ff-info-icon {
         display: none;
     }
 }
 
-// Also hide info icon when drawer is narrow (below 640px)
+/* Also hide info icon when drawer is narrow (below 640px) */
 @container drawer (max-width: 639px) {
     .ff-info-icon {
         display: none;

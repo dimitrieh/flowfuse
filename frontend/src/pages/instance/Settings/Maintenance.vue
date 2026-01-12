@@ -336,40 +336,34 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-.maintenance {
-    .scheduled-upgrade {
-        .days-selector {
-            .day-selector {
-                border: 1px solid var(--ff-indigo-200);
-                background: var(--ff-indigo-50);
-                padding: 5px 15px;
-                border-radius: 4px;
-                cursor: pointer;
-                transition: ease-in-out .3s;
-                flex: 1;
-                position: relative;
-                text-align: center;
+<style scoped>
+.maintenance .scheduled-upgrade .days-selector .day-selector {
+    border: 1px solid var(--color-indigo-200);
+    background: var(--color-indigo-50);
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: ease-in-out .3s;
+    flex: 1;
+    position: relative;
+    text-align: center;
+}
 
-                &:hover {
-                    background: var(--ff-indigo-200);
-                }
+.maintenance .scheduled-upgrade .days-selector .day-selector:hover {
+    background: var(--color-indigo-200);
+}
 
-                &.selected {
-                    background: var(--ff-indigo-400);
-                    color: white;
+.maintenance .scheduled-upgrade .days-selector .day-selector.selected {
+    background: var(--color-indigo-400);
+    color: white;
+}
 
-                    span {
-                        font-weight: 600;
-                    }
-                }
+.maintenance .scheduled-upgrade .days-selector .day-selector.selected span {
+    font-weight: 600;
+}
 
-                &.disabled {
-                    opacity: 0.5;
-                    cursor: not-allowed;
-                }
-            }
-        }
-    }
+.maintenance .scheduled-upgrade .days-selector .day-selector.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 </style>

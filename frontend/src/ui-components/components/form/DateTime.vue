@@ -19,23 +19,16 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.ff-date-picker {
-    &.disabled {
-        input {
-            cursor: not-allowed !important;
-        }
-    }
-
-    .dp__action_button {
-        &.dp__action_select {
-            background: var(--ff-indigo-700);
-
-            &[disabled] {
-                background: var(--ff-grey-300);
-            }
-        }
-    }
+<style>
+.ff-date-picker.disabled input {
+    cursor: not-allowed !important;
 }
 
+.ff-date-picker .dp__action_button.dp__action_select {
+    background: var(--color-indigo-700);
+}
+
+.ff-date-picker .dp__action_button.dp__action_select[disabled] {
+    background: var(--color-gray-300);
+}
 </style>

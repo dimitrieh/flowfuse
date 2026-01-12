@@ -270,36 +270,34 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import "../../stylesheets/pages/project.scss";
-
-// Container query for drawer context
-// Breakpoint matches DRAWER_MOBILE_BREAKPOINT constant in Editor/index.vue
+<style>
+/* Container query for drawer context */
+/* Breakpoint matches DRAWER_MOBILE_BREAKPOINT constant in Editor/index.vue */
 @container drawer (min-width: 640px) {
   .ff-project-overview .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-// Ensure single column layout when container is smaller
+/* Ensure single column layout when container is smaller */
 @container drawer (max-width: 639px) {
   .ff-project-overview .grid {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
 
-// Editor URL overflow - truncate with ellipsis
+/* Editor URL overflow - truncate with ellipsis */
 .ff-instance-info a.ff-link.flex {
   min-width: 0;
-
-  span {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
 }
 
-// Type field - ellipse from LEFT to show stack name
+.ff-instance-info a.ff-link.flex span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Type field - ellipse from LEFT to show stack name */
 .ff-instance-info table tr td.flex .grow {
   direction: rtl;
   text-align: left;

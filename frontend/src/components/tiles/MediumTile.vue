@@ -78,11 +78,11 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .ff-medium-tile {
     position: relative;
     border-radius: 6px;
-    border: 2px solid var(--ff-grey-300);
+    border: 2px solid var(--color-gray-300);
     background: white;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
     padding: 49px 24px 24px 24px;
@@ -91,56 +91,54 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    .ff-ribbon {
-        --ribbon-overlap: 8px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 30px;
-        left: calc(-1 * var(--ribbon-overlap));
-        line-height: 1.3;
-        width: calc(100% + 2 * var(--ribbon-overlap));
-        margin: 0;
-        position: absolute;
-        top: 8px;
-        color: white;
-        border-top: 1px solid #363636;
-        border-bottom: 1px solid #202020;
-        border-radius: 2px 2px 0 0;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.3);
-
-        &.red {
-            background: var(--ff-red-50)0;
-            &::before,
-            &::after {
-                border-color: var(--ff-red-900) transparent transparent transparent;
-            }
-        }
-
-        &.blue {
-            background: var(--ff-indigo-700);
-            &::before,
-            &::after {
-                border-color: var(--ff-indigo-900) transparent transparent transparent;
-            }
-        }
-
-        &::before,
-        &::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 0;
-            position: absolute;
-            bottom: calc((-2 * var(--ribbon-overlap)) - 1px);
-            z-index: -10;
-            border: var(--ribbon-overlap) solid;
-        }
-
-        &::before {left: 0}
-        &::after {right: 0}
-    }
-
+}
+.ff-medium-tile .ff-ribbon {
+    --ribbon-overlap: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    left: calc(-1 * var(--ribbon-overlap));
+    line-height: 1.3;
+    width: calc(100% + 2 * var(--ribbon-overlap));
+    margin: 0;
+    position: absolute;
+    top: 8px;
+    color: white;
+    border-top: 1px solid #363636;
+    border-bottom: 1px solid #202020;
+    border-radius: 2px 2px 0 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+.ff-medium-tile .ff-ribbon.red {
+    background: var(--color-red-50)0;
+}
+.ff-medium-tile .ff-ribbon.red::before,
+.ff-medium-tile .ff-ribbon.red::after {
+    border-color: var(--color-red-900) transparent transparent transparent;
+}
+.ff-medium-tile .ff-ribbon.blue {
+    background: var(--color-indigo-700);
+}
+.ff-medium-tile .ff-ribbon.blue::before,
+.ff-medium-tile .ff-ribbon.blue::after {
+    border-color: var(--color-indigo-900) transparent transparent transparent;
+}
+.ff-medium-tile .ff-ribbon::before,
+.ff-medium-tile .ff-ribbon::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: calc((-2 * var(--ribbon-overlap)) - 1px);
+    z-index: -10;
+    border: var(--ribbon-overlap) solid;
+}
+.ff-medium-tile .ff-ribbon::before {
+    left: 0;
+}
+.ff-medium-tile .ff-ribbon::after {
+    right: 0;
 }
 </style>

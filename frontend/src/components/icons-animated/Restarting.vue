@@ -17,7 +17,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 .ff-icon-restarting svg {
     --anim-time: 1s;

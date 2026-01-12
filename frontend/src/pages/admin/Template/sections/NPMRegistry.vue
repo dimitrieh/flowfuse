@@ -144,9 +144,9 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 textarea:disabled {
-  background-color: var(--ff-white);
+  background-color: var(--color-white);
   opacity: .9;
   -webkit-appearance: none;
   -moz-appearance: none;

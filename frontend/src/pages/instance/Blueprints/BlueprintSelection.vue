@@ -81,8 +81,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import '../../../stylesheets/components/blueprint-selection.scss';
+<style>
 .blueprint-group {
   display: flex;
   flex-wrap: wrap;

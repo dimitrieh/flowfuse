@@ -207,7 +207,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 .banner-wrapper > div {
   margin-top: 0;
 }

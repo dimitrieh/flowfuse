@@ -55,17 +55,15 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-#assign-device-dialog {
-    .ff-tile-selection {
-        margin-top: 1rem;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-    .ff-tile-selection-option {
-        width: auto;
-        margin: 0;
-    }
+<style scoped>
+#assign-device-dialog .ff-tile-selection {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+#assign-device-dialog .ff-tile-selection-option {
+    width: auto;
+    margin: 0;
 }
 </style>

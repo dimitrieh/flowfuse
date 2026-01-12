@@ -22,6 +22,6 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import "../stylesheets/components/info-card.scss";
+<style>
+/* Component styles are managed globally */
 </style>

@@ -38,29 +38,30 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 #table-explorer {
     display: flex;
     gap: 15px;
     height: 100%;
     width: 100%;
     overflow: auto;
+}
 
-    &.collapsed {
-        gap: 0;
-        #tables-list {
-            max-width: 0;
-            min-width: 0;
-            overflow: hidden;
-            padding: 0;
-            border-right-color: transparent;
-        }
-    }
+#table-explorer.collapsed {
+    gap: 0;
+}
 
-    #tables-list {
-        border-right: 1px solid var(--ff-color-border);
-        padding-right: 10px;
-        transition: ease-in-out .3s, border-right-color ease-out .3s;
-    }
+#table-explorer.collapsed #tables-list {
+    max-width: 0;
+    min-width: 0;
+    overflow: hidden;
+    padding: 0;
+    border-right-color: transparent;
+}
+
+#table-explorer #tables-list {
+    border-right: 1px solid var(--color-border);
+    padding-right: 10px;
+    transition: ease-in-out .3s, border-right-color ease-out .3s;
 }
 </style>

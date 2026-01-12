@@ -345,77 +345,77 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .ff-expert {
     display: flex;
     flex-direction: column;
     height: 100%;
     background: white;
-    overflow: hidden; // Prevent this container from scrolling
+    overflow: hidden; /* Prevent this container from scrolling */
     position: relative;
 }
 
 .messages-container {
     flex: 1;
     overflow-y: auto;
-    padding: 1rem; // p-4
+    padding: 1rem; /* p-4 */
     scroll-behavior: smooth;
-    min-height: 0; // Important for flex child overflow
+    min-height: 0; /* Important for flex child overflow */
+}
 
-    // Custom scrollbar styling
-    &::-webkit-scrollbar {
-        width: 8px;
-    }
+/* Custom scrollbar styling */
+.messages-container::-webkit-scrollbar {
+    width: 8px;
+}
 
-    &::-webkit-scrollbar-track {
-        background: transparent;
-    }
+.messages-container::-webkit-scrollbar-track {
+    background: transparent;
+}
 
-    &::-webkit-scrollbar-thumb {
-        background-color: var(--ff-grey-300);
-        border-radius: 4px;
+.messages-container::-webkit-scrollbar-thumb {
+    background-color: var(--color-gray-300);
+    border-radius: 4px;
+}
 
-        &:hover {
-            background-color: var(--ff-grey-400);
-        }
-    }
+.messages-container::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-gray-400);
 }
 
 .info-banner {
-    background-color: #eef2ff; // indigo-100
+    background-color: #eef2ff; /* indigo-100 */
     border-radius: 0.5rem;
     margin-bottom: 1.5rem;
     padding: 0.75rem 1rem;
+}
 
-    .info-text {
-        color: #4338ca; // indigo-700
-        font-size: 0.875rem;
-        margin: 0;
-        line-height: 1.5;
-    }
+.info-banner .info-text {
+    color: #4338ca; /* indigo-700 */
+    font-size: 0.875rem;
+    margin: 0;
+    line-height: 1.5;
+}
 
-    .info-link {
-        color: inherit;
-        text-decoration: underline;
+.info-banner .info-link {
+    color: inherit;
+    text-decoration: underline;
+}
 
-        &:hover {
-            color: #3730a3; // indigo-800
-        }
-    }
+.info-banner .info-link:hover {
+    color: #3730a3; /* indigo-800 */
+}
 
-    .beta-badge {
-        display: inline-block;
-        background-color: #818cf8; // indigo-400
-        color: white;
-        font-size: 0.625rem;
-        font-weight: 600;
-        padding: 0.125rem 0.375rem;
-        border-radius: 0.25rem;
-        text-transform: uppercase;
-        letter-spacing: 0.025em;
-        cursor: help;
-        vertical-align: text-top;
-    }
+.info-banner .beta-badge {
+    display: inline-block;
+    background-color: #818cf8; /* indigo-400 */
+    color: white;
+    font-size: 0.625rem;
+    font-weight: 600;
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    cursor: help;
+    vertical-align: text-top;
 }
 
 .empty-state {
@@ -426,32 +426,32 @@ export default {
     height: 100%;
     text-align: center;
     padding: 2rem;
-    color: var(--ff-grey-600);
+    color: var(--color-gray-600);
+}
 
-    .empty-state-icon {
-        width: 4rem;
-        height: 4rem;
-        margin-bottom: 1rem;
-        color: var(--ff-indigo-400);
+.empty-state .empty-state-icon {
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1rem;
+    color: var(--color-indigo-400);
+}
 
-        svg {
-            width: 100%;
-            height: 100%;
-        }
-    }
+.empty-state .empty-state-icon svg {
+    width: 100%;
+    height: 100%;
+}
 
-    h3 {
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: var(--ff-grey-900);
-        margin: 0 0 0.5rem 0;
-    }
+.empty-state h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-gray-900);
+    margin: 0 0 0.5rem 0;
+}
 
-    p {
-        font-size: 1rem;
-        margin: 0;
-        max-width: 400px;
-    }
+.empty-state p {
+    font-size: 1rem;
+    margin: 0;
+    max-width: 400px;
 }
 
 .message-wrapper {
@@ -474,6 +474,6 @@ export default {
 }
 
 .messages-container.has-mode-switcher {
-    padding-top: 4rem; // Extra padding to account for floating mode switcher
+    padding-top: 4rem; /* Extra padding to account for floating mode switcher */
 }
 </style>

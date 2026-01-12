@@ -279,7 +279,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .ff-team-dashboard {
     height: 100%;
     display: flex;
@@ -290,37 +290,31 @@ export default {
     container-name: team-dashboard;
 }
 
-.instances-section {
-    // Default: stacked (flex-wrap)
-    // When container is 640px+ wide, display side-by-side
-    @container team-dashboard (min-width: 640px) {
+/* Default: stacked (flex-wrap) */
+/* When container is 640px+ wide, display side-by-side */
+@container team-dashboard (min-width: 640px) {
+    .instances-section {
         flex-wrap: nowrap;
     }
 }
 </style>
 
-<style lang="scss">
-#team-dashboard {
-    .ff-accordion {
-        border: none;
+<style>
+#team-dashboard .ff-accordion {
+    border: none;
+}
 
-        &--button {
-            background: var(--ff-white);
-            border: none;
-            border-bottom: 1px solid var(--ff-color-border);
-        }
+#team-dashboard .ff-accordion--button {
+    background: var(--color-white);
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+}
 
-        &--content {
-            & > div {
-                &:nth-child(odd) {
-                    background: var(--ff-grey-50);
-                }
+#team-dashboard .ff-accordion--content > div:nth-child(odd) {
+    background: var(--color-gray-50);
+}
 
-                .ff-audit-entry {
-                    border: none;
-                }
-            }
-        }
-    }
+#team-dashboard .ff-accordion--content > div .ff-audit-entry {
+    border: none;
 }
 </style>

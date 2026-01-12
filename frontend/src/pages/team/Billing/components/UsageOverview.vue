@@ -110,12 +110,8 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-.hosted-instances-usage {
-    tr:last-of-type {
-        td {
-            border-bottom: none;
-        }
-    }
+<style scoped>
+.hosted-instances-usage tr:last-of-type td {
+    border-bottom: none;
 }
 </style>

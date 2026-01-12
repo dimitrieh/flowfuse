@@ -156,135 +156,149 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .import-flows {
     overflow: auto;
+}
 
-    & > .wrapper {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        flex: 1;
-        overflow: auto;
-        min-height: 400px;
+/* .import-flows > .wrapper */
+.import-flows > .wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1;
+    overflow: auto;
+    min-height: 400px;
+}
 
-        @media (max-width: 768px) {
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .preview {
-            flex: 1;
-            min-width: 0;
-            display: flex;
-            flex-direction: column;
-            max-height: 100%;
-
-            @media (max-width: 768px) {
-                max-width: 100%;
-                max-height: 400px;
-                order: 2;
-            }
-        }
-
-        .add-flows {
-            overflow: auto;
-            min-width: 350px;
-            max-width: 600px;
-            height: 100%;
-            flex: 1;
-
-            .content {
-                overflow: auto;
-                flex: 1;
-
-                .flow-input-wrapper {
-                    height: 100%;
-                    display: flex;
-
-                    textarea {
-                        background: none;
-                        border-color: var(--ff-grey-200);
-                        resize: none;
-                        min-height: 200px;
-                        transition: background-color ease-out .3s, border-color ease-out .3s;
-                        flex: 1;
-
-                        &:hover, &:focus {
-                            background: var(--ff-white);
-                            border-color: var(--ff-grey-300);
-                            resize: vertical;
-                        }
-
-                        &.has-content {
-                            border-color: var(--ff-grey-300);
-                        }
-
-                        @media (max-width: 768px) {
-                            max-height: 100%;
-                            min-height: 100px;
-                            background: var(--ff-white);
-                            border-color: var(--ff-grey-300);
-                            resize: none;
-                        }
-                    }
-                }
-
-                @media (max-width: 768px) {
-                    overflow: initial;
-                    gap: 0;
-                }
-            }
-
-            @media (max-width: 768px) {
-                width: 100%;
-                min-width: 100%;
-                max-width: fit-content;
-                height: auto;
-                flex: 0 0 auto;
-            }
-        }
-    }
-
-    .notice {
-        display: flex;
+@media (max-width: 768px) {
+    .import-flows > .wrapper {
+        flex-direction: column;
         gap: 15px;
-        align-items: baseline;
-        font-size: 0.8rem;
-
-        .notice-element {
-
-            h3 {
-                font-weight: bold
-            }
-
-            p {
-                font-style: italic;
-                margin-bottom: 5px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            flex: 0 0 auto;
-            align-items: flex-start;
-            justify-content: initial;
-            padding: 10px;
-            flex-direction: column;
-            overflow: auto;
-            height: fit-content;
-            max-height: 10vh;
-        }
     }
 }
-</style>
-<style lang="scss">
-.import-flows {
-    & > .wrapper {
-        .preview {
-            .ff-flow-viewer {
-                flex: 1;
-            }
-        }
+
+/* .import-flows > .wrapper .preview */
+.import-flows > .wrapper .preview {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+}
+
+@media (max-width: 768px) {
+    .import-flows > .wrapper .preview {
+        max-width: 100%;
+        max-height: 400px;
+        order: 2;
     }
+}
+
+/* .import-flows > .wrapper .add-flows */
+.import-flows > .wrapper .add-flows {
+    overflow: auto;
+    min-width: 350px;
+    max-width: 600px;
+    height: 100%;
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .import-flows > .wrapper .add-flows {
+        width: 100%;
+        min-width: 100%;
+        max-width: fit-content;
+        height: auto;
+        flex: 0 0 auto;
+    }
+}
+
+/* .import-flows > .wrapper .add-flows .content */
+.import-flows > .wrapper .add-flows .content {
+    overflow: auto;
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .import-flows > .wrapper .add-flows .content {
+        overflow: initial;
+        gap: 0;
+    }
+}
+
+/* .import-flows > .wrapper .add-flows .content .flow-input-wrapper */
+.import-flows > .wrapper .add-flows .content .flow-input-wrapper {
+    height: 100%;
+    display: flex;
+}
+
+/* .import-flows > .wrapper .add-flows .content .flow-input-wrapper textarea */
+.import-flows > .wrapper .add-flows .content .flow-input-wrapper textarea {
+    background: none;
+    border-color: var(--color-gray-200);
+    resize: none;
+    min-height: 200px;
+    transition: background-color ease-out .3s, border-color ease-out .3s;
+    flex: 1;
+}
+
+.import-flows > .wrapper .add-flows .content .flow-input-wrapper textarea:hover,
+.import-flows > .wrapper .add-flows .content .flow-input-wrapper textarea:focus {
+    background: var(--color-white);
+    border-color: var(--color-gray-300);
+    resize: vertical;
+}
+
+.import-flows > .wrapper .add-flows .content .flow-input-wrapper textarea.has-content {
+    border-color: var(--color-gray-300);
+}
+
+@media (max-width: 768px) {
+    .import-flows > .wrapper .add-flows .content .flow-input-wrapper textarea {
+        max-height: 100%;
+        min-height: 100px;
+        background: var(--color-white);
+        border-color: var(--color-gray-300);
+        resize: none;
+    }
+}
+
+/* .import-flows .notice */
+.import-flows .notice {
+    display: flex;
+    gap: 15px;
+    align-items: baseline;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .import-flows .notice {
+        flex: 0 0 auto;
+        align-items: flex-start;
+        justify-content: initial;
+        padding: 10px;
+        flex-direction: column;
+        overflow: auto;
+        height: fit-content;
+        max-height: 10vh;
+    }
+}
+
+/* .import-flows .notice .notice-element h3 */
+.import-flows .notice .notice-element h3 {
+    font-weight: bold;
+}
+
+/* .import-flows .notice .notice-element p */
+.import-flows .notice .notice-element p {
+    font-style: italic;
+    margin-bottom: 5px;
+}
+</style>
+<style>
+/* Non-scoped styles for nested components */
+.import-flows > .wrapper .preview .ff-flow-viewer {
+    flex: 1;
 }
 </style>

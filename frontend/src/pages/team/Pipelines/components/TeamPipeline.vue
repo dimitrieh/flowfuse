@@ -50,75 +50,76 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .ff-pipeline {
-    border: 1px solid var(--ff-grey-300);
+    border: 1px solid var(--color-gray-300);
     border-radius: 5px;
     overflow: hidden;
+}
 
-    & > .ff-pipeline-header {
-        background: var(--ff-white);
-        padding: 15px;
-        border-bottom: 1px solid var(--ff-grey-300);
-        transition: ease-in-out .3s;
+.ff-pipeline > .ff-pipeline-header {
+    background: var(--color-white);
+    padding: 15px;
+    border-bottom: 1px solid var(--color-gray-300);
+    transition: ease-in-out .3s;
+}
 
-        &:hover {
-            color: var(--ff-white);
-            background: var(--ff-indigo-700);
-            .ff-pipeline-application-name {
-                transition: ease-in-out .3s;
-                color:  var(--ff-grey-400);
-            }
-        }
+.ff-pipeline > .ff-pipeline-header:hover {
+    color: var(--color-white);
+    background: var(--color-indigo-700);
+}
 
-        &:has(.ff-pipeline-application-name:hover) {
-            color: var(--ff-grey-50)0;
+.ff-pipeline > .ff-pipeline-header:hover .ff-pipeline-application-name {
+    transition: ease-in-out .3s;
+    color: var(--color-gray-400);
+}
 
-            .ff-pipeline-application-name:hover {
-                color: var(--ff-white);
-            }
-        }
+.ff-pipeline > .ff-pipeline-header:has(.ff-pipeline-application-name:hover) {
+    color: var(--color-gray-50)0;
+}
 
-        .ff-application-name {
-            transition: ease-in-out .3s;
-            color: var(--ff-grey-400);
+.ff-pipeline > .ff-pipeline-header:has(.ff-pipeline-application-name:hover) .ff-pipeline-application-name:hover {
+    color: var(--color-white);
+}
 
-            &:hover {
-                color: var(--ff-indigo-700);
-            }
-        }
+.ff-pipeline > .ff-pipeline-header .ff-application-name {
+    transition: ease-in-out .3s;
+    color: var(--color-gray-400);
+}
 
-        .to {
-            display: flex;
-            flex: 1;
-            justify-content: end;
-        }
-    }
+.ff-pipeline > .ff-pipeline-header .ff-application-name:hover {
+    color: var(--color-indigo-700);
+}
 
-    & > .ff-pipeline-content {
-        padding: 15px;
-        overflow: auto;
+.ff-pipeline > .ff-pipeline-header .to {
+    display: flex;
+    flex: 1;
+    justify-content: end;
+}
 
-        .ff-pipeline-stages-list {
-            display: flex;
-            flex-direction: row;
-            gap: 15px;
+.ff-pipeline > .ff-pipeline-content {
+    padding: 15px;
+    overflow: auto;
+}
 
-            li {
-                display: flex;
-                gap: 15px;
-                align-items: center;
+.ff-pipeline > .ff-pipeline-content .ff-pipeline-stages-list {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
 
-                &:last-child > .ff-icon {
-                    display: none;
-                }
-            }
-        }
+.ff-pipeline > .ff-pipeline-content .ff-pipeline-stages-list li {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
 
-        .ff-empty-stages-message {
-            text-align: center;
-            color: var(--ff-grey-50)0;
-        }
-    }
+.ff-pipeline > .ff-pipeline-content .ff-pipeline-stages-list li:last-child > .ff-icon {
+    display: none;
+}
+
+.ff-pipeline > .ff-pipeline-content .ff-empty-stages-message {
+    text-align: center;
+    color: var(--color-gray-50)0;
 }
 </style>

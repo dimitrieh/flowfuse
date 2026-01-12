@@ -38,11 +38,9 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-.notifications-button-wrapper {
-
-  .notifications-button {
-    color: var(--ff-grey-800);
+<style scoped>
+.notifications-button-wrapper .notifications-button {
+    color: var(--color-gray-800);
     display: flex;
     align-items: center;
     flex: 1;
@@ -51,40 +49,33 @@ export default {
     height: 100%;
     padding: 18px;
     position: relative;
-
-    > * {
-      pointer-events: none;
-    }
-
-    svg {
-      flex: 1;
-      width: 24px;
-      height: 24px;
-      transition: ease-in-out .1s;
-      object-fit: contain;
-    }
-
-    &:hover {
-      svg {
-        will-change: transform ;
-        color: var(--ff-indigo-600);
-        transform: scale(1.25) translateZ(0); /* Using slight adjustments to whole values */
-        backface-visibility: hidden;
-        perspective: 1000px;
-        stroke-width: 1.5px;
-        shape-rendering: geometricPrecision;
-        text-rendering: geometricPrecision;
-      }
-    }
-
-    .ff-notification-pill {
-      bottom: 10px;
-      right: 5px;
-      position: absolute;
-      font-size: 0.65rem;
-      padding: 0 7px;
-      background-color: var(--ff-red-500);
-    }
-  }
+}
+.notifications-button-wrapper .notifications-button > * {
+    pointer-events: none;
+}
+.notifications-button-wrapper .notifications-button svg {
+    flex: 1;
+    width: 24px;
+    height: 24px;
+    transition: ease-in-out .1s;
+    object-fit: contain;
+}
+.notifications-button-wrapper .notifications-button:hover svg {
+    will-change: transform;
+    color: var(--color-indigo-600);
+    transform: scale(1.25) translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    stroke-width: 1.5px;
+    shape-rendering: geometricPrecision;
+    text-rendering: geometricPrecision;
+}
+.notifications-button-wrapper .notifications-button .ff-notification-pill {
+    bottom: 10px;
+    right: 5px;
+    position: absolute;
+    font-size: 0.65rem;
+    padding: 0 7px;
+    background-color: var(--color-red-500);
 }
 </style>

@@ -411,7 +411,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .ff-data-table--cell textarea {
     resize: vertical;
     max-height: 10rem; /* 160px approx ~8 lines, after which user will need to scroll */
@@ -442,12 +442,8 @@ export default {
 }
 </style>
 
-<style lang="scss">
-.ff-environment {
-    .ff-input.ff-text-input {
-        input:disabled {
-            color: var(--ff-grey-600)
-        }
-    }
+<style>
+.ff-environment .ff-input.ff-text-input input:disabled {
+    color: var(--color-gray-600)
 }
 </style>

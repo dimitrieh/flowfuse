@@ -148,14 +148,14 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .action-button {
   cursor: default;
 }
 
-// Container query for drawer context - responsive button behavior
-// Breakpoint matches DRAWER_MOBILE_BREAKPOINT constant in Editor/index.vue
-// When inside drawer, respond to drawer width instead of viewport
+/* Container query for drawer context - responsive button behavior */
+/* Breakpoint matches DRAWER_MOBILE_BREAKPOINT constant in Editor/index.vue */
+/* When inside drawer, respond to drawer width instead of viewport */
 @container drawer (min-width: 640px) {
   .actions-text-container {
     display: inline;

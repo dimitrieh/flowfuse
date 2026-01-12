@@ -10,7 +10,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .ff-icon-anim {
     display: flex;
     justify-content: center;
@@ -63,7 +63,7 @@ export default {
     background-color: currentColor;
   }
   50%, 100% {
-    background-color: var(--ff-grey-500-20);
+    background-color: var(--color-gray-500-20);
   }
 }
 </style>

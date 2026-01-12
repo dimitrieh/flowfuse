@@ -154,33 +154,28 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 .ff-dropdown.visibility-selector {
-  min-width: 130px;
-
-  .ff-button {
+    min-width: 130px;
+}
+.ff-dropdown.visibility-selector .ff-button {
     padding-left: 0;
     padding-right: 0;
     border: none;
     background: none !important;
-  }
-
-  .ff-options {
-    border: 1px solid var(--ff-grey-200) !important;
-
-    .ff-option {
-      background: white !important;
-      border: none !important;
-
-      &[disabled="true"] {
-        color: var(--ff-grey-600);
-        cursor: not-allowed;
-      }
-
-      &:hover {
-        background-color: var(--ff-grey-200) !important;
-      }
-    }
-  }
+}
+.ff-dropdown.visibility-selector .ff-options {
+    border: 1px solid var(--color-gray-200) !important;
+}
+.ff-dropdown.visibility-selector .ff-options .ff-option {
+    background: white !important;
+    border: none !important;
+}
+.ff-dropdown.visibility-selector .ff-options .ff-option[disabled="true"] {
+    color: var(--color-gray-600);
+    cursor: not-allowed;
+}
+.ff-dropdown.visibility-selector .ff-options .ff-option:hover {
+    background-color: var(--color-gray-200) !important;
 }
 </style>

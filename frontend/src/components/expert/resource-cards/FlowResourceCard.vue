@@ -65,6 +65,6 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-// Minimal scoped styles - most styling is handled by Tailwind classes in template
+<style scoped>
+/* Minimal scoped styles - most styling is handled by Tailwind classes in template */
 </style>

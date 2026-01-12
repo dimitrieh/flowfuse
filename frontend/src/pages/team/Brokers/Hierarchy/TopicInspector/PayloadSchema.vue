@@ -80,15 +80,15 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .ff-topic-inspecting {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    background: var(--ff-white);
+    background: var(--color-white);
     padding: 10px;
     border-radius: 6px;
-    border: 1px solid var(--ff-grey-200);
+    border: 1px solid var(--color-gray-200);
     overflow: auto;
 }
 </style>

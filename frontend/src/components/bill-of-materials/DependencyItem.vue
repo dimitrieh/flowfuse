@@ -120,64 +120,61 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 .dependency-item {
-    border: 1px solid var(--ff-grey-300);
+    border: 1px solid var(--color-gray-300);
     margin-bottom: 12px;
+}
 
-    .dependency-header {
-        cursor: pointer;
-        background: var(--ff-grey-100);
-        display: flex;
-        padding: 6px 9px;
-        align-items: center;
-        gap: 15px;
+.dependency-item .dependency-header {
+    cursor: pointer;
+    background: var(--color-gray-100);
+    display: flex;
+    padding: 6px 9px;
+    align-items: center;
+    gap: 15px;
+}
 
-        .title {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            gap: 15px;
+.dependency-item .dependency-header .title {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
 
-            h3, p {
-                margin: 0;
-                line-height: 1;
-            }
+.dependency-item .dependency-header .title h3,
+.dependency-item .dependency-header .title p {
+    margin: 0;
+    line-height: 1;
+}
 
-            p {
-                color: var(--ff-grey-50)0;
-                font-weight: 400;
-                font-size: 80%;
-            }
-        }
+.dependency-item .dependency-header .title p {
+    color: var(--color-gray-500);
+    font-weight: 400;
+    font-size: 80%;
+}
 
-        .details {
-            display: flex;
-            flex-direction: column;
-            text-align: right;
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
+.dependency-item .dependency-header .details {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
 
-        .ff-toggle {
-            transition: ease-in-out .3s;
-        }
+.dependency-item .dependency-header .ff-toggle {
+    transition: ease-in-out .3s;
+}
 
-        &.open {
-            border-bottom: 1px solid var(--ff-grey-300);
+.dependency-item .dependency-header.open {
+    border-bottom: 1px solid var(--color-gray-300);
+}
 
-            .ff-toggle {
-                transform: rotate(90deg);
-            }
-        }
-    }
+.dependency-item .dependency-header.open .ff-toggle {
+    transform: rotate(90deg);
+}
 
-    &:last-of-type {
-        .ff-accordion {
-            button {
-                border-bottom: none;
-            }
-        }
-    }
+.dependency-item:last-of-type .ff-accordion button {
+    border-bottom: none;
 }
 </style>

@@ -122,13 +122,12 @@ export default {
     }
 }
 </script>
-<style scoped lang="scss">
+<style scoped>
 .ff-broker-hierarchy {
     display: flex;
     flex-direction: row;
     gap: 12px;
     overflow: auto;
-    //height: 100%;
 }
 
 @media screen and (max-width: 768px) {

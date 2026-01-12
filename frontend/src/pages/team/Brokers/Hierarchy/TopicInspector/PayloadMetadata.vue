@@ -54,27 +54,29 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .ff-topic-inspecting {
-    background: var(--ff-white);
+    background: var(--color-white);
     padding: 10px;
     border-radius: 6px;
-    border: 1px solid var(--ff-grey-200);
+    border: 1px solid var(--color-gray-200);
 }
 
 .ff-topic-path {
     display: flex;
-    background-color: var(--ff-indigo-50);
-    color: var(--ff-indigo-600);
+    background-color: var(--color-indigo-50);
+    color: var(--color-indigo-600);
     border-radius: 6px;
-    border: 1px solid var(--ff-indigo-100);
+    border: 1px solid var(--color-indigo-100);
     padding: 6px;
     font-weight: 600;
-    & > span:first-child {
-        flex-grow: 1
-    }
-    & > span:last-child {
-        flex-grow: 0
-    }
+}
+
+.ff-topic-path > span:first-child {
+    flex-grow: 1;
+}
+
+.ff-topic-path > span:last-child {
+    flex-grow: 0;
 }
 </style>

@@ -203,7 +203,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .page-fade-enter-active, .page-fade-leave-active {
     transition: opacity .2s ease-in-out;
 }

@@ -107,24 +107,20 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-.suggestion {
-    .content {
-        .format {
-            color: var(--ff-indigo-50)0;
-        }
-    }
+<style scoped>
+.suggestion .content .format {
+    color: var(--color-indigo-500);
+}
 
-    .actions {
-        .preview {
-            color: var(--ff-grey-50)0
-        }
-        .accept {
-            color: var(--ff-green-500)
-        }
-        .reject {
-            color: var(--ff-red-50)0
-        }
-    }
+.suggestion .actions .preview {
+    color: var(--color-gray-500);
+}
+
+.suggestion .actions .accept {
+    color: var(--color-green-500);
+}
+
+.suggestion .actions .reject {
+    color: var(--color-red-500);
 }
 </style>

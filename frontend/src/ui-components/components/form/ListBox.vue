@@ -209,90 +209,90 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 .ff-listbox {
-  display: inline-block;
-  min-width: 200px;
+    display: inline-block;
+    min-width: 200px;
+}
 
-  &:focus-visible {
+.ff-listbox:focus-visible {
     border: none;
     outline: none;
+}
 
-  }
-
-  .ff-button {
-    border: 1px solid var(--ff-grey-300);
+.ff-listbox .ff-button {
+    border: 1px solid var(--color-gray-300);
     padding: 5px 5px 5px 10px;
-    background: var(--ff-white);
+    background: var(--color-white);
+}
 
-    &:focus-visible {
-        outline: none;
-    }
+.ff-listbox .ff-button:focus-visible {
+    outline: none;
+}
 
-    &:focus {
-        border-color: var(--ff-blue-500);
-    }
+.ff-listbox .ff-button:focus {
+    border-color: var(--color-blue-500);
+}
 
-    .icon {
-      svg {
-        width: 1.5rem;
-        height: 1.5rem;
-      }
-    }
-  }
+.ff-listbox .ff-button .icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
 
-  &[data-headlessui-state="open"] {
-    button {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-  }
+.ff-listbox[data-headlessui-state="open"] button {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .ff-options {
-    background: var(--ff-grey-50);
+    background: var(--color-gray-50);
     box-shadow: 0 6px 9px 0 #00000038;
     max-height: 28rem;
     z-index: 200;
     overflow-y: auto;
     padding: 0;
-    border-left: 1px solid var(--ff-grey-200);
-    border-right: 1px solid var(--ff-grey-200);
-    border-bottom: 1px solid var(--ff-grey-200);
-    &:focus-visible, &:focus {
-        outline: none;
-    }
+    border-left: 1px solid var(--color-gray-200);
+    border-right: 1px solid var(--color-gray-200);
+    border-bottom: 1px solid var(--color-gray-200);
+}
 
-    .ff-option {
-        border-bottom: 1px solid var(--ff-grey-200);
-        background-color: var(--ff-grey-50);
-        cursor: pointer;
+.ff-options:focus-visible,
+.ff-options:focus {
+    outline: none;
+}
 
-        &:last-of-type {
-            border-bottom: none;
-        }
+.ff-options .ff-option {
+    border-bottom: 1px solid var(--color-gray-200);
+    background-color: var(--color-gray-50);
+    cursor: pointer;
+}
 
-        .ff-option-content {
-            padding: var(--ff-unit-sm) var(--ff-unit-md);
-            border: 1px solid transparent;
+.ff-options .ff-option:last-of-type {
+    border-bottom: none;
+}
 
-            &.selected {
-                background-color: var(--ff-grey-200);
-            }
-            &.active {
-                border: 1px solid var(--ff-indigo-300);
-            }
-            &.selected.active {
-                border-color: transparent;
-            }
-        }
+.ff-options .ff-option .ff-option-content {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid transparent;
+}
 
-        &:hover {
-            background-color: var(--ff-grey-200);
-            .ff-option-content.active {
-                border-color: transparent
-            }
-        }
-    }
+.ff-options .ff-option .ff-option-content.selected {
+    background-color: var(--color-gray-200);
+}
+
+.ff-options .ff-option .ff-option-content.active {
+    border: 1px solid var(--color-indigo-300);
+}
+
+.ff-options .ff-option .ff-option-content.selected.active {
+    border-color: transparent;
+}
+
+.ff-options .ff-option:hover {
+    background-color: var(--color-gray-200);
+}
+
+.ff-options .ff-option:hover .ff-option-content.active {
+    border-color: transparent;
 }
 </style>

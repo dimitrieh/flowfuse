@@ -148,76 +148,76 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .graph {
     min-width: 64px;
     padding: 15px;
     position: relative;
     overflow: hidden;
+}
 
-    .icon-wrapper {
-        min-width: 34px;
-        min-height: 35px;
-        border: 2px solid var(--ff-blue-800);
-        border-radius: 50%;
-        padding: 5px;
-        background: #fff;
-        position: relative;
-        z-index: 10;
-        color: var(--ff-blue-800);
-    }
+.graph .icon-wrapper {
+    min-width: 34px;
+    min-height: 35px;
+    border: 2px solid var(--color-blue-800);
+    border-radius: 50%;
+    padding: 5px;
+    background: #fff;
+    position: relative;
+    z-index: 10;
+    color: var(--color-blue-800);
+}
 
-    .connector {
-        border: 1px solid var(--ff-blue-800);
-        position: absolute;
-        left: 47%;  // compensates for border width
-        z-index: 5;
+.graph .connector {
+    border: 1px solid var(--color-blue-800);
+    position: absolute;
+    left: 47%; /* compensates for border width */
+    z-index: 5;
+}
 
-        &.top {
-            top: -230px;
-            height: 250px;
+.graph .connector.top {
+    top: -230px;
+    height: 250px;
+}
 
-            &.snapshot {
-                transform: rotate(45deg);
-                top: -25%;
-                left: 80%;
-                height: 50px;
-                border-style: dashed;
-                border-color: var(--ff-grey-500);
-            }
-        }
+.graph .connector.top.snapshot {
+    transform: rotate(45deg);
+    top: -25%;
+    left: 80%;
+    height: 50px;
+    border-style: dashed;
+    border-color: var(--color-gray-500);
+}
 
-        &.bottom {
-            bottom: -200px;
-            height: 230px;
-            &.snapshot {
-                transform: rotate(-45deg);
-                top: 50%;
-                left: 83%;
-                height: 50px;
-                border-style: dashed;
-                border-color: var(--ff-grey-500);
-            }
-        }
+.graph .connector.bottom {
+    bottom: -200px;
+    height: 230px;
+}
 
-        &.through {
-            bottom: -100px;
-            height: 230px;
-            left: 30px;
-        }
-    }
+.graph .connector.bottom.snapshot {
+    transform: rotate(-45deg);
+    top: 50%;
+    left: 83%;
+    height: 50px;
+    border-style: dashed;
+    border-color: var(--color-gray-500);
+}
 
-    &.is-snapshot {
-        padding-left: 45px;
-        min-width: 94px;
+.graph .connector.through {
+    bottom: -100px;
+    height: 230px;
+    left: 30px;
+}
 
-        .connector {
-            &.top, &.bottom {
-                left: 65%;
-                border-color: var(--ff-grey-500);
-                border-style: dashed;
-            }
-        }
-    }
+.graph.is-snapshot {
+    padding-left: 45px;
+    min-width: 94px;
+}
+
+.graph.is-snapshot .connector.top,
+.graph.is-snapshot .connector.bottom {
+    left: 65%;
+    border-color: var(--color-gray-500);
+    border-style: dashed;
 }
 </style>

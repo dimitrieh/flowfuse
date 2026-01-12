@@ -303,147 +303,141 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .ff-editor-wrapper {
   position: relative;
   height: 100%;
   display: flex;
   flex: 1;
+}
 
-  .tabs-wrapper {
-    position: fixed;
-    left: 0;
-    top: 60px;
-    width: 0;
-    height: calc(100% - 60px);
-    background: white;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    container-type: inline-size;
-    container-name: drawer;
-    z-index: 1;
+.ff-editor-wrapper .tabs-wrapper {
+  position: fixed;
+  left: 0;
+  top: 60px;
+  width: 0;
+  height: calc(100% - 60px);
+  background: white;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  container-type: inline-size;
+  container-name: drawer;
+  z-index: 1;
+}
 
-    &.open {
-      transform: translateX(0);
-      box-shadow: 5px 0px 8px rgba(0, 0, 0, 0.10);
-    }
+.ff-editor-wrapper .tabs-wrapper.open {
+  transform: translateX(0);
+  box-shadow: 5px 0px 8px rgba(0, 0, 0, 0.10);
+}
 
-    .header, main {
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.2s;
-    }
+.ff-editor-wrapper .tabs-wrapper .header,
+.ff-editor-wrapper .tabs-wrapper main {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
 
-    &.open {
-      .header, main {
-        opacity: 1;
-        pointer-events: auto;
-      }
-    }
+.ff-editor-wrapper .tabs-wrapper.open .header,
+.ff-editor-wrapper .tabs-wrapper.open main {
+  opacity: 1;
+  pointer-events: auto;
+}
 
-    .header {
-      padding: 0 15px 0 0;
-      display: flex;
-      line-height: 1.5;
-      border-bottom: 1px solid var(--ff-grey-200);
-      background: white;
-      z-index: 10;
+.ff-editor-wrapper .tabs-wrapper .header {
+  padding: 0 15px 0 0;
+  display: flex;
+  line-height: 1.5;
+  border-bottom: 1px solid var(--color-gray-200);
+  background: white;
+  z-index: 10;
+}
 
-      .logo {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-left: 15px;
+.ff-editor-wrapper .tabs-wrapper .header .logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 15px;
+}
 
-        a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color: var(--ff-grey-50)0;
-          gap: 4px;
+.ff-editor-wrapper .tabs-wrapper .header .logo a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-gray-500);
+  gap: 4px;
+}
 
-          .ff-btn--icon {
-            width: 16px;
-            height: 16px;
-          }
+.ff-editor-wrapper .tabs-wrapper .header .logo a .ff-btn--icon {
+  width: 16px;
+  height: 16px;
+}
 
-          img {
-            height: 20px;
-          }
+.ff-editor-wrapper .tabs-wrapper .header .logo a img {
+  height: 20px;
+}
 
-          &:hover {
-            opacity: 0.8;
-          }
-        }
-      }
+.ff-editor-wrapper .tabs-wrapper .header .logo a:hover {
+  opacity: 0.8;
+}
 
-      .tabs {
-        flex: 1;
-        padding: 0 15px;
-        min-width: 0;
-      }
+.ff-editor-wrapper .tabs-wrapper .header .tabs {
+  flex: 1;
+  padding: 0 15px;
+  min-width: 0;
+}
 
-      .side-actions {
-        display: flex;
-        justify-content: flex-end;
-        gap: 10px;
-        align-items: center;
-        color: var(--ff-grey-50)0;
-        flex-shrink: 0;
+.ff-editor-wrapper .tabs-wrapper .header .side-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  align-items: center;
+  color: var(--color-gray-500);
+  flex-shrink: 0;
+}
 
-        .close-drawer-button {
-          background: none;
-          border: none;
-          padding: 0;
-          color: inherit;
-          font: inherit;
-          display: flex;
-          align-items: center;
+.ff-editor-wrapper .tabs-wrapper .header .side-actions .close-drawer-button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  display: flex;
+  align-items: center;
+}
 
-          &:hover {
-            cursor: pointer;
-          }
-        }
-      }
-    }
-  }
+.ff-editor-wrapper .tabs-wrapper .header .side-actions .close-drawer-button:hover {
+  cursor: pointer;
+}
 
-  &.resizing {
-    cursor: ew-resize;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    .resize-bar {
-        background-color: var(--ff-blue-500);
-    }
-    .tabs-wrapper {
-        transition: none;
-    }
-  }
+.ff-editor-wrapper.resizing {
+  cursor: ew-resize;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.ff-editor-wrapper.resizing .resize-bar {
+  background-color: var(--color-blue-500);
+}
+
+.ff-editor-wrapper.resizing .tabs-wrapper {
+  transition: none;
 }
 </style>
 
-<style lang="scss">
-.ff-editor-wrapper {
-  .tabs-wrapper {
-    main {
-      overflow-y: auto;
-      overflow-x: hidden;
-    }
+<style>
+.ff-editor-wrapper .tabs-wrapper main {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 
-    .header {
-      .tabs {
-        .ff-tab-option {
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-      }
-    }
-  }
+.ff-editor-wrapper .tabs-wrapper .header .tabs .ff-tab-option {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 </style>

@@ -28,7 +28,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .not-found-wrapper {
     background: none;
     height: 100%;
@@ -36,30 +36,30 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+}
 
-    .not-found-container {
-        background: var(--ff-white);
-        padding: 30px 150px;
-        margin: 50px;
-        border-radius: 20px;
-        box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+.not-found-wrapper .not-found-container {
+    background: var(--color-white);
+    padding: 30px 150px;
+    margin: 50px;
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+}
 
-        .image-wrapper {
-            display: flex;
-            justify-content: center;
-            margin: 30px 0;
-        }
+.not-found-wrapper .not-found-container .image-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
 
-        .title {
-            margin: 30px 0;
-        }
+.not-found-wrapper .not-found-container .title {
+    margin: 30px 0;
+}
 
-        .actions {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 30px 0 15px;
-        }
-    }
+.not-found-wrapper .not-found-container .actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0 15px;
 }
 </style>

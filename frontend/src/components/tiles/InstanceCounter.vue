@@ -75,28 +75,25 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .ff-counter {
     border: 1px solid transparent;
     transition: ease-in-out .15s;
     will-change: border-color;
-
-    &.empty {
-        opacity: .3;
-    }
-
-    &:hover {
-        opacity: 1;
-
-        &.green {
-            border-color: var(--ff-green-500);
-        }
-        &.red {
-            border-color: var(--ff-red-50)0;
-        }
-        &.gray {
-            border-color: var(--ff-grey-50)0;
-        }
-    }
+}
+.ff-counter.empty {
+    opacity: .3;
+}
+.ff-counter:hover {
+    opacity: 1;
+}
+.ff-counter:hover.green {
+    border-color: var(--color-green-500);
+}
+.ff-counter:hover.red {
+    border-color: var(--color-red-50)0;
+}
+.ff-counter:hover.gray {
+    border-color: var(--color-gray-50)0;
 }
 </style>

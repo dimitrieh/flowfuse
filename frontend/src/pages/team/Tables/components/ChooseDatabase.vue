@@ -119,7 +119,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 #add-database {
     height: 100%;
 }

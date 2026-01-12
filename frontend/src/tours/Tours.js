@@ -6,7 +6,7 @@ import Product from '../services/product.js'
 
 // eslint-disable-next-line n/no-extraneous-import
 import 'shepherd.js/dist/css/shepherd.css'
-import './tour-theme.scss'
+import './tour-theme.css'
 
 import store from '../store/index.js'
 

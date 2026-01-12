@@ -76,6 +76,6 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import "../stylesheets/components/notifications.scss";
+<style>
+/* Component styles are managed globally */
 </style>

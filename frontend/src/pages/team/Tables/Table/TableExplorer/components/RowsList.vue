@@ -92,19 +92,19 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 #rows-list {
     height: 100%;
     width: 100%;
     overflow: auto;
+}
 
-    .header {
-        border-bottom: 1px solid var(--ff-color-border);
-        padding-bottom: 15px;
-        margin-bottom: 15px;
-        display: flex;
-        align-items: center;
-        height: 50px;
-    }
+#rows-list .header {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    height: 50px;
 }
 </style>

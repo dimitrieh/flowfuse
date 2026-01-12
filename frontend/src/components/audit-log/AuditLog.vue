@@ -123,7 +123,6 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import "../../stylesheets/components/audit-log.scss";
-@import "../../stylesheets/components/accordion.scss";
+<style>
+/* Component styles are managed globally */
 </style>

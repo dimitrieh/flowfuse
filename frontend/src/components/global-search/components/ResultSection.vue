@@ -137,116 +137,103 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 .section {
     margin-bottom: 15px;
+}
 
-    & > .title {
-        position: relative;
-        margin-bottom: 5px;
-        display: flex;
-        align-items: self-end;
-        gap: 5px;
+.section > .title {
+    position: relative;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: self-end;
+    gap: 5px;
+}
 
-        .icon {
-            color: var(--ff-indigo-700);
-        }
+.section > .title .icon {
+    color: var(--color-indigo-700);
+}
 
-        .counter {
-            opacity: .6;
-            font-size: 90%;
-        }
+.section > .title .counter {
+    opacity: .6;
+    font-size: 90%;
+}
 
-        &:after {
-            height: 2px;
-            background: var(--ff-grey-200);
-            content: '';
-            flex: 1;
-            align-self: center;
-        }
+.section > .title:after {
+    height: 2px;
+    background: var(--color-gray-200);
+    content: '';
+    flex: 1;
+    align-self: center;
+}
 
-        .text {
-            &:focus {
-                outline: 2px solid var(--ff-indigo-700);
-                outline-offset: 2px;
-            }
-        }
-    }
+.section > .title .text:focus {
+    outline: 2px solid var(--color-indigo-700);
+    outline-offset: 2px;
+}
 
-    .results {
-        .result-wrapper {
-            transition: ease-in-out .3s;
-            padding: 2px 10px;
-            border-radius: 5px;
-            max-height: 90vh;
-            overflow: auto;
+.section .results .result-wrapper {
+    transition: ease-in-out .3s;
+    padding: 2px 10px;
+    border-radius: 5px;
+    max-height: 90vh;
+    overflow: auto;
+}
 
-            .result {
-                display: flex;
-                gap: 10px;
-                align-items: center;
-                line-height: 25px;
+.section .results .result-wrapper .result {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    line-height: 25px;
+}
 
-                .icon {}
-                .title {}
-                .details {
-                    flex: 1;
-                    opacity: .4;
-                    font-size: 90%;
-                }
-                .actions {
-                    display: flex;
-                    gap: 5px;
-                }
+.section .results .result-wrapper .result .details {
+    flex: 1;
+    opacity: .4;
+    font-size: 90%;
+}
 
-                &:focus {
-                    background: var(--ff-indigo-50);
-                    border: none;
-                    outline: none;
-                }
-            }
+.section .results .result-wrapper .result .actions {
+    display: flex;
+    gap: 5px;
+}
 
-            &:hover {
-                background: var(--ff-indigo-50);
-            }
+.section .results .result-wrapper .result:focus {
+    background: var(--color-indigo-50);
+    border: none;
+    outline: none;
+}
 
-            &.show-more {
-                text-align: center;
-                margin: 3px 0;
+.section .results .result-wrapper:hover {
+    background: var(--color-indigo-50);
+}
 
-                a {
-                    padding: 5px 0;
-                    width: 100%;
-                    display: block;
-                    opacity: .6;
+.section .results .result-wrapper.show-more {
+    text-align: center;
+    margin: 3px 0;
+}
 
-                    &:focus {
-                        background: var(--ff-indigo-50);
-                        border: none;
-                        outline: none;
-                    }
-                }
-            }
-        }
-    }
+.section .results .result-wrapper.show-more a {
+    padding: 5px 0;
+    width: 100%;
+    display: block;
+    opacity: .6;
+}
 
-    &:last-of-type {
-        margin-bottom: 0;
-    }
+.section .results .result-wrapper.show-more a:focus {
+    background: var(--color-indigo-50);
+    border: none;
+    outline: none;
+}
+
+.section:last-of-type {
+    margin-bottom: 0;
 }
 
 @media screen and (max-width: 480px) {
-    .section {
-        .results {
-            .result-wrapper {
-                .result {
-                    .actions {
-                        display: none;
-                        background: red;
-                    }
-                }
-            }
-        }
+    .section .results .result-wrapper .result .actions {
+        display: none;
+        background: red;
     }
 }
 </style>

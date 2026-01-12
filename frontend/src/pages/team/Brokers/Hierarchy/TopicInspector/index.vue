@@ -191,7 +191,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .ff-topic-inspector {
     display: flex;
     flex-direction: column;

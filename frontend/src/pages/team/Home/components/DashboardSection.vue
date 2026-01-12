@@ -36,26 +36,26 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .ff-box {
-    border: 1px solid var(--ff-color-border);
-    background: var(--ff-white);
+    border: 1px solid var(--color-border);
+    background: var(--color-white);
     padding: 10px;
     display: flex;
     flex-direction: column;
     flex: 1;
+}
 
-    .ff-box-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 10px;
+.ff-box .ff-box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
 
-        .ff-box-title {
-            margin: 0;
-            padding: 0;
-            font-size: 1.3rem;
-        }
-    }
+.ff-box .ff-box-header .ff-box-title {
+    margin: 0;
+    padding: 0;
+    font-size: 1.3rem;
 }
 </style>

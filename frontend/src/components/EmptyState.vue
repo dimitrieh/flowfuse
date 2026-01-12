@@ -51,6 +51,6 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import "../stylesheets/components/empty-state.scss";
+<style>
+/* Component styles are managed globally */
 </style>

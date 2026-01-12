@@ -94,7 +94,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 .flex-break {
     flex-basis: 100%;
     height: 0;
@@ -102,31 +102,31 @@ export default {
 .ff-file-upload {
     width: 100%;
     display: flex;
-    gap: var(--ff-unit-sm);
-    .ff-btn {
-        flex-shrink: 0;
-    }
+    gap: var(--spacing-sm);
+}
+.ff-file-upload .ff-btn {
+    flex-shrink: 0;
 }
 .ff-file-upload--empty,
 .ff-file-upload--file {
     flex-grow: 1;
-    border: 1px solid var(--ff-grey-300);
-    padding: var(--ff-unit-sm) var(--ff-unit-md);
-    border-radius: var(--ff-unit-sm);
+    border: 1px solid var(--color-gray-300);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--spacing-sm);
     display: flex;
     align-items: center;
-    gap: var(--ff-unit-sm);
+    gap: var(--spacing-sm);
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow-x: hidden;
 }
 .ff-file-upload--empty {
-    color: var(--ff-grey-400);
+    color: var(--color-gray-400);
 }
 .ff-file-upload--clear {
     cursor: pointer;
-    &:hover {
-        color: var(--ff-blue-600);
-    }
+}
+.ff-file-upload--clear:hover {
+    color: var(--color-blue-600);
 }
 </style>

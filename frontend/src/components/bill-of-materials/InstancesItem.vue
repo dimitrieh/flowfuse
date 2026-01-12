@@ -51,34 +51,34 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .instance-item {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 15px;
-    background: var(--ff-grey-50);
-    border-bottom: 1px solid var(--ff-grey-300);
+    background: var(--color-gray-50);
+    border-bottom: 1px solid var(--color-gray-300);
     justify-content: space-between;
     padding: 6px;
     align-items: center;
+}
 
-    .title {
-        grid-column-start: 2;
-        grid-column-end: 6;
-        display: flex;
-        gap: 15px;
-        justify-content: space-between;
+.instance-item .title {
+    grid-column-start: 2;
+    grid-column-end: 6;
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+}
 
-        h6 {
-            display: flex;
-            gap: 6px;
-        }
-    }
+.instance-item .title h6 {
+    display: flex;
+    gap: 6px;
+}
 
-    .actions {
-        grid-column-start: 6;
-        display: flex;
-        justify-content: flex-end;
-    }
+.instance-item .actions {
+    grid-column-start: 6;
+    display: flex;
+    justify-content: flex-end;
 }
 </style>

@@ -161,7 +161,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .blueprints-section {
     display: flex;
     flex-direction: column;

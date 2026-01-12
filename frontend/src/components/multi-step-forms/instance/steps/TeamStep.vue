@@ -55,39 +55,31 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-.ff-select-team-step {
-    .team-tile {
-        padding: 12px;
-        border: 2px solid var(--ff-grey-300);
-        width: 100%;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: ease-in-out .3s;
+<style scoped>
+.ff-select-team-step .team-tile {
+    padding: 12px;
+    border: 2px solid var(--color-gray-300);
+    width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: ease-in-out .3s;
+}
 
-        &:hover {
-            border-color: var(--ff-indigo-400);
-        }
+.ff-select-team-step .team-tile:hover {
+    border-color: var(--color-indigo-400);
+}
 
-        &.selected {
-            border-color: var(--ff-indigo-600);
-        }
+.ff-select-team-step .team-tile.selected {
+    border-color: var(--color-indigo-600);
+}
 
-        .header {
-            .title {
+.ff-select-team-step .team-tile .header .counters {
+    color: var(--color-gray-400);
+    font-size: var(--font-size-xs);
+}
 
-            }
-
-            .counters {
-                color: var(--ff-grey-400);
-                font-size: var(--ff-funit-xs);
-            }
-        }
-
-        .description {
-            color: var(--ff-grey-400);
-            font-size: var(--ff-funit-sm);
-        }
-    }
+.ff-select-team-step .team-tile .description {
+    color: var(--color-gray-400);
+    font-size: var(--font-size-sm);
 }
 </style>

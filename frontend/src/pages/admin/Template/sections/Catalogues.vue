@@ -228,9 +228,9 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 input:disabled {
-  background-color: var(--ff-white) !important;
+  background-color: var(--color-white) !important;
   opacity: .9;
   -webkit-appearance: none;
   -moz-appearance: none;

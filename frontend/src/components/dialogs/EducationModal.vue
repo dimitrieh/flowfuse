@@ -117,78 +117,75 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .education-modal {
   position: absolute;
   top: 65px;
   right: 5px;
   width: 350px;
-  background: var(--ff-white);
-  border: 1px solid var(--ff-grey-300);
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-300);
   box-shadow: -6px 6px 10px rgba(0, 0, 0, .2);
   margin: 0;
+}
 
-  .ff-dialog-content {
-    padding: 10px 10px 5px 10px;
+.education-modal .ff-dialog-content {
+  padding: 10px 10px 5px 10px;
+}
 
-    p {
-      line-height: 1.5;
-    }
-  }
+.education-modal .ff-dialog-content p {
+  line-height: 1.5;
+}
 
-  .ff-dialog-actions {
-    padding: 5px 10px 10px 10px;
-  }
+.education-modal .ff-dialog-actions {
+  padding: 5px 10px 10px 10px;
+}
 
-  .title {
-    margin-bottom: 20px;
-    text-align: center;
-    border-bottom: 1px solid var(--ff-grey-200);
-    padding-bottom: 15px;
-  }
+.education-modal .title {
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--color-gray-200);
+  padding-bottom: 15px;
+}
 
-  .options {
-    li {
-      margin-bottom: 5px;
+.education-modal .options li {
+  margin-bottom: 5px;
+}
 
-      a {
-        transition: ease-in-out .3s;
-        position: relative;
-        line-height: 2;
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        border: 1px solid var(--ff-grey-200);
-        align-items: center;
-        padding: 5px;
-        color: var(--ff-black);
+.education-modal .options li a {
+  transition: ease-in-out .3s;
+  position: relative;
+  line-height: 2;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid var(--color-gray-200);
+  align-items: center;
+  padding: 5px;
+  color: var(--color-black);
+}
 
-        &:hover {
-          text-decoration: none;
-          border: 1px solid var(--ff-blue-700);
-          color: var(--ff-blue-700);
-        }
-      }
-    }
-  }
+.education-modal .options li a:hover {
+  text-decoration: none;
+  border: 1px solid var(--color-blue-700);
+  color: var(--color-blue-700);
+}
 
-  .actions {
-    display: flex;
-    justify-content: flex-end;
-  }
+.education-modal .actions {
+  display: flex;
+  justify-content: flex-end;
+}
 
-  .loader-wrapper {
-    position: relative;
+.education-modal .loader-wrapper {
+  position: relative;
+}
 
-    .loader {
-      position: absolute;
-      z-index: 1000;
-      right: 0;
-      bottom: -7px;
-      height: 10px;
-      width: 100%;
-    }
-
-  }
+.education-modal .loader-wrapper .loader {
+  position: absolute;
+  z-index: 1000;
+  right: 0;
+  bottom: -7px;
+  height: 10px;
+  width: 100%;
 }
 </style>

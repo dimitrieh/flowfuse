@@ -204,35 +204,32 @@ export default {
 
 </script>
 
-<style lang="scss">
+<style>
+.clients-wrapper {
+    border: 1px solid var(--color-gray-300);
+    border-radius: 5px;
+    overflow: hidden;
+}
 
-    .clients-wrapper {
-        border: 1px solid var(--ff-grey-300);
-        border-radius: 5px;
-        overflow: hidden;
+.clients-wrapper .header {
+    background: var(--color-gray-100);
+    padding: 10px;
+    border-bottom: 1px solid var(--color-gray-300);
+}
 
-        .header {
-            background: var(--ff-grey-100);
-            padding: 10px;
-            border-bottom: 1px solid var(--ff-grey-300);
+.clients-wrapper .header span.username {
+    grid-column: span 2;
+}
 
-            span {
-                &.username {
-                    grid-column: span 2;
-                }
-            }
-        }
+.clients-wrapper .clients-list {
+    background: var(--color-white);
+}
 
-        .clients-list {
-            background: var(--ff-white);
+.clients-wrapper .clients-list .client {
+    border-bottom: 1px solid var(--color-gray-300);
+}
 
-            .client {
-                border-bottom: 1px solid var(--ff-grey-300);
-
-                &:last-of-type {
-                    border-bottom: none;
-                }
-            }
-        }
-    }
+.clients-wrapper .clients-list .client:last-of-type {
+    border-bottom: none;
+}
 </style>

@@ -123,63 +123,55 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.recently-modified {
-    & > p {
-        border-bottom: 1px solid var(--ff-grey-100);
-        margin-bottom: 10px;
-        line-height: 2rem;
-    }
+<style>
+.recently-modified > p {
+    border-bottom: 1px solid var(--color-gray-100);
+    margin-bottom: 10px;
+    line-height: 2rem;
+}
 
-    .device-wrapper {
-        .device-tile {
-            border: 1px solid var(--ff-grey-100);
-            padding: 2px 10px;
-            border-radius: 5px;
-            display: flex;
-            width: 100%;
-            height: fit-content;
-            justify-content: space-between;
-            align-items: center;
-            gap: 10px;
-            will-change: border-color;
-            transition: ease-in-out .3s;
+.recently-modified .device-wrapper .device-tile {
+    border: 1px solid var(--color-gray-100);
+    padding: 2px 10px;
+    border-radius: 5px;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    will-change: border-color;
+    transition: ease-in-out .3s;
+}
 
-            &.has-more {
-                padding: 10px;
-            }
+.recently-modified .device-wrapper .device-tile.has-more {
+    padding: 10px;
+}
 
-            &:hover {
-                border-color: var(--ff-grey-200);
-            }
+.recently-modified .device-wrapper .device-tile:hover {
+    border-color: var(--color-gray-200);
+}
 
-            .details {
-                flex: 1;
+.recently-modified .device-wrapper .device-tile .details {
+    flex: 1;
+}
 
-                .detail-wrapper {
-                    &:last-of-type {
-                        font-size: var(--ff-funit-sm);
-                        color: var(--ff-grey-400);
-                    }
-                }
+.recently-modified .device-wrapper .device-tile .details .detail-wrapper:last-of-type {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-400);
+}
 
-                .name {
-                    &:hover {
-                        color: var(--ff-indigo-700);
-                    }
-                }
-            }
+.recently-modified .device-wrapper .device-tile .details .name:hover {
+    color: var(--color-indigo-700);
+}
 
-            .actions {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-        }
-    }
+.recently-modified .device-wrapper .device-tile .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    .no-devices {
-        min-height: 130px;
-    }
+.recently-modified .no-devices {
+    min-height: 130px;
 }
 </style>

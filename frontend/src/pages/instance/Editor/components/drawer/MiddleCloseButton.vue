@@ -21,8 +21,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-
+<style scoped>
 .drawer-close {
   position: absolute;
   display: flex;
@@ -36,13 +35,13 @@ export default {
   right: -30px;
   margin-top: -50px;
   box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.10);
-  border: 1px solid var(--ff-grey-300);
+  border: 1px solid var(--color-gray-300);
   border-left: none;
-  color: var(--ff-grey-400);
+  color: var(--color-gray-400);
+}
 
-  &:hover {
-    cursor: pointer;
-  }
+.drawer-close:hover {
+  cursor: pointer;
 }
 
 .slideIn-enter-active,

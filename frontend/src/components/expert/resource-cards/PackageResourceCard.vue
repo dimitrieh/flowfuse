@@ -56,23 +56,23 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .package-card {
     display: flex;
     align-items: flex-start;
     gap: 0.5rem;
     padding: 0.75rem;
     background-color: white;
-    border: 1px solid var(--ff-grey-200);
+    border: 1px solid var(--color-gray-200);
     border-radius: 0.5rem;
     text-decoration: none;
-    color: var(--ff-grey-900);
+    color: var(--color-gray-900);
     transition: all 0.2s ease;
+}
 
-    &:hover {
-        border-color: var(--ff-indigo-300);
-        background-color: var(--ff-grey-50);
-    }
+.package-card:hover {
+    border-color: var(--color-indigo-300);
+    background-color: var(--color-gray-50);
 }
 
 .package-favicon {
@@ -94,7 +94,7 @@ export default {
     font-size: 0.875rem;
     font-weight: 500;
     font-family: monospace;
-    color: var(--ff-grey-900);
+    color: var(--color-gray-900);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -102,7 +102,7 @@ export default {
 
 .package-url {
     font-size: 0.75rem;
-    color: var(--ff-grey-50)0;
+    color: var(--color-gray-500);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

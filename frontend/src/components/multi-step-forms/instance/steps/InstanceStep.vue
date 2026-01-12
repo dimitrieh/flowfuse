@@ -453,16 +453,8 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-.ff-instance-step {
-    form {
-        .ff-instance-name {
-            .ff-input-wrapper {
-                button {
-                    padding: 5px 10px;
-                }
-            }
-        }
-    }
+<style scoped>
+.ff-instance-step form .ff-instance-name .ff-input-wrapper button {
+    padding: 5px 10px;
 }
 </style>

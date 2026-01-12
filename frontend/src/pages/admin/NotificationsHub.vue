@@ -236,8 +236,8 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .inactive-team {
-    color: var(--ff-grey-400);
+    color: var(--color-gray-400);
 }
 </style>

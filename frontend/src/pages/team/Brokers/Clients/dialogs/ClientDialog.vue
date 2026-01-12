@@ -322,13 +322,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-#client-dialog {
-
-    .headers {
-        label:first-of-type {
-            max-width: 200px;
-        }
-    }
+<style scoped>
+#client-dialog .headers label:first-of-type {
+    max-width: 200px;
 }
 </style>

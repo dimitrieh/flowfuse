@@ -419,29 +419,26 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 #snapshot-details-drawer {
     flex: 1;
+}
 
-    &, .container {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        overflow: auto;
-    }
+#snapshot-details-drawer,
+#snapshot-details-drawer .container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow: auto;
+}
 
-    .description {
-        p {
-            white-space: break-spaces;
-        }
-    }
+#snapshot-details-drawer .description p {
+    white-space: break-spaces;
+}
 
-    .flow-viewer {
-        .wrapper {
-            max-height: 250px;
-            overflow: auto;
-        }
-    }
+#snapshot-details-drawer .flow-viewer .wrapper {
+    max-height: 250px;
+    overflow: auto;
 }
 </style>

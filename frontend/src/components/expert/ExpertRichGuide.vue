@@ -78,7 +78,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .ff-expert-rich-guide {
     display: flex;
     flex-direction: column;
@@ -88,112 +88,104 @@ export default {
 .guide-badge {
     display: inline-flex;
     align-self: flex-start;
-    margin-bottom: 0.75rem; // mb-3
-
-    span {
-        display: inline-block;
-        padding: 0.5rem 0.75rem; // py-2 px-3
-        background-color: var(--ff-indigo-100);
-        color: var(--ff-indigo-700);
-        font-size: 0.875rem; // text-sm
-        border-radius: 9999px; // rounded-full
-    }
+    margin-bottom: 0.75rem; /* mb-3 */
 }
 
-.guide-header {
-    .guide-title {
-        font-size: 1.125rem; // text-lg
-        font-weight: 600; // font-semibold
-        color: #111827; // text-gray-900
-        margin: 0 0 0.5rem 0; // mb-2
-    }
+.guide-badge span {
+    display: inline-block;
+    padding: 0.5rem 0.75rem; /* py-2 px-3 */
+    background-color: var(--color-indigo-100);
+    color: var(--color-indigo-700);
+    font-size: 0.875rem; /* text-sm */
+    border-radius: 9999px; /* rounded-full */
+}
 
-    .guide-summary {
-        color: #374151; // text-gray-700
-        margin: 0 0 1rem 0; // mb-4
-        line-height: 1.625;
-    }
+.guide-header .guide-title {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600; /* font-semibold */
+    color: #111827; /* text-gray-900 */
+    margin: 0 0 0.5rem 0; /* mb-2 */
+}
+
+.guide-header .guide-summary {
+    color: #374151; /* text-gray-700 */
+    margin: 0 0 1rem 0; /* mb-4 */
+    line-height: 1.625;
 }
 
 .section-title {
-    font-size: 1rem; // text-base
-    font-weight: 500; // font-medium
-    color: #111827; // text-gray-900
-    margin: 0 0 0.75rem 0; // mb-3
+    font-size: 1rem; /* text-base */
+    font-weight: 500; /* font-medium */
+    color: #111827; /* text-gray-900 */
+    margin: 0 0 0.75rem 0; /* mb-3 */
 }
 
 .guide-steps {
-    margin-bottom: 1rem; // mb-4
-
-    .steps-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem; // space-y-3
-    }
-
-    .step-item {
-        display: flex;
-        align-items: flex-start;
-    }
-
-    .step-number {
-        flex-shrink: 0;
-        width: 1.5rem; // w-6
-        height: 1.5rem; // h-6
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: var(--ff-indigo-600);
-        color: white;
-        font-size: 0.875rem; // text-sm
-        border-radius: 50%; // rounded-full
-        margin-right: 0.75rem; // mr-3
-        margin-top: 0.125rem; // mt-0.5
-    }
-
-    .step-content {
-        flex: 1;
-
-        .step-title {
-            font-size: 1rem;
-            font-weight: 500;
-            color: var(--ff-grey-900);
-            margin: 0 0 0.25rem 0;
-        }
-
-        .step-detail {
-            font-size: 0.875rem;
-            color: var(--ff-grey-600);
-            margin: 0.25rem 0 0 0;
-            line-height: 1.5;
-        }
-    }
+    margin-bottom: 1rem; /* mb-4 */
 }
 
-.guide-packages {
-    .packages-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 0.5rem;
-    }
+.guide-steps .steps-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* space-y-3 */
 }
 
-.guide-resources {
-    .resources-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
+.guide-steps .step-item {
+    display: flex;
+    align-items: flex-start;
 }
 
-.guide-flows {
-    .resources-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
+.guide-steps .step-number {
+    flex-shrink: 0;
+    width: 1.5rem; /* w-6 */
+    height: 1.5rem; /* h-6 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-indigo-600);
+    color: white;
+    font-size: 0.875rem; /* text-sm */
+    border-radius: 50%; /* rounded-full */
+    margin-right: 0.75rem; /* mr-3 */
+    margin-top: 0.125rem; /* mt-0.5 */
+}
+
+.guide-steps .step-content {
+    flex: 1;
+}
+
+.guide-steps .step-content .step-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-gray-900);
+    margin: 0 0 0.25rem 0;
+}
+
+.guide-steps .step-content .step-detail {
+    font-size: 0.875rem;
+    color: var(--color-gray-600);
+    margin: 0.25rem 0 0 0;
+    line-height: 1.5;
+}
+
+.guide-packages .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.5rem;
+}
+
+.guide-resources .resources-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.guide-flows .resources-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 </style>

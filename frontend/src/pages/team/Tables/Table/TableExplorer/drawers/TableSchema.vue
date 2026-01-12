@@ -77,53 +77,51 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 #table-schema {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    background: var(--ff-grey-50);
+    background: var(--color-gray-50);
+}
 
-    > .header {
-        border-bottom: 1px solid var(--ff-grey-300);
-        padding: 10px 0;
-        width: 100%;
-        background: var(--ff-white);
+#table-schema > .header {
+    border-bottom: 1px solid var(--color-gray-300);
+    padding: 10px 0;
+    width: 100%;
+    background: var(--color-white);
+}
 
-        .content {
-            padding: 0 12px;
-            display: flex;
-            align-items: baseline;
+#table-schema > .header .content {
+    padding: 0 12px;
+    display: flex;
+    align-items: baseline;
+}
 
-            .title {
-                margin: 0;
-                color: var(--ff-grey-800);
-                font-weight: bold;
-                font-size: 1.25rem;
-                line-height: 1.75rem;
-            }
-        }
-    }
+#table-schema > .header .content .title {
+    margin: 0;
+    color: var(--color-gray-800);
+    font-weight: bold;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
 
-    .content-wrapper {
-        flex: 1;
-        width: 100%;
-        background-color: var(--ff-grey-50);
-        overflow: auto;
+#table-schema .content-wrapper {
+    flex: 1;
+    width: 100%;
+    background-color: var(--color-gray-50);
+    overflow: auto;
+}
 
-        .header {
-            .title {
-                color: var(--ff-grey-600);
-                font-size: 10px;
-            }
-        }
-    }
+#table-schema .content-wrapper .header .title {
+    color: var(--color-gray-600);
+    font-size: 10px;
+}
 
-    .footer {
-        background: var(--ff-white);
-        padding: 10px 12px;
-        border-top: 1px solid var(--ff-grey-300);
-    }
+#table-schema .footer {
+    background: var(--color-white);
+    padding: 10px 12px;
+    border-top: 1px solid var(--color-gray-300);
 }
 </style>

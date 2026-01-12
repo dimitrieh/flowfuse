@@ -185,18 +185,15 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.device-group {
-    .ff-target-snapshot-info{
-        border: 1px solid var(--ff-grey-300);
-        padding: 10px 15px;
-        display: flex;
-        gap: 20px;
+<style>
+.device-group .ff-target-snapshot-info {
+    border: 1px solid var(--color-gray-300);
+    padding: 10px 15px;
+    display: flex;
+    gap: 20px;
+}
 
-        .ff-title {
-            font-weight: 500;
-        }
-    }
-
+.device-group .ff-target-snapshot-info .ff-title {
+    font-weight: 500;
 }
 </style>

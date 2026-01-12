@@ -58,58 +58,52 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.ff-topic-docs {
-    .ff-accordion {
-        margin: 0;
+<style>
+.ff-topic-docs .ff-accordion {
+    margin: 0;
+}
 
-        .ff-accordion--button{
-            font-weight: bold;
-            border: 1px solid var(--ff-blue-300);
-            background-color: var(--ff-blue-50);
-            border-radius: 6px;
-            padding: 12px;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+.ff-topic-docs .ff-accordion .ff-accordion--button {
+    font-weight: bold;
+    border: 1px solid var(--color-blue-300);
+    background-color: var(--color-blue-50);
+    border-radius: 6px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-            &:hover {
-                cursor: pointer;
-                background-color: var(--ff-blue-100);
-            }
-        }
+.ff-topic-docs .ff-accordion .ff-accordion--button:hover {
+    cursor: pointer;
+    background-color: var(--color-blue-100);
+}
 
-        .ff-accordion--content {
-            border: 1px solid var(--ff-blue-300);
-            border-top: none;
-            border-radius: 0 0 6px 6px;
-            padding: 12px;
+.ff-topic-docs .ff-accordion .ff-accordion--content {
+    border: 1px solid var(--color-blue-300);
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    padding: 12px;
+}
 
-            .ff-topic-docs-row-meta {
-                section {
-                    margin-bottom: 15px;
+.ff-topic-docs .ff-accordion .ff-accordion--content .ff-topic-docs-row-meta section {
+    margin-bottom: 15px;
+}
 
-                    label {
-                        display: block;
-                        font-weight: bold;
-                        margin-bottom: 3px;
-                    }
-                    .ff-empty-state {
-                        color: var(--ff-grey-400);
-                        background-color: var(--ff-grey-50);
-                        padding: 12px;
-                        margin-top: 6px;
-                    }
-                }
-            }
-        }
+.ff-topic-docs .ff-accordion .ff-accordion--content .ff-topic-docs-row-meta section label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
 
-        &.open {
-            .ff-accordion--button {
-                border-radius: 6px 6px 0 0;
-            }
-        }
-    }
+.ff-topic-docs .ff-accordion .ff-accordion--content .ff-topic-docs-row-meta section .ff-empty-state {
+    color: var(--color-gray-400);
+    background-color: var(--color-gray-50);
+    padding: 12px;
+    margin-top: 6px;
+}
+
+.ff-topic-docs .ff-accordion.open .ff-accordion--button {
+    border-radius: 6px 6px 0 0;
 }
 </style>

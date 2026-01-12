@@ -76,17 +76,6 @@ module.exports = function (env, argv) {
                             options: { importLoaders: 1 }
                         }
                     ]
-                }, {
-                    test: /\.scss$/,
-                    use: [
-                        'style-loader',
-                        {
-                            loader: 'css-loader',
-                            options: { import: true, url: true }
-                        },
-                        'sass-loader'
-
-                    ]
                 },
                 {
                     test: /\.(eot|ttf|woff|woff2)(\?\S*)?$/,

@@ -159,15 +159,10 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-#team-pipelines {
-
-    .pipelines {
-        .pipelines-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-    }
+<style scoped>
+#team-pipelines .pipelines .pipelines-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 </style>

@@ -1,0 +1,49 @@
+/**
+ * Tailwind v4 Custom Utilities
+ * These utilities work with all Tailwind modifiers (hover:, lg:, focus:, etc.)
+ */
+
+/* Icon sizes */
+@utility icon-sm {
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+}
+
+@utility icon-md {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: inline-block;
+}
+
+@utility icon-lg {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-block;
+}
+
+@utility icon-xl {
+  width: 3rem;
+  height: 3rem;
+  display: inline-block;
+  stroke-width: 1px;
+}
+
+/* Disabled state utility */
+@utility disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* Avatar sizes */
+@utility avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+}
+
+@utility avatar-large {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+}

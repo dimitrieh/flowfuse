@@ -67,39 +67,39 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .flow-viewer-wrapper {
     display: flex;
     flex: 1 1 auto;
     min-height: 0;
     flex-direction: column;
     position: relative;
+}
 
-    .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(255, 255, 255, 0.4);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-    }
+.flow-viewer-wrapper .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
 
-    .ff-flow-viewer {
-        display: flex;
-        flex-direction: column;
-        flex: 1 1 auto;
-        min-height: 0;
-        overflow: auto;
-        opacity: 1;
-        transition: ease-in-out .3s;
+.flow-viewer-wrapper .ff-flow-viewer {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: auto;
+    opacity: 1;
+    transition: ease-in-out .3s;
+}
 
-        &.loading {
-            opacity: 0.5;
-        }
-    }
+.flow-viewer-wrapper .ff-flow-viewer.loading {
+    opacity: 0.5;
 }
 </style>

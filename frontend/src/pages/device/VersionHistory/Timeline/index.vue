@@ -191,17 +191,13 @@ export default {
 }
 </script>
 
-<style lang="scss">
-#visual-timeline {
-    .timeline {
-        border: 1px solid var(--ff-grey-300);
-        border-radius: 3px;
-        overflow: auto;
-        li:last-child {
-            .connector.bottom {
-                display: none;
-            }
-        }
-    }
+<style>
+#visual-timeline .timeline {
+    border: 1px solid var(--color-gray-300);
+    border-radius: 3px;
+    overflow: auto;
+}
+#visual-timeline .timeline li:last-child .connector.bottom {
+    display: none;
 }
 </style>

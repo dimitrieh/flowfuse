@@ -70,128 +70,127 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .ff-expert-message {
     display: flex;
     width: 100%;
     margin-bottom: 1rem;
+}
 
-    &.message-human {
-        justify-content: flex-end;
+.ff-expert-message.message-human {
+    justify-content: flex-end;
+}
 
-        .message-bubble {
-            background-color: var(--ff-indigo-600);
-            color: white;
-            border-radius: 0.5rem;
-            border-bottom-right-radius: 0.125rem;
-        }
-    }
+.ff-expert-message.message-human .message-bubble {
+    background-color: var(--color-indigo-600);
+    color: white;
+    border-radius: 0.5rem;
+    border-bottom-right-radius: 0.125rem;
+}
 
-    &.message-ai {
-        justify-content: flex-start;
+.ff-expert-message.message-ai {
+    justify-content: flex-start;
+}
 
-        .message-bubble {
-            background-color: var(--ff-grey-100);
-            color: #1F2937; // gray-800
-            border-radius: 0.5rem;
-            border-bottom-left-radius: 0.125rem;
-        }
-    }
+.ff-expert-message.message-ai .message-bubble {
+    background-color: var(--color-gray-100);
+    color: #1F2937; /* gray-800 */
+    border-radius: 0.5rem;
+    border-bottom-left-radius: 0.125rem;
+}
 
-    &.message-system {
-        justify-content: center;
+.ff-expert-message.message-system {
+    justify-content: center;
+}
 
-        .message-bubble {
-            background-color: #FEF3C7; // amber-100
-            color: #92400E; // amber-900
-            border-radius: 0.5rem;
-            text-align: left;
-            max-width: 100%;
-            width: 100%;
-        }
+.ff-expert-message.message-system .message-bubble {
+    background-color: #FEF3C7; /* amber-100 */
+    color: #92400E; /* amber-900 */
+    border-radius: 0.5rem;
+    text-align: left;
+    max-width: 100%;
+    width: 100%;
+}
 
-        .message-text {
-            font-size: 0.875rem;
-            line-height: 1.5;
-        }
+.ff-expert-message.message-system .message-text {
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
 
-        &.system-expired .message-bubble {
-            background-color: #FEE2E2; // red-100
-            color: #991B1B; // red-900
-        }
-    }
-
+.ff-expert-message.message-system.system-expired .message-bubble {
+    background-color: #FEE2E2; /* red-100 */
+    color: #991B1B; /* red-900 */
 }
 
 .message-bubble {
-    max-width: 90%; // Always leave a gap on the side
-    padding: 0.5rem 1rem; // py-2 px-4
+    max-width: 90%; /* Always leave a gap on the side */
+    padding: 0.5rem 1rem; /* py-2 px-4 */
     word-wrap: break-word;
     overflow-wrap: break-word;
+}
 
-    &.rich-guide-bubble {
-        padding: 1rem; // py-4 px-4
-    }
+.message-bubble.rich-guide-bubble {
+    padding: 1rem; /* py-4 px-4 */
 }
 
 .message-text {
     font-size: 1rem;
     line-height: 1.5;
-
-    :deep(p) {
-        margin: 0 0 0.5rem 0;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-
-    :deep(ul), :deep(ol) {
-        margin: 0.5rem 0;
-        padding-left: 1.5rem;
-    }
-
-    :deep(li) {
-        margin: 0.25rem 0;
-    }
-
-    :deep(code) {
-        background-color: rgba(0, 0, 0, 0.05);
-        padding: 0.125rem 0.25rem;
-        border-radius: 0.25rem;
-        font-family: monospace;
-        font-size: 0.875em;
-    }
-
-    :deep(pre) {
-        background-color: rgba(0, 0, 0, 0.05);
-        padding: 0.75rem;
-        border-radius: 0.5rem;
-        overflow-x: auto;
-        margin: 0.5rem 0;
-
-        code {
-            background-color: transparent;
-            padding: 0;
-        }
-    }
-
-    :deep(a) {
-        color: var(--ff-indigo-600);
-        text-decoration: underline;
-
-        &:hover {
-            color: var(--ff-indigo-700);
-        }
-    }
-
-    :deep(strong) {
-        font-weight: 600;
-    }
-
-    :deep(em) {
-        font-style: italic;
-    }
 }
 
+.message-text :deep(p) {
+    margin: 0 0 0.5rem 0;
+}
+
+.message-text :deep(p:last-child) {
+    margin-bottom: 0;
+}
+
+.message-text :deep(ul),
+.message-text :deep(ol) {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.message-text :deep(li) {
+    margin: 0.25rem 0;
+}
+
+.message-text :deep(code) {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-family: monospace;
+    font-size: 0.875em;
+}
+
+.message-text :deep(pre) {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 0.5rem 0;
+}
+
+.message-text :deep(pre code) {
+    background-color: transparent;
+    padding: 0;
+}
+
+.message-text :deep(a) {
+    color: var(--color-indigo-600);
+    text-decoration: underline;
+}
+
+.message-text :deep(a:hover) {
+    color: var(--color-indigo-700);
+}
+
+.message-text :deep(strong) {
+    font-weight: 600;
+}
+
+.message-text :deep(em) {
+    font-style: italic;
+}
 </style>

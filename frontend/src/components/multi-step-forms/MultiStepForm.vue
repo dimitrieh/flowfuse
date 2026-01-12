@@ -160,7 +160,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .ff-multi-step-form {
     position: relative;
     max-height: 100%;
@@ -168,23 +168,23 @@ export default {
     overflow: auto;
     display: flex;
     flex-direction: column;
+}
 
-    .loading-overlay {
-        position: absolute;
-        top: 0;
-        left:0;
-        width: 100%;
-        height: 100%;
-        background: rgba(255,255,255, .6);
-        z-index: 100;
-    }
+.ff-multi-step-form .loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    z-index: 100;
+}
 
-    .content {
-        flex: 1;
-        max-height: 100%;
-        display: flex;
-        flex-direction: column;
-        overflow: auto;
-    }
+.ff-multi-step-form .content {
+    flex: 1;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
 }
 </style>

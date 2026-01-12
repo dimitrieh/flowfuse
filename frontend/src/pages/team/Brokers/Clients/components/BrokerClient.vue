@@ -125,104 +125,105 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 .ff-accordion.broker-client {
     margin-bottom: 0;
+}
 
-    button {
-        border: none;
-        background: none;
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 15px;
-        padding: 0;
+.ff-accordion.broker-client button {
+    border: none;
+    background: none;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    padding: 0;
+}
 
-        .username {
-            padding: 15px 10px;
-            grid-column: span 2;
-            overflow: hidden;
+.ff-accordion.broker-client button .username {
+    padding: 15px 10px;
+    grid-column: span 2;
+    overflow: hidden;
+}
 
-            .ff-text-copier {
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                & > span {
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
-                .title-wrapper {
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
+.ff-accordion.broker-client button .username .ff-text-copier {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
-            }
+.ff-accordion.broker-client button .username .ff-text-copier > span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
-            .ff-icon {
-                margin-left: 0;
-                min-width: 20px;
-            }
-        }
+.ff-accordion.broker-client button .username .ff-text-copier .title-wrapper {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
-        .rules {
-            padding: 15px 10px;
+.ff-accordion.broker-client button .username .ff-icon {
+    margin-left: 0;
+    min-width: 20px;
+}
 
-        }
+.ff-accordion.broker-client button .rules {
+    padding: 15px 10px;
+}
 
-        .toggle {
-            grid-column: span 3;
-            text-align: right;
-            padding-right: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
+.ff-accordion.broker-client button .toggle {
+    grid-column: span 3;
+    text-align: right;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
 
-            .edit, .delete {
-                padding: 24px 15px;
-                display: inline-block;
-                position: relative;
-                align-self: stretch;
+.ff-accordion.broker-client button .toggle .edit,
+.ff-accordion.broker-client button .toggle .delete {
+    padding: 24px 15px;
+    display: inline-block;
+    position: relative;
+    align-self: stretch;
+}
 
-                .ff-icon-sm {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    transition: ease-in-out .3s;
-                }
+.ff-accordion.broker-client button .toggle .edit .ff-icon-sm,
+.ff-accordion.broker-client button .toggle .delete .ff-icon-sm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: ease-in-out .3s;
+}
 
-                &:hover {
-                    .ff-icon-sm {
-                        width: 20px;
-                        height: 20px;
-                    }
-                }
-            }
+.ff-accordion.broker-client button .toggle .edit:hover .ff-icon-sm,
+.ff-accordion.broker-client button .toggle .delete:hover .ff-icon-sm {
+    width: 20px;
+    height: 20px;
+}
 
-            .edit:hover {
-                color: var(--ff-grey-700);
-            }
-            .delete:hover {
-                color: var(--ff-red-700);
-            }
-        }
-    }
+.ff-accordion.broker-client button .toggle .edit:hover {
+    color: var(--color-gray-700);
+}
 
-    .ff-accordion--content {
-        background: var(--ff-grey-100);
-        .acl-list {
-            .acl-wrapper {
-                border-bottom: 1px solid var(--ff-grey-200);
-                padding: 15px 10px;
-                gap: 10px;
-                font-size: 80%;
+.ff-accordion.broker-client button .toggle .delete:hover {
+    color: var(--color-red-700);
+}
 
-                &:last-of-type {
-                    border: none;
-                }
-            }
-        }
-    }
+.ff-accordion.broker-client .ff-accordion--content {
+    background: var(--color-gray-100);
+}
+
+.ff-accordion.broker-client .ff-accordion--content .acl-list .acl-wrapper {
+    border-bottom: 1px solid var(--color-gray-200);
+    padding: 15px 10px;
+    gap: 10px;
+    font-size: 80%;
+}
+
+.ff-accordion.broker-client .ff-accordion--content .acl-list .acl-wrapper:last-of-type {
+    border: none;
 }
 </style>

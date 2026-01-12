@@ -184,110 +184,93 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-.segment-wrapper {
-    .segment {
-        position: relative;
-        margin: 5px 0 0;
-        transition: ease .15s;
-        &:hover {
-            color: var(--ff-indigo-700);
+<style scoped>
+.segment-wrapper .segment {
+    position: relative;
+    margin: 5px 0 0;
+    transition: ease .15s;
+}
 
-            cursor: pointer;
-        }
+.segment-wrapper .segment:hover {
+    color: var(--color-indigo-700);
+    cursor: pointer;
+}
 
-        .diagram {
-            .connector-elbow {
-                border-left: 2px solid  var(--ff-indigo-300);
-                border-bottom: 2px solid  var(--ff-indigo-300);
-                border-bottom-left-radius: 7px;
-                display: inline-block;
-                position: absolute;
-                height: 50px;
-                width: 25px;
-                left: -23px;
-                top: -35px;
-            }
-            .connector-trunk {
-                width: 1px;
-                border-left: 2px solid var(--ff-indigo-300);
-                display: inline-block;
-                position: absolute;
-                height: 5000px;
-                left: -23px;
-                top: -5000px;
-            }
-        }
+.segment-wrapper .segment .diagram .connector-elbow {
+    border-left: 2px solid  var(--color-indigo-300);
+    border-bottom: 2px solid  var(--color-indigo-300);
+    border-bottom-left-radius: 7px;
+    display: inline-block;
+    position: absolute;
+    height: 50px;
+    width: 25px;
+    left: -23px;
+    top: -35px;
+}
 
-        .content {
-            padding: 5px;
-            position: relative;
+.segment-wrapper .segment .diagram .connector-trunk {
+    width: 1px;
+    border-left: 2px solid var(--color-indigo-300);
+    display: inline-block;
+    position: absolute;
+    height: 5000px;
+    left: -23px;
+    top: -5000px;
+}
 
-            .chevron {
-                transition: ease .15s;
-            }
+.segment-wrapper .segment .content {
+    padding: 5px;
+    position: relative;
+}
 
-            .title {
-                align-items: center;
-                display: flex;
-                gap: 3px;
+.segment-wrapper .segment .content .chevron {
+    transition: ease .15s;
+}
 
-                .highlight {
-                    background-color: var(--ff-indigo-100);
-                }
-            }
+.segment-wrapper .segment .content .title {
+    align-items: center;
+    display: flex;
+    gap: 3px;
+}
 
-            .ff-text-copier {
-                display: none;
-                height: 17px;
-            }
+.segment-wrapper .segment .content .title .highlight {
+    background-color: var(--color-indigo-100);
+}
 
-            &:hover {
-                .ff-text-copier {
-                    display: inline-block;
-                    color: var(--ff-grey-400);
-                }
-            }
-        }
-    }
+.segment-wrapper .segment .content .ff-text-copier {
+    display: none;
+    height: 17px;
+}
 
-    .children {
-        overflow: hidden;
-    }
-    &.selected > {
-        .segment {
-            background: var(--ff-indigo-50);
-        }
-    }
-    &.open > {
-        .segment {
-            .content {
-                .title {
-                    color: var(--ff-indigo-700);
-                }
+.segment-wrapper .segment .content:hover .ff-text-copier {
+    display: inline-block;
+    color: var(--color-gray-400);
+}
 
-                .chevron {
-                    transform: rotate(90deg)
-                }
-            }
-        }
-    }
+.segment-wrapper .children {
+    overflow: hidden;
+}
 
-    &.empty > {
-        .segment {
-            .content {
-                .title {
-                    color: var(--ff-grey-600);
-                    font-size: 90%;
-                    font-weight: 300;
+.segment-wrapper.selected > .segment {
+    background: var(--color-indigo-50);
+}
 
-                    .separator {
-                        color: var(--ff-black);
-                        font-weight: bold;
-                    }
-                }
-            }
-        }
-    }
+.segment-wrapper.open > .segment .content .title {
+    color: var(--color-indigo-700);
+}
+
+.segment-wrapper.open > .segment .content .chevron {
+    transform: rotate(90deg);
+}
+
+.segment-wrapper.empty > .segment .content .title {
+    color: var(--color-gray-600);
+    font-size: 90%;
+    font-weight: 300;
+}
+
+.segment-wrapper.empty > .segment .content .title .separator {
+    color: var(--color-black);
+    font-weight: bold;
 }
 </style>

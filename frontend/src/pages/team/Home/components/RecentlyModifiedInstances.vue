@@ -88,68 +88,66 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 .recently-modified {
     display: flex;
     flex: 1;
     flex-direction: column;
+}
 
-    & > p {
-        border-bottom: 1px solid var(--ff-grey-100);
-        margin-bottom: 10px;
-        line-height: 2rem;
-    }
+.recently-modified > p {
+    border-bottom: 1px solid var(--color-gray-100);
+    margin-bottom: 10px;
+    line-height: 2rem;
+}
 
-    .instance-wrapper {
-        height: fit-content;
+.recently-modified .instance-wrapper {
+    height: fit-content;
+}
 
-        .instance-tile {
-            border: 1px solid var(--ff-grey-100);
-            padding: 2px 10px;
-            border-radius: 5px;
-            display: flex;
-            width: 100%;
-            height: fit-content;
-            justify-content: space-between;
-            align-items: center;
-            gap: 10px;
-            will-change: border-color;
-            transition: ease-in-out .3s;
+.recently-modified .instance-wrapper .instance-tile {
+    border: 1px solid var(--color-gray-100);
+    padding: 2px 10px;
+    border-radius: 5px;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    will-change: border-color;
+    transition: ease-in-out .3s;
+}
 
-            &.has-more {
-                padding: 10px;
-            }
+.recently-modified .instance-wrapper .instance-tile.has-more {
+    padding: 10px;
+}
 
-            &:hover {
-                border-color: var(--ff-grey-200);
-            }
+.recently-modified .instance-wrapper .instance-tile:hover {
+    border-color: var(--color-gray-200);
+}
 
-            .details {
-                flex: 1;
+.recently-modified .instance-wrapper .instance-tile .details {
+    flex: 1;
+}
 
-                .detail-wrapper {
-                    &.detail {
-                        font-size: var(--ff-funit-sm);
-                        color: var(--ff-grey-400);
-                    }
-                    .name, .editor-link:not(.inactive) {
-                        &:hover {
-                            color: var(--ff-indigo-700);
-                        }
-                    }
-                }
-            }
+.recently-modified .instance-wrapper .instance-tile .details .detail-wrapper.detail {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-400);
+}
 
-            .actions {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-        }
-    }
+.recently-modified .instance-wrapper .instance-tile .details .detail-wrapper .name:hover,
+.recently-modified .instance-wrapper .instance-tile .details .detail-wrapper .editor-link:not(.inactive):hover {
+    color: var(--color-indigo-700);
+}
 
-    .no-instances {
-        min-height: 130px;
-    }
+.recently-modified .instance-wrapper .instance-tile .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recently-modified .no-instances {
+    min-height: 130px;
 }
 </style>

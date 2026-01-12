@@ -189,88 +189,80 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 .ff-blueprint-tile {
-    background-color: var(--ff-white);
+    background-color: var(--color-white);
     width: 250px;
     border-width: 2px;
+}
 
-    &.active {
-        border-width: 2px;
-        border-color: var(--ff-blue-600);
-        transition: border-color .3s;
-    }
+.ff-blueprint-tile.active {
+    border-width: 2px;
+    border-color: var(--color-blue-600);
+    transition: border-color .3s;
+}
 
-    .ff-blueprint-tile--header {
-        position: relative;
-        height: 115px;
+.ff-blueprint-tile .ff-blueprint-tile--header {
+    position: relative;
+    height: 115px;
+}
 
-        .ff-icon {
-            transform: scale(8);
-            position: absolute;
-            top: 70px;
-            transition: transform .3s;
-            &.alt-preview {
-                position: absolute;
-                height: 30px;
-                width: 30px;
-                transform: scale(1) !important;
-                top: 5px !important;
-                right: 5px !important;
-                stroke: none;
-                opacity: .7;
-                &:hover {
-                    cursor: zoom-in;
-                    color: var(--ff-blue-600);
-                }
-            }
-        }
+.ff-blueprint-tile .ff-blueprint-tile--header .ff-icon {
+    transform: scale(8);
+    position: absolute;
+    top: 70px;
+    transition: transform .3s;
+}
 
-        .ff-more-info {
-            position: absolute;
-            top: 5px;
-            left: 5px;
-        }
-    }
+.ff-blueprint-tile .ff-blueprint-tile--header .ff-icon.alt-preview {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    transform: scale(1) !important;
+    top: 5px !important;
+    right: 5px !important;
+    stroke: none;
+    opacity: .7;
+}
 
-    &.no-icon {
-        .ff-blueprint-tile--header {
-            .ff-icon:not(.alt-preview) {
-                transform: scale(4);
-                position: initial;
-            }
-        }
-    }
+.ff-blueprint-tile .ff-blueprint-tile--header .ff-icon.alt-preview:hover {
+    cursor: zoom-in;
+    color: var(--color-blue-600);
+}
 
-    .ff-dialog-container {
-        .ff-dialog-box {
-            max-width: 75rem;
+.ff-blueprint-tile .ff-blueprint-tile--header .ff-more-info {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
 
-            .ff-dialog-content {
-                padding: 0;
-            }
+.ff-blueprint-tile.no-icon .ff-blueprint-tile--header .ff-icon:not(.alt-preview) {
+    transform: scale(4);
+    position: initial;
+}
 
-            .ff-dialog-actions {
-                padding: 5px 15px;
-            }
-        }
-    }
-    &.interactive:hover {
-        border-width: 2px;
-        border-color: var(--ff-blue-600);
-        .ff-blueprint-tile--header {
-            .ff-icon:not(.alt-preview) {
-                transform: scale(10);
-            }
-        }
+.ff-blueprint-tile .ff-dialog-container .ff-dialog-box {
+    max-width: 75rem;
+}
 
-        &.no-icon {
-            .ff-blueprint-tile--header {
-                .ff-icon:not(.alt-preview) {
-                    transform: scale(6);
-                }
-            }
-        }
-    }
+.ff-blueprint-tile .ff-dialog-container .ff-dialog-box .ff-dialog-content {
+    padding: 0;
+}
+
+.ff-blueprint-tile .ff-dialog-container .ff-dialog-box .ff-dialog-actions {
+    padding: 5px 15px;
+}
+
+.ff-blueprint-tile.interactive:hover {
+    border-width: 2px;
+    border-color: var(--color-blue-600);
+}
+
+.ff-blueprint-tile.interactive:hover .ff-blueprint-tile--header .ff-icon:not(.alt-preview) {
+    transform: scale(10);
+}
+
+.ff-blueprint-tile.interactive:hover.no-icon .ff-blueprint-tile--header .ff-icon:not(.alt-preview) {
+    transform: scale(6);
 }
 </style>

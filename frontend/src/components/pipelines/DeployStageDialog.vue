@@ -321,13 +321,12 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-
-    .error-banner {
-        padding: 9px;
-        background-color: var(--ff-red-50);
-        border: 1px solid var(--ff-red-300);
-        border-radius: 3px;
-        color: var(--ff-red-600);
-    }
+<style scoped>
+.error-banner {
+    padding: 9px;
+    background-color: var(--color-red-50);
+    border: 1px solid var(--color-red-300);
+    border-radius: 3px;
+    color: var(--color-red-600);
+}
 </style>

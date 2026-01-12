@@ -250,25 +250,19 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
-.column {
-    .col-section {
+<style>
+.column .col-section .ff-combobox,
+.column .col-section .ff-listbox {
+    min-width: 10px; /* resetting min-width */
+    max-width: 100%;
+    width: 100%;
+}
 
-        .ff-combobox, .ff-listbox {
-            min-width: 10px; // resetting min-width
-            max-width: 100%;
-            width: 100%;
-        }
+.column .col-section .ff-input {
+    min-width: 10px;
+}
 
-        .ff-input {
-            min-width: 10px;
-        }
-
-        .ff-checkbox {
-            span {
-                top: 8px;
-            }
-        }
-    }
+.column .col-section .ff-checkbox span {
+    top: 8px;
 }
 </style>

@@ -86,14 +86,14 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .ff-cpu-bar {
     width: 100%;
     height: 100%;
     border-radius: 3px;
     padding: 3px;
     border: 1px solid;
-    border-color: var(--ff-grey-300);
+    border-color: var(--color-gray-300);
 }
 
 .ff-cpu-bar--fill {
@@ -102,15 +102,15 @@ export default {
 }
 
 .ff-cpu-bar--fill.high {
-    background-color: var(--ff-red-200);
+    background-color: var(--color-red-200);
 }
 
 .ff-cpu-bar--fill.medium {
-    background-color: var(--ff-yellow-200);
+    background-color: var(--color-yellow-200);
 }
 
 .ff-cpu-bar--fill.low {
-    background-color: var(--ff-green-200);
+    background-color: var(--color-green-200);
 }
 
 .ff-cpu-bar--label {

@@ -128,53 +128,47 @@ export default {
     }
 }
 </script>
-<style lang="scss">
-@import "../stylesheets/components/team-list.scss";
+<style>
+/* Component styles are managed globally */
 
-.ff-team-selection {
-    &.ff-listbox {
-        button {
-            border-radius: 0;
-            border: none;
-            background: none;
-
-            button {
-                padding: 0;
-
-            }
-            .icon {
-                svg {
-                    color: var(--ff-grey-800);
-                    width: 80%;
-                    padding-left: 10px;
-                }
-            }
-        }
-    }
+.ff-team-selection.ff-listbox button {
+    border-radius: 0;
+    border: none;
+    background: none;
 }
+
+.ff-team-selection.ff-listbox button button {
+    padding: 0;
+}
+
+.ff-team-selection.ff-listbox button .icon svg {
+    color: var(--color-gray-800);
+    width: 80%;
+    padding-left: 10px;
+}
+
 .ff-options .ff-team-selection-option {
-    border-color: var(--ff-color-border);
-    color: var(--ff-grey-800);
-    border-bottom: 1px solid var(--ff-color-border);
+    border-color: var(--color-border);
+    color: var(--color-gray-800);
+    border-bottom: 1px solid var(--color-border);
     display: flex;
     align-items: center;
-
-    .ff-option-content {
-        padding: 12px 12px 12px 18px;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        width: 100%;
-
-        &.selected {
-            background: var(--ff-grey-200);
-        }
-
-        .ff-icon {
-            width: 1.25rem;
-            height: 1.25rem;
-        }
-    }
 }
 
+.ff-options .ff-team-selection-option .ff-option-content {
+    padding: 12px 12px 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.ff-options .ff-team-selection-option .ff-option-content.selected {
+    background: var(--color-gray-200);
+}
+
+.ff-options .ff-team-selection-option .ff-option-content .ff-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
 </style>

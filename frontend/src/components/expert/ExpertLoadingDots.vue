@@ -83,7 +83,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .ff-expert-loading {
     display: flex;
     flex-direction: column;
@@ -102,16 +102,16 @@ export default {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background-color: var(--ff-indigo-500);
+    background-color: var(--color-indigo-500);
     animation: bounce-dot 1.4s infinite ease-in-out both;
+}
 
-    &:nth-child(1) {
-        animation-delay: -0.32s;
-    }
+.loading-dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
 
-    &:nth-child(2) {
-        animation-delay: -0.16s;
-    }
+.loading-dot:nth-child(2) {
+    animation-delay: -0.16s;
 }
 
 @keyframes bounce-dot {
@@ -127,7 +127,7 @@ export default {
 
 .loading-message {
     font-size: 0.875rem;
-    color: var(--ff-grey-600);
+    color: var(--color-gray-600);
     font-style: italic;
     animation: fade-in 0.3s ease-in;
 }

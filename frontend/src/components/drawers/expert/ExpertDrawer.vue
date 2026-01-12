@@ -97,121 +97,116 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .ff-expert-drawer {
     display: flex;
     flex-direction: column;
     height: 100%;
-    overflow: hidden; // Prevent drawer from scrolling
+    overflow: hidden; /* Prevent drawer from scrolling */
+}
 
-    &:focus {
-        outline: none;
-    }
+.ff-expert-drawer:focus {
+    outline: none;
+}
 
-    .header {
-        padding: 1rem 1.5rem;
-        background: linear-gradient(white, white) padding-box,
-                    linear-gradient(90deg, var(--ff-red-600), #5048e5, var(--ff-red-600), #5048e5, var(--ff-red-600)) border-box;
-        border: none;
-        border-bottom: 1px solid transparent;
-        background-size: 200% 100%;
-        animation: gradient-flow-lr 4s linear infinite;
-        flex-shrink: 0; // Prevent header from shrinking
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+.ff-expert-drawer .header {
+    padding: 1rem 1.5rem;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(90deg, var(--color-red-600), #5048e5, var(--color-red-600), #5048e5, var(--color-red-600)) border-box;
+    border: none;
+    border-bottom: 1px solid transparent;
+    background-size: 200% 100%;
+    animation: gradient-flow-lr 4s linear infinite;
+    flex-shrink: 0; /* Prevent header from shrinking */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        // Logo + Expert title on left
-        > .flex:first-child {
-            flex: 1;
-            justify-content: flex-start;
-        }
+/* Logo + Expert title on left */
+.ff-expert-drawer .header > .flex:first-child {
+    flex: 1;
+    justify-content: flex-start;
+}
 
-        // Mode selector in center
-        .agent-mode {
-            flex: 0 0 auto;
+/* Mode selector in center */
+.ff-expert-drawer .header .agent-mode {
+    flex: 0 0 auto;
+}
 
-            :deep(.ff-btn) {
-                min-width: 5.5rem;
-                justify-content: center;
-            }
-        }
+.ff-expert-drawer .header .agent-mode :deep(.ff-btn) {
+    min-width: 5.5rem;
+    justify-content: center;
+}
 
-        // Actions on right
-        .header-actions {
-            flex: 1;
-            justify-content: flex-end;
-        }
+/* Actions on right */
+.ff-expert-drawer .header .header-actions {
+    flex: 1;
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
 
-        .flex {
-            display: flex;
+.ff-expert-drawer .header .flex {
+    display: flex;
+}
 
-            &.items-center {
-                align-items: center;
-            }
+.ff-expert-drawer .header .flex.items-center {
+    align-items: center;
+}
 
-            &.gap-1 {
-                gap: 0.25rem; // gap-1
-            }
-        }
+.ff-expert-drawer .header .flex.gap-1 {
+    gap: 0.25rem; /* gap-1 */
+}
 
-        .title {
-            font-size: 1rem;
-            font-weight: 700; // font-bold
-            line-height: 20px;
-            color: #1f2937; // text-gray-800
-            margin: 0;
-        }
+.ff-expert-drawer .header .title {
+    font-size: 1rem;
+    font-weight: 700; /* font-bold */
+    line-height: 20px;
+    color: #1f2937; /* text-gray-800 */
+    margin: 0;
+}
 
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
+.ff-expert-drawer .header .header-actions .header-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+    transition: background-color 0.15s ease;
+}
 
-            .header-button {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 30px;
-                height: 30px;
-                padding: 0;
-                background: none;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                color: inherit;
-                font: inherit;
-                transition: background-color 0.15s ease;
+.ff-expert-drawer .header .header-actions .header-button:hover {
+    cursor: pointer;
+    background: var(--color-gray-100);
+}
 
-                &:hover {
-                    cursor: pointer;
-                    background: var(--ff-grey-100);
-                }
+.ff-expert-drawer .header .header-actions .header-button:focus-visible {
+    outline: 2px solid var(--color-indigo-700);
+    outline-offset: 1px;
+}
 
-                &:focus-visible {
-                    outline: 2px solid $ff-indigo-700;
-                    outline-offset: 1px;
-                }
+.ff-expert-drawer .header .header-actions .header-button.pin-button.is-pinned {
+    background: var(--color-indigo-800);
+    color: white;
+}
 
-                &.pin-button.is-pinned {
-                    background: var(--ff-indigo-800);
-                    color: white;
+.ff-expert-drawer .header .header-actions .header-button.pin-button.is-pinned:hover {
+    background: var(--color-indigo-900);
+}
 
-                    &:hover {
-                        background: var(--ff-indigo-900);
-                    }
-                }
-            }
-        }
-    }
-
-    // Ensure ExpertPanel fills remaining space
-    > * {
-        &:not(.header) {
-            flex: 1;
-            min-height: 0; // Important for flex child overflow
-        }
-    }
+/* Ensure ExpertPanel fills remaining space */
+.ff-expert-drawer > *:not(.header) {
+    flex: 1;
+    min-height: 0; /* Important for flex child overflow */
 }
 
 @keyframes gradient-flow-lr {

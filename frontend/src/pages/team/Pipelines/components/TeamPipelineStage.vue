@@ -99,33 +99,33 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .ff-pipeline-stage {
-    border: 1px solid var(--ff-grey-300);
+    border: 1px solid var(--color-gray-300);
     border-radius: 6px;
     overflow: hidden;
-    background: var(--ff-white);
+    background: var(--color-white);
     padding: 12px;
     display: flex;
     flex-direction: column;
     gap: 12px;
     min-width: 225px;
+}
 
-    .ff-pipeline-target {
-        display: flex;
-        flex-direction: row;
-        gap: 6px;
-        font-size: 11px;
-        align-items: center;
-        border: 1px solid var(--ff-grey-300);
-        padding: 6px;
-        border-radius: 6px;
-        transition: ease-in-out .3s;
+.ff-pipeline-stage .ff-pipeline-target {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    font-size: 11px;
+    align-items: center;
+    border: 1px solid var(--color-gray-300);
+    padding: 6px;
+    border-radius: 6px;
+    transition: ease-in-out .3s;
+}
 
-        &:hover {
-            color: var(--ff-indigo-700);
-            border-color: var(--ff-indigo-700);
-        }
-    }
+.ff-pipeline-stage .ff-pipeline-target:hover {
+    color: var(--color-indigo-700);
+    border-color: var(--color-indigo-700);
 }
 </style>

@@ -152,7 +152,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .ff-registry-list {
     display: grid;
     gap: 6px;

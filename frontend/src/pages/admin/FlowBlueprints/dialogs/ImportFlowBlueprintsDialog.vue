@@ -177,75 +177,71 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.ff-dialog-container {
-  .ff-dialog-content {
+<style>
+.ff-dialog-container .ff-dialog-content {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
 
-    .file-upload-section {
-      .file-row > div {
-        flex-direction: column;
-        align-items: baseline;
-      }
+.ff-dialog-container .ff-dialog-content .file-upload-section .file-row > div {
+    flex-direction: column;
+    align-items: baseline;
+}
 
-      .ff-btn {
-        width: 100%;
-      }
+.ff-dialog-container .ff-dialog-content .file-upload-section .ff-btn {
+    width: 100%;
+}
 
-      .file-input {
-        display: flex;
-        gap: 5px;
-      }
+.ff-dialog-container .ff-dialog-content .file-upload-section .file-input {
+    display: flex;
+    gap: 5px;
+}
 
-      .loaded-file {
-        display: flex;
-        gap: 5px;
-        align-items: center;
-        margin-top: 10px;
+.ff-dialog-container .ff-dialog-content .file-upload-section .loaded-file {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-top: 10px;
+}
 
-        .clear {
-          cursor: pointer;
-          padding: 5px;
+.ff-dialog-container .ff-dialog-content .file-upload-section .loaded-file .clear {
+    cursor: pointer;
+    padding: 5px;
+}
 
-          .ff-btn--icon {
-            width: 15px;
-            height: 15px;
-          }
-        }
-      }
-    }
+.ff-dialog-container .ff-dialog-content .file-upload-section .loaded-file .clear .ff-btn--icon {
+    width: 15px;
+    height: 15px;
+}
 
-    .textarea-section {
-      .textarea-wrapper {
-        display: flex;
-        justify-content: space-between;
+.ff-dialog-container .ff-dialog-content .textarea-section .textarea-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
 
-        .clear {
-          font-weight: normal;
-          cursor: pointer;
-        }
-      }
-    }
+.ff-dialog-container .ff-dialog-content .textarea-section .textarea-wrapper .clear {
+    font-weight: normal;
+    cursor: pointer;
+}
 
-    .divider {
-      position: relative;
-      .line {
-        height: 1px;
-        width: 100%;
-        background: var(--ff-grey-400);
-        position: absolute;
-        top: 50%;
-        display: block;
-      }
-      .text {
-        background: white;
-        padding: 5px;
-        position: relative;
-        z-index: 10;
-      }
-    }
-  }
+.ff-dialog-container .ff-dialog-content .divider {
+    position: relative;
+}
+
+.ff-dialog-container .ff-dialog-content .divider .line {
+    height: 1px;
+    width: 100%;
+    background: var(--color-gray-400);
+    position: absolute;
+    top: 50%;
+    display: block;
+}
+
+.ff-dialog-container .ff-dialog-content .divider .text {
+    background: white;
+    padding: 5px;
+    position: relative;
+    z-index: 10;
 }
 </style>

@@ -81,15 +81,14 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .ff-row-file {
     position: relative;
-    &:hover {
-        color: var(--ff-blue-600);
-    }
 }
-
+.ff-row-file:hover {
+    color: var(--color-blue-600);
+}
 .not-available {
-  opacity: .4;
+    opacity: .4;
 }
 </style>

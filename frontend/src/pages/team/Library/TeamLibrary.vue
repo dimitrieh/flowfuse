@@ -215,14 +215,15 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .ff-team-library .ff-breadcrumbs {
     margin-top: 12px;
     margin-bottom: 12px;
 }
+
 .breadcrumbs-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 </style>

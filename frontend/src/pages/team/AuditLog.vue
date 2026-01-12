@@ -139,7 +139,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 .ff-admin-audit .ff-accordion {
     margin-bottom: 12px;
 }

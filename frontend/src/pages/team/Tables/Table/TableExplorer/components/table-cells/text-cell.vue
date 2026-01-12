@@ -60,14 +60,14 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .text-cell {
     overflow: auto;
     max-height: 3rem;
+}
 
-    .value {
-        background: none;
-        border: none;
-    }
+.text-cell .value {
+    background: none;
+    border: none;
 }
 </style>

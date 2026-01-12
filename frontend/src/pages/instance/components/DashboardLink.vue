@@ -83,10 +83,10 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-// Container query for drawer context - responsive button behavior
-// Breakpoint matches DRAWER_MOBILE_BREAKPOINT constant in Editor/index.vue
-// When inside drawer, respond to drawer width instead of viewport
+<style scoped>
+/* Container query for drawer context - responsive button behavior */
+/* Breakpoint matches DRAWER_MOBILE_BREAKPOINT constant in Editor/index.vue */
+/* When inside drawer, respond to drawer width instead of viewport */
 @container drawer (min-width: 640px) {
   .dashboard-link-text {
     display: inline;

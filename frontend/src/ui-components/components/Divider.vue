@@ -8,11 +8,11 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .ff-divider {
     width: 100%;
     height: 1px;
-    background-color: var(--ff-grey-200);
+    background-color: var(--color-gray-200);
     margin-top: 12px;
     margin-bottom: 12px;
 }

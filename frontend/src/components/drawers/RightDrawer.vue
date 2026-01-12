@@ -372,11 +372,11 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 #right-drawer {
     position: fixed;
-    border-left: 1px solid var(--ff-grey-300);
-    background: var(--ff-grey-50);
+    border-left: 1px solid var(--color-gray-300);
+    background: var(--color-gray-50);
     height: calc(100% - 60px);
     top: 60px;
     right: -1000px;
@@ -388,113 +388,119 @@ export default {
     box-shadow: -5px 4px 8px -4px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    overflow: hidden; // Changed from auto to hidden - let child components handle their own scrolling
+    overflow: hidden; /* Changed from auto to hidden - let child components handle their own scrolling */
+}
 
-    // Hide border when closed to prevent visible grey line
-    &:not(.open) {
-        border-left-color: transparent;
-    }
+/* Hide border when closed to prevent visible grey line */
+#right-drawer:not(.open) {
+    border-left-color: transparent;
+}
 
-    // Hide border on small viewports where drawer is full-width
-    @media (max-width: 479px) {
+/* Hide border on small viewports where drawer is full-width */
+@media (max-width: 479px) {
+    #right-drawer {
         border-left: none;
     }
+}
 
-    .resize-bar {
-        position: absolute;
-        left: -4px; // Center on border (50% of 8px width)
-        top: 0;
-        bottom: 0;
-        width: 8px;
-        cursor: ew-resize;
-        background: transparent;
-        z-index: 1001;
+#right-drawer .resize-bar {
+    position: absolute;
+    left: -4px; /* Center on border (50% of 8px width) */
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    cursor: ew-resize;
+    background: transparent;
+    z-index: 1001;
+}
 
-        // Hide resize bar on small viewports where drawer is full-width
-        @media (max-width: 479px) {
-            display: none;
-        }
+/* Hide resize bar on small viewports where drawer is full-width */
+@media (max-width: 479px) {
+    #right-drawer .resize-bar {
+        display: none;
+    }
+}
+
+#right-drawer .header {
+    background: white;
+    flex-shrink: 0;
+}
+
+#right-drawer.open {
+    right: 0;
+    width: 100%;
+    /* On small viewports: use 100% width (no minimum) */
+    max-width: 100vw;
+    min-width: 0;
+}
+
+/* On viewports 480-767px: use 480px minimum but no max-width constraint */
+/* (pinning is disabled, so let JS control the width) */
+@media (min-width: 480px) and (max-width: 767px) {
+    #right-drawer.open {
+        min-width: 480px;
+        max-width: none;
+    }
+}
+
+/* On viewports >= 768px: apply max-width constraints (pinning is enabled) */
+@media (min-width: 768px) {
+    #right-drawer.open {
+        max-width: 90vw;
+        min-width: 480px;
     }
 
-    .header {
-        background: white;
-        flex-shrink: 0;
+    #right-drawer.open.wider {
+        max-width: 90vw;
     }
+}
 
-    &.open {
-        right: 0;
-        width: 100%;
+#right-drawer.fixed {
+    position: relative; /* Changed from initial to relative for resize bar positioning */
+    height: 100%;
+    top: 0; /* Reset top offset to prevent gap at top */
+    box-shadow: none; /* Remove shadow when pinned */
+    flex-shrink: 0; /* Prevent flex from shrinking the drawer below its set width */
+    min-width: unset; /* Remove responsive min-width constraint */
+    max-width: none; /* Remove responsive max-width constraint */
+}
 
-        // On small viewports: use 100% width (no minimum)
-        max-width: 100vw;
-        min-width: 0;
+/* Hide drawer when pinned but closed to prevent grey block */
+#right-drawer.fixed:not(.open) {
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
 
-        // On viewports 480-767px: use 480px minimum but no max-width constraint
-        // (pinning is disabled, so let JS control the width)
-        @media (min-width: 480px) and (max-width: 767px) {
-            min-width: 480px;
-            max-width: none;
-        }
+#right-drawer.resizing {
+    transition: none; /* Disable transition while actively resizing for smooth dragging */
+    max-width: none !important; /* Remove max-width constraint to allow free resizing */
+    min-width: unset !important; /* Remove min-width constraint to allow free resizing */
+}
 
-        // On viewports >= 768px: apply max-width constraints (pinning is enabled)
-        @media (min-width: 768px) {
-            max-width: 90vw;
-            min-width: 480px;
+#right-drawer.manually-resized {
+    max-width: none !important; /* Keep custom width after manual resize */
+    min-width: unset !important; /* Keep custom width after manual resize */
+}
 
-            &.wider {
-                max-width: 90vw;
-            }
-        }
-    }
+#right-drawer.pinning {
+    transition: none !important; /* Disable all transitions while pinning to prevent visual jump */
+}
 
-    &.fixed {
-        position: relative; // Changed from initial to relative for resize bar positioning
-        height: 100%;
-        top: 0; // Reset top offset to prevent gap at top
-        box-shadow: none; // Remove shadow when pinned
-        flex-shrink: 0; // Prevent flex from shrinking the drawer below its set width
-        min-width: unset; // Remove responsive min-width constraint
-        max-width: none; // Remove responsive max-width constraint
+/* Only animate position during open, not width changes */
+#right-drawer.opening {
+    transition: right .3s ease-in-out, box-shadow .3s ease-in-out, border-color .3s ease-in-out !important;
+}
 
-        // Hide drawer when pinned but closed to prevent grey block
-        &:not(.open) {
-            width: 0 !important;
-            min-width: 0 !important;
-            max-width: 0 !important;
-            overflow: hidden;
-            opacity: 0;
-            pointer-events: none;
-        }
-    }
-
-    &.resizing {
-        transition: none; // Disable transition while actively resizing for smooth dragging
-        max-width: none !important; // Remove max-width constraint to allow free resizing
-        min-width: unset !important; // Remove min-width constraint to allow free resizing
-    }
-
-    &.manually-resized {
-        max-width: none !important; // Keep custom width after manual resize
-        min-width: unset !important; // Keep custom width after manual resize
-    }
-
-    &.pinning {
-        transition: none !important; // Disable all transitions while pinning to prevent visual jump
-    }
-
-    &.opening {
-        // Only animate position during open, not width changes
-        transition: right .3s ease-in-out, box-shadow .3s ease-in-out, border-color .3s ease-in-out !important;
-    }
-
-    &.closing {
-        // Only animate position during close, not width changes
-        transition: right .3s ease-in-out, box-shadow .3s ease-in-out, border-color .3s ease-in-out !important;
-
-        // Maintain current width/max-width/min-width during slide-out to prevent shrinking animation
-        // These will be overridden by inline styles from drawerStyle
-        max-width: none !important;
-        min-width: unset !important;
-    }
+/* Only animate position during close, not width changes */
+/* Maintain current width/max-width/min-width during slide-out to prevent shrinking animation */
+/* These will be overridden by inline styles from drawerStyle */
+#right-drawer.closing {
+    transition: right .3s ease-in-out, box-shadow .3s ease-in-out, border-color .3s ease-in-out !important;
+    max-width: none !important;
+    min-width: unset !important;
 }
 </style>

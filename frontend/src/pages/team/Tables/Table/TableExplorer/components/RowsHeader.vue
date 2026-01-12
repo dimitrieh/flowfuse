@@ -50,14 +50,15 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .rows-header {
     margin-bottom: 15px;
     padding-bottom: 15px;
-    border-bottom: 1px solid $ff-color--border;
+    border-bottom: 1px solid var(--color-border);
+}
 
-    .toggle-collapse, .refresh-table {
-        border: 1px solid transparent;
-    }
+.rows-header .toggle-collapse,
+.rows-header .refresh-table {
+    border: 1px solid transparent;
 }
 </style>

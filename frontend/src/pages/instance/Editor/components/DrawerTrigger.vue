@@ -31,7 +31,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .drawer-trigger {
     display: flex;
     align-items: center;
@@ -43,9 +43,9 @@ export default {
     padding: 8px 2px 8px 8px;
 
     /* Colors - matching original drawer trigger */
-    color: var(--ff-grey-400);
-    background: var(--ff-white);
-    border: 1px solid var(--ff-grey-400);
+    color: var(--color-gray-400);
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-400);
     border-left: none;
 
     /* Reset button styles */
@@ -58,24 +58,24 @@ export default {
     /* Animation */
     transform: translateX(0);
     transition: transform ease-in-out 0.3s;
+}
 
-    img {
-        height: 20px;
-    }
+.drawer-trigger img {
+    height: 20px;
+}
 
-    .ff-btn--icon {
-        color: var(--ff-grey-400);
-        width: 20px;
-        height: 20px;
-    }
+.drawer-trigger .ff-btn--icon {
+    color: var(--color-gray-400);
+    width: 20px;
+    height: 20px;
+}
 
-    &.hidden {
-        // Move completely off-screen: own width (100%) + extra margin (20px)
-        transform: translateX(calc(-100% - 20px));
-    }
+/* Move completely off-screen: own width (100%) + extra margin (20px) */
+.drawer-trigger.hidden {
+    transform: translateX(calc(-100% - 20px));
+}
 
-    &:hover {
-        cursor: pointer;
-    }
+.drawer-trigger:hover {
+    cursor: pointer;
 }
 </style>

@@ -44,29 +44,29 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .popover-item {
     display: flex;
     align-items: center;
     gap: 15px;
     padding: 10px 20px;
     cursor: pointer;
+}
 
-    .icon {
-        padding: 5px;
-    }
+.popover-item .icon {
+    padding: 5px;
+}
 
-    .content {
-        display: flex;
-        flex-direction: column;
+.popover-item .content {
+    display: flex;
+    flex-direction: column;
+}
 
-        .description {
-            color: var(--ff-grey-400);
-        }
-    }
+.popover-item .content .description {
+    color: var(--color-gray-400);
+}
 
-    &:hover {
-        background: var(--ff-grey-100);
-    }
+.popover-item:hover {
+    background: var(--color-gray-100);
 }
 </style>

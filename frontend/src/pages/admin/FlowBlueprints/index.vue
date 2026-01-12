@@ -209,7 +209,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .tools {
   display: flex;
   gap: 5px;

@@ -204,16 +204,16 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .chart-wrapper {
     flex: 1;
     display: flex;
+}
 
-    .chart {
-        flex: 1;
-        height: 100%;
-        width: 100%;
-        min-height: 250px;
-    }
+.chart-wrapper .chart {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    min-height: 250px;
 }
 </style>

@@ -284,266 +284,235 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 #global-search {
     padding: 0;
     display: flex;
     flex: 1;
     justify-content: flex-end;
     max-width: 100%;
+}
 
-    .content-wrapper {
-        position: relative;
-        justify-content: flex-end;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
+#global-search .content-wrapper {
+    position: relative;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
 
-        .search-wrapper {
-            display: flex;
-            gap: 5px;
-            align-items: center;
-            width: 100%;
+#global-search .content-wrapper .search-wrapper {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    width: 100%;
+}
 
-            .mobile-search {
-                display: none;
-                cursor: pointer;
-                color: var(--ff-white);
-                min-width: 20px;
-                min-height: 20px;
-            }
+#global-search .content-wrapper .search-wrapper .mobile-search {
+    display: none;
+    cursor: pointer;
+    color: var(--color-white);
+    min-width: 20px;
+    min-height: 20px;
+}
 
-            .close-button {
-                display: none;
-            }
+#global-search .content-wrapper .search-wrapper .close-button {
+    display: none;
+}
 
-            .input-wrapper {
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-                position: relative;
-                width: 100%;
+#global-search .content-wrapper .search-wrapper .input-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}
 
-                .ff-icon-sm.close,
-                .ff-icon-sm.search {
-                    color: var(--ff-grey-400);
-                    position: absolute;
-                    z-index: 1;
-                    top: 8px;
+#global-search .content-wrapper .search-wrapper .input-wrapper .ff-icon-sm.close,
+#global-search .content-wrapper .search-wrapper .input-wrapper .ff-icon-sm.search {
+    color: var(--color-gray-400);
+    position: absolute;
+    z-index: 1;
+    top: 8px;
+}
 
-                    &.search {
-                        left: 7px;
-                    }
+#global-search .content-wrapper .search-wrapper .input-wrapper .ff-icon-sm.search {
+    left: 7px;
+}
 
-                    &.close {
-                        right: 7px;
-                    }
-                }
+#global-search .content-wrapper .search-wrapper .input-wrapper .ff-icon-sm.close {
+    right: 7px;
+}
 
-                input {
-                    color: transparent;
-                    padding: 6px 27px;
-                    background: var(--ff-grey-50);
-                    border-color: var(--ff-color-border);
-                    width: 100%;
-                    line-height: 20px;
-                    height: 34px;
-                    box-sizing: border-box;
+#global-search .content-wrapper .search-wrapper .input-wrapper input {
+    color: transparent;
+    padding: 6px 27px;
+    background: var(--color-gray-50);
+    border-color: var(--color-border);
+    width: 100%;
+    line-height: 20px;
+    height: 34px;
+    box-sizing: border-box;
+}
 
-                    &.overlay-input {
-                        display: none;
-                    }
-                }
-            }
-        }
+#global-search .content-wrapper .search-wrapper .input-wrapper input.overlay-input {
+    display: none;
+}
 
-        .results-wrapper {
-            background: var(--ff-white);
-            min-width: 100%;
-            z-index: 120;
-            padding: 5px 5px 15px 5px;
+#global-search .content-wrapper .results-wrapper {
+    background: var(--color-white);
+    min-width: 100%;
+    z-index: 120;
+    padding: 5px 5px 15px 5px;
+}
 
-            .result-badge {
-                padding: 0 5px;
-                width: 50px;
-                max-height: 25px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 5px;
-                border: 1px solid var(--ff-indigo-700);
-                color: var(--ff-indigo-700);
-                border-radius: 5px;
-                background: var(--ff-white);
-            }
-        }
-    }
+#global-search .content-wrapper .results-wrapper .result-badge {
+    padding: 0 5px;
+    width: 50px;
+    max-height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid var(--color-indigo-700);
+    color: var(--color-indigo-700);
+    border-radius: 5px;
+    background: var(--color-white);
+}
 
-    &.focused {
-        .content-wrapper {
-            position: fixed;
-            width: 60vw;
-            background: white;
-            top: 15px;
-            left: 20vw;
-            z-index: 120;
-            border: none;
-            border-radius: 5px;
+#global-search.focused .content-wrapper {
+    position: fixed;
+    width: 60vw;
+    background: white;
+    top: 15px;
+    left: 20vw;
+    z-index: 120;
+    border: none;
+    border-radius: 5px;
+}
 
-            .search-wrapper {
-                .input-wrapper {
-                    .ff-icon-sm.search,
-                    .ff-icon-sm.close {
-                        color: var(--ff-grey-500);
-                    }
+#global-search.focused .content-wrapper .search-wrapper .input-wrapper .ff-icon-sm.search,
+#global-search.focused .content-wrapper .search-wrapper .input-wrapper .ff-icon-sm.close {
+    color: var(--color-gray-500);
+}
 
-                    input {
-                        color: var(--ff-grey-500);
-                        flex: 1;
-                        background: white;
-                        display: none;
-                        width: 100%;
+#global-search.focused .content-wrapper .search-wrapper .input-wrapper input {
+    color: var(--color-gray-500);
+    flex: 1;
+    background: white;
+    display: none;
+    width: 100%;
+}
 
-                        &.overlay-input {
-                            display: block;
-                            transition: ease-in-out .3s;
-                            height: 34px;
-                            line-height: 20px;
-                            padding: 6px 27px;
-                            box-sizing: border-box;
+#global-search.focused .content-wrapper .search-wrapper .input-wrapper input.overlay-input {
+    display: block;
+    transition: ease-in-out .3s;
+    height: 34px;
+    line-height: 20px;
+    padding: 6px 27px;
+    box-sizing: border-box;
+}
 
-                            &.has-results {
-                                border-bottom-left-radius: 0;
-                                border-bottom-right-radius: 0;
-                            }
-                        }
-                    }
-                }
-            }
+#global-search.focused .content-wrapper .search-wrapper .input-wrapper input.overlay-input.has-results {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
 
-            .results-wrapper {
-                overflow: auto;
-                max-height: 90vh;
+#global-search.focused .content-wrapper .results-wrapper {
+    overflow: auto;
+    max-height: 90vh;
+}
 
-                .ff-icon-sm {
-                    min-width: 16px;
-                }
-            }
-        }
+#global-search.focused .content-wrapper .results-wrapper .ff-icon-sm {
+    min-width: 16px;
+}
 
-        .overlay {
-            position: absolute;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, .3);
-            left: 0;
-            top: 0;
-            z-index: 110;
-        }
-    }
-
+#global-search.focused .overlay {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .3);
+    left: 0;
+    top: 0;
+    z-index: 110;
 }
 
 @media screen and (max-width: 1023px) {
     #global-search {
         padding: 0px;
-        input.qwe {
-            background: red !important;
-        }
-        &.focused {
-            .content-wrapper {
-                width: 100%;
-                top: 0;
-                left: 0;
-                border-top-left-radius: 0;
-                border-top-right-radius: 0;
+    }
 
-                .search-wrapper {
-                    margin: 5px;
-                    padding-right: 10px;
-                    .close-button {
-                        display: block;
-                    }
+    #global-search input.qwe {
+        background: red !important;
+    }
 
-                }
-            }
-        }
+    #global-search.focused .content-wrapper {
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    #global-search.focused .content-wrapper .search-wrapper {
+        margin: 5px;
+        padding-right: 10px;
+    }
+
+    #global-search.focused .content-wrapper .search-wrapper .close-button {
+        display: block;
     }
 }
+
 @media screen and (max-width: 639px) {
-    #global-search {
-        .content-wrapper {
-            padding: 5px 0;
+    #global-search .content-wrapper {
+        padding: 5px 0;
+    }
 
-            .search-wrapper {
-                .mobile-search {
-                    display: block;
-                }
+    #global-search .content-wrapper .search-wrapper .mobile-search {
+        display: block;
+    }
 
-                .close,
-                .search,
-                input {
-                    display: none;
-                }
+    #global-search .content-wrapper .search-wrapper .close,
+    #global-search .content-wrapper .search-wrapper .search,
+    #global-search .content-wrapper .search-wrapper input {
+        display: none;
+    }
 
-                input {
-                    &.has-results {
-                        border-bottom-left-radius: 5px !important;
-                        border-bottom-right-radius: 5px !important;
-                    }
-                }
+    #global-search .content-wrapper .search-wrapper input.has-results {
+        border-bottom-left-radius: 5px !important;
+        border-bottom-right-radius: 5px !important;
+    }
 
-            }
-        }
+    #global-search.focused .content-wrapper {
+        padding: 10px;
+    }
 
-        &.focused {
-            .content-wrapper {
-                padding: 10px;
-                .mobile-search {
-                    display: none;
-                }
+    #global-search.focused .content-wrapper .mobile-search {
+        display: none;
+    }
 
-                .search-wrapper {
-                    .close,
-                    .search,
-                    input {
-                        display: block;
-                    }
-                }
-            }
-        }
+    #global-search.focused .content-wrapper .search-wrapper .close,
+    #global-search.focused .content-wrapper .search-wrapper .search,
+    #global-search.focused .content-wrapper .search-wrapper input {
+        display: block;
     }
 }
 </style>
 
-<style lang="scss">
-#global-search {
-    .content-wrapper {
-        .section {
-            .results {
-                .result {
-                    .actions {
-                        .instance-editor-link {
-                            & > a {
-                                padding: 0 5px;
+<style>
+#global-search .content-wrapper .section .results .result .actions .instance-editor-link > a {
+    padding: 0 5px;
+}
 
-                                .ff-btn--icon,
-                                svg {
-                                    height: 16px;
-                                    width: 16px;
-                                }
-                            }
-                        }
-                    }
-                    .icon {
-                        .forge-badge {
-                            background: var(--ff-white);
-                        }
-                    }
-                }
-            }
-        }
-    }
+#global-search .content-wrapper .section .results .result .actions .instance-editor-link > a .ff-btn--icon,
+#global-search .content-wrapper .section .results .result .actions .instance-editor-link > a svg {
+    height: 16px;
+    width: 16px;
+}
+
+#global-search .content-wrapper .section .results .result .icon .forge-badge {
+    background: var(--color-white);
 }
 </style>

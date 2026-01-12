@@ -40,11 +40,11 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .ff-registry-entry {
-    background-color: var(--ff-white);
+    background-color: var(--color-white);
     padding: 12px;
-    border: 1px solid var(--ff-grey-200);
+    border: 1px solid var(--color-gray-200);
     display: flex;
     justify-content: space-between;
     align-items: center;

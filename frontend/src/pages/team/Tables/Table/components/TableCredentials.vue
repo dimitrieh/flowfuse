@@ -84,41 +84,42 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="scss">
-#table-credentials {
-    .title {
-        display: flex;
-        gap: 5px;
-        align-items: center;
-        margin-bottom: 10px;
+<style scoped>
+#table-credentials .title {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 10px;
+}
 
-        h3 {
-            margin: 0;
-            padding: 0;
-        }
-    }
+#table-credentials .title h3 {
+    margin: 0;
+    padding: 0;
+}
 
-    .client-details,
-    .database-details {
-        padding: 10px;
-        background: var(--ff-white);
-        border: 1px solid var(--ff-color-border);
-        border-radius: 5px;
+#table-credentials .client-details,
+#table-credentials .database-details {
+    padding: 10px;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+}
 
-        .item {
-            display: flex;
-            margin-bottom: 10px;
+#table-credentials .client-details .item,
+#table-credentials .database-details .item {
+    display: flex;
+    margin-bottom: 10px;
+}
 
-            dt {
-                font-weight: 500;
-                max-width: 30%;
-                flex: 1
-            }
+#table-credentials .client-details .item dt,
+#table-credentials .database-details .item dt {
+    font-weight: 500;
+    max-width: 30%;
+    flex: 1
+}
 
-            dd {
-                flex: 1;
-            }
-        }
-    }
+#table-credentials .client-details .item dd,
+#table-credentials .database-details .item dd {
+    flex: 1;
 }
 </style>

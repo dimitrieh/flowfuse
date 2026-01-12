@@ -275,21 +275,16 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-.broker-form {
-    .server, .credentials {
-        .title {
-            border-bottom: 1px solid var(--ff-grey-200);
-        }
-    }
+<style scoped>
+.broker-form .server .title,
+.broker-form .credentials .title {
+    border-bottom: 1px solid var(--color-gray-200);
+}
 
-    .server {
-        &::after {
-            content: ' ';
-            width: 1px;
-            height: 10px;
-            background: red;
-        }
-    }
+.broker-form .server::after {
+    content: ' ';
+    width: 1px;
+    height: 10px;
+    background: red;
 }
 </style>

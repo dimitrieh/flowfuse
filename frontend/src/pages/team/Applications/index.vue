@@ -194,12 +194,10 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import "../../../stylesheets/components/applications-list";
-
+<style>
 .no-results {
   text-align: center;
-  color: var(--ff-grey-400);
+  color: var(--color-gray-400);
 }
 
 .fade-slide-enter-active,

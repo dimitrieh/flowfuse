@@ -106,81 +106,77 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 .blueprints-selector-dialog {
     margin: 0 !important;
     display: block;
-
-    .ff-dialog-box {
-      max-width: 90vw;
-      max-height: 80vh;
-      overflow: auto;
-
-      .ff-dialog-content {
-        display: flex;
-        flex-direction: row;
-        padding: 0;
-        overflow: auto;
-
-        .blueprints-container {
-          padding: 10px 10px 0;
-          overflow: auto;
-
-          .header {
-            padding: 0 0 10px;
-
-            h3 {
-              font-size: 30px;
-            }
-
-            p {
-              line-height: 20px;
-              padding-top: 10px;
-              color : var(--ff-grey-50)0;
-            }
-          }
-
-          .blueprint-selection-wrapper {
-            overflow: auto;
-            padding: 10px 0;
-          }
-
-          .ff-blueprint-groups {
-            h4 {
-              font-size: 25px;
-              line-height: 1.5;
-              margin-top: 10px;
-            }
-
-            .blueprint-group {
-              display: flex;
-              flex-direction: row;
-              flex-wrap: wrap;
-
-              .ff-blueprint-tile {
-                width: auto;
-                max-width: 250px;
-                flex: 1 1 200px;
-              }
-            }
-          }
-        }
-
-        .flow-viewer-container {
-          overflow: hidden;
-
-          .viewer {
-            height: 100%;
-            width: 100%;
-          }
-        }
-
-      }
-
-      .ff-dialog-actions {
-        border-top: 1px solid var(--ff-grey-400);
-      }
-    }
 }
 
+.blueprints-selector-dialog .ff-dialog-box {
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow: auto;
+}
+
+.blueprints-selector-dialog .ff-dialog-box .ff-dialog-content {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    overflow: auto;
+}
+
+.blueprints-selector-dialog .ff-dialog-box .ff-dialog-content .blueprints-container {
+    padding: 10px 10px 0;
+    overflow: auto;
+}
+
+.blueprints-selector-dialog .ff-dialog-box .ff-dialog-content .blueprints-container .header {
+    padding: 0 0 10px;
+}
+
+.blueprints-selector-dialog .ff-dialog-box .ff-dialog-content .blueprints-container .header h3 {
+    font-size: 30px;
+}
+
+.blueprints-selector-dialog .ff-dialog-box .ff-dialog-content .blueprints-container .header p {
+    line-height: 20px;
+    padding-top: 10px;
+    color: var(--color-gray-500);
+}
+
+.blueprints-selector-dialog .ff-dialog-box .ff-dialog-content .blueprints-container .blueprint-selection-wrapper {
+    overflow: auto;
+    padding: 10px 0;
+}
+
+.blueprints-selector-dialog .ff-dialog-box .ff-dialog-content .blueprints-container .ff-blueprint-groups h4 {
+    font-size: 25px;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+.blueprints-selector-dialog .ff-dialog-box .ff-dialog-content .blueprints-container .ff-blueprint-groups .blueprint-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.blueprints-selector-dialog .ff-dialog-box .ff-dialog-content .blueprints-container .ff-blueprint-groups .blueprint-group .ff-blueprint-tile {
+    width: auto;
+    max-width: 250px;
+    flex: 1 1 200px;
+}
+
+.blueprints-selector-dialog .ff-dialog-box .ff-dialog-content .flow-viewer-container {
+    overflow: hidden;
+}
+
+.blueprints-selector-dialog .ff-dialog-box .ff-dialog-content .flow-viewer-container .viewer {
+    height: 100%;
+    width: 100%;
+}
+
+.blueprints-selector-dialog .ff-dialog-box .ff-dialog-actions {
+    border-top: 1px solid var(--color-gray-400);
+}
 </style>

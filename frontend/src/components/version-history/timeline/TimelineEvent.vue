@@ -354,56 +354,53 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.event {
+<style>
+.event .body {
+    padding: 15px 0;
+    overflow: hidden;
+}
 
-    .body {
-        padding: 15px 0;
-        overflow: hidden;
+.event .body .content {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
-        .content {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+.event .body .content .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
-            .title {
-                overflow: hidden;
-                text-overflow: ellipsis;
+.event .body .content .title i {
+    opacity: .5;
+}
 
-                i {
-                    opacity: .5;
-                }
+.event .body .content .title a {
+    color: var(--color-blue-600);
+}
 
-                a {
-                    color: var(--ff-blue-600);
-                }
-            }
+.event .body .content .details {
+    font-size: 70%;
+    opacity: 0.8;
+}
 
-            .details {
-                font-size: 70%;
-                opacity: 0.8;
-            }
-        }
+.event .body .username {
+    color: var(--color-gray-600);
+}
 
-        .username {
-            color: var(--ff-grey-600);
-        }
-    }
+.event .actions {
+    padding: 15px 10px;
+    min-width: 40px;
+}
 
-    .actions {
-        padding: 15px 10px;
-        min-width: 40px;
-    }
+.event.is-snapshot {
+    background: var(--color-gray-100);
+    color: var(--color-gray-500);
+}
 
-    &.is-snapshot {
-        background: var(--ff-grey-100);
-        color: var(--ff-grey-500);
-    }
-
-    &.load-more {
-        background: var(--ff-grey-200);
-        color: var(--ff-blue-500);
-        cursor: pointer;
-    }
+.event.load-more {
+    background: var(--color-gray-200);
+    color: var(--color-blue-500);
+    cursor: pointer;
 }
 </style>

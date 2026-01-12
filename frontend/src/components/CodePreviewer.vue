@@ -19,6 +19,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@import "../stylesheets/components/code-previewer.scss";
+<style scoped>
+/* Component styles are managed globally */
 </style>

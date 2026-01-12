@@ -466,26 +466,28 @@ export default {
     }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .ff-team-properties-table {
     padding: 9px 12px;
     border-radius: 0.25rem;
     background-color: white;
     border-collapse: separate;
     border-width: 1px;
-    border-color: var(--ff-grey-300);
+    border-color: var(--color-gray-300);
     min-width: 400px;
-    td {
-        height: 36px;
-    }
-    tr:not(:last-child) {
-        td,th {
-            border-bottom: 1px solid var(--ff-grey-100);
-        }
-    }
-    th {
-        font-weight: 600;
-        padding-right: 12px;
-    }
+}
+
+.ff-team-properties-table td {
+    height: 36px;
+}
+
+.ff-team-properties-table tr:not(:last-child) td,
+.ff-team-properties-table tr:not(:last-child) th {
+    border-bottom: 1px solid var(--color-gray-100);
+}
+
+.ff-team-properties-table th {
+    font-weight: 600;
+    padding-right: 12px;
 }
 </style>

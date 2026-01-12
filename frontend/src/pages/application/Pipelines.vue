@@ -460,6 +460,3 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import "../../stylesheets/components/pipelines.scss";
-</style>

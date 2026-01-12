@@ -39,10 +39,8 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-.os-selector {
-    .os-item {
-        transition: ease-in-out .3s;
-    }
+<style scoped>
+.os-selector .os-item {
+    transition: ease-in-out .3s;
 }
 </style>

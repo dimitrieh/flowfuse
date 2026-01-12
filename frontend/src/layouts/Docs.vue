@@ -16,16 +16,18 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 .ff-layout--docs {
     background-color: white;
-    &-contents {
-        max-width: 1012px;
-        margin: auto;
-        padding: 16px;
-    }
-    h1 {
-        margin: 16px 0;
-    }
+}
+
+.ff-layout--docs-contents {
+    max-width: 1012px;
+    margin: auto;
+    padding: 16px;
+}
+
+.ff-layout--docs h1 {
+    margin: 16px 0;
 }
 </style>

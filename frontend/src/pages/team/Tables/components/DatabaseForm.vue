@@ -110,29 +110,28 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-.database-form {
-    .database, .credentials {
-        .title {
-            border-bottom: 1px solid var(--ff-grey-200);
-        }
-    }
-    dl {
-        padding: 10px;
-        max-width: 600px;
+<style scoped>
+.database-form .database .title,
+.database-form .credentials .title {
+    border-bottom: 1px solid var(--color-gray-200);
+}
 
-        dt, dd {
-            margin: 0;
-        }
+.database-form dl {
+    padding: 10px;
+    max-width: 600px;
+}
 
-        dt {
-            font-weight: 600;
-        }
-        dd {
-            text-indent: 10px;
-            margin-bottom: 10px;
-        }
-    }
+.database-form dl dt,
+.database-form dl dd {
+    margin: 0;
+}
 
+.database-form dl dt {
+    font-weight: 600;
+}
+
+.database-form dl dd {
+    text-indent: 10px;
+    margin-bottom: 10px;
 }
 </style>

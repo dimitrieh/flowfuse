@@ -264,23 +264,24 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .unified-namespace-hierarchy {
     display: flex;
     flex-direction: column;
     flex: 1;
     min-width: 0;
     overflow: auto;
-
-    .topics {
-        background: var(--ff-white);
-        padding: 10px;
-        border-radius: 6px;
-        border: 1px solid var(--ff-grey-200);
-        overflow: auto;
-        height: 100%;
-    }
 }
+
+.unified-namespace-hierarchy .topics {
+    background: var(--color-white);
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--color-gray-200);
+    overflow: auto;
+    height: 100%;
+}
+
 @media screen and (max-width: 768px) {
     .unified-namespace-hierarchy {
         min-width: 100%;

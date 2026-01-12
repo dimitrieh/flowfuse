@@ -123,64 +123,55 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="scss">
-td {
-    .content {
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        transition: max-height 0.3s ease-in-out;
-        height: fit-content;
-        box-shadow: inset 0 2px 15px 0 rgba(0,0,0,0.1);
-        overflow-y: auto;
+<style scoped>
+td .content {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: max-height 0.3s ease-in-out;
+    height: fit-content;
+    box-shadow: inset 0 2px 15px 0 rgba(0,0,0,0.1);
+    overflow-y: auto;
+}
 
-        .application {
-            line-height: 29px;
-            display: grid;
-            grid-template-columns: 55px repeat(10, 1fr) 56px;
-            border-bottom: 1px solid var(--ff-grey-200);
-            transition: ease-in-out .3s;
+td .content .application {
+    line-height: 29px;
+    display: grid;
+    grid-template-columns: 55px repeat(10, 1fr) 56px;
+    border-bottom: 1px solid var(--color-gray-200);
+    transition: ease-in-out .3s;
+}
 
-            .name {
-                grid-column: span 8;
-            }
-            .role {
-                padding-left: 15px;
-            }
+td .content .application .name {
+    grid-column: span 8;
+}
 
-            .action {
-                .ff-icon {
-                    transition: ease-in-out .2s;
-                    opacity: 0;
-                }
-            }
+td .content .application .role {
+    padding-left: 15px;
+}
 
-            &:hover {
-                background: var(--ff-grey-100);
-                .action {
-                    .ff-icon {
-                        opacity: 1;
-                    }
-                }
-            }
+td .content .application .action .ff-icon {
+    transition: ease-in-out .2s;
+    opacity: 0;
+}
 
-            &:last-of-type {
-                border-bottom: none;
-            }
-        }
+td .content .application:hover {
+    background: var(--color-gray-100);
+}
 
-    }
+td .content .application:hover .action .ff-icon {
+    opacity: 1;
+}
 
-    &.collapsed {
-        .content {
-            max-height: 0
-        }
-    }
+td .content .application:last-of-type {
+    border-bottom: none;
+}
 
-    &.expanded {
-        .content {
-            max-height: 200px;
-        }
-    }
+td.collapsed .content {
+    max-height: 0;
+}
+
+td.expanded .content {
+    max-height: 200px;
 }
 </style>

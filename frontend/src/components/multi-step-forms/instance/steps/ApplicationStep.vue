@@ -247,39 +247,31 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-.ff-select-application-step {
-    .app-tile {
-        padding: 12px;
-        border: 2px solid var(--ff-grey-300);
-        width: 100%;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: ease-in-out .3s;
+<style scoped>
+.ff-select-application-step .app-tile {
+    padding: 12px;
+    border: 2px solid var(--color-gray-300);
+    width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: ease-in-out .3s;
+}
 
-        &:hover {
-            border-color: var(--ff-indigo-400);
-        }
+.ff-select-application-step .app-tile:hover {
+    border-color: var(--color-indigo-400);
+}
 
-        &.selected {
-            border-color: var(--ff-indigo-600);
-        }
+.ff-select-application-step .app-tile.selected {
+    border-color: var(--color-indigo-600);
+}
 
-        .header {
-            .title {
+.ff-select-application-step .app-tile .header .counters {
+    color: var(--color-gray-400);
+    font-size: var(--font-size-xs);
+}
 
-            }
-
-            .counters {
-                color: var(--ff-grey-400);
-                font-size: var(--ff-funit-xs);
-            }
-        }
-
-        .description {
-            color: var(--ff-grey-400);
-            font-size: var(--ff-funit-sm);
-        }
-    }
+.ff-select-application-step .app-tile .description {
+    color: var(--color-gray-400);
+    font-size: var(--font-size-sm);
 }
 </style>

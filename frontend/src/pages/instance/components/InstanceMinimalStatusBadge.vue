@@ -50,7 +50,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 .minimal-status {
     display: block;
     height: 10px;

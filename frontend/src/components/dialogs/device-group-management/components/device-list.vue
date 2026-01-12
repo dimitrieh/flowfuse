@@ -68,28 +68,26 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.device-list-accordion {
-    &.ff-accordion {
-        margin-bottom: 0;
+<style>
+.device-list-accordion.ff-accordion {
+    margin-bottom: 0;
+}
 
-        button {
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            background: transparent;
-            transition: background-color ease-in-out .3s;
-            padding-left: 0;
-            padding-right: 0;
+.device-list-accordion.ff-accordion button {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: transparent;
+    transition: background-color ease-in-out .3s;
+    padding-left: 0;
+    padding-right: 0;
+}
 
-            label {
-                font-weight: normal;
-            }
+.device-list-accordion.ff-accordion button label {
+    font-weight: normal;
+}
 
-            &:hover {
-                background-color: transparent;
-            }
-        }
-    }
+.device-list-accordion.ff-accordion button:hover {
+    background-color: transparent;
 }
 </style>

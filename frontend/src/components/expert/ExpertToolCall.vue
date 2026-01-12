@@ -164,12 +164,12 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 @import 'highlight.js/styles/github.css';
 
 .ff-expert-tool-call {
-    background-color: $ff-grey-50;
-    border: 1px solid $ff-grey-200;
+    background-color: var(--color-gray-50);
+    border: 1px solid var(--color-gray-200);
     border-radius: 0.5rem 0.5rem 0.5rem 0;
     overflow: hidden;
     max-width: 90%;
@@ -183,38 +183,38 @@ export default {
     background-color: white;
     cursor: pointer;
     user-select: none;
+}
 
-    &:hover {
-        background-color: $ff-grey-50;
-    }
+.ff-expert-tool-call--header:hover {
+    background-color: var(--color-gray-50);
+}
 
-    .ff-icon {
-        width: 1rem;
-        height: 1rem;
-        color: $ff-grey-500;
-        flex-shrink: 0;
-        transition: transform 0.2s ease;
+.ff-expert-tool-call--header .ff-icon {
+    width: 1rem;
+    height: 1rem;
+    color: var(--color-gray-500);
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
 
-        &.rotated {
-            transform: rotate(90deg);
-        }
-    }
+.ff-expert-tool-call--header .ff-icon.rotated {
+    transform: rotate(90deg);
 }
 
 .ff-expert-tool-call--count {
     font-size: 1rem;
     font-weight: 500;
-    color: $ff-grey-800;
+    color: var(--color-gray-800);
     flex: 1;
 }
 
 .ff-expert-tool-call--duration {
     font-size: 1rem;
-    color: $ff-grey-500;
+    color: var(--color-gray-500);
 }
 
 .ff-expert-tool-call--body {
-    border-top: 1px solid $ff-grey-200;
+    border-top: 1px solid var(--color-gray-200);
     padding: 0.75rem 1rem;
     display: flex;
     flex-direction: column;
@@ -230,7 +230,7 @@ export default {
 .ff-expert-tool-call--title {
     font-size: 0.875rem;
     font-weight: 600;
-    color: $ff-grey-800;
+    color: var(--color-gray-800);
 }
 
 .ff-expert-tool-call--name {
@@ -238,7 +238,7 @@ export default {
     align-items: center;
     gap: 0.375rem;
     font-size: 0.75rem;
-    color: $ff-grey-500;
+    color: var(--color-gray-500);
     font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
 }
 
@@ -251,8 +251,8 @@ export default {
     padding: 0 0.25rem;
     font-size: 0.5625rem;
     font-weight: 700;
-    color: $ff-grey-600;
-    background-color: $ff-grey-200;
+    color: var(--color-gray-600);
+    background-color: var(--color-gray-200);
     border-radius: 0.1875rem;
     flex-shrink: 0;
     cursor: help;
@@ -266,7 +266,7 @@ export default {
 }
 
 .ff-expert-tool-call--section {
-    border: 1px solid $ff-grey-200;
+    border: 1px solid var(--color-gray-200);
     border-radius: 0.375rem;
     overflow: hidden;
 }
@@ -281,23 +281,23 @@ export default {
     user-select: none;
     font-size: 0.75rem;
     font-weight: 500;
-    color: $ff-grey-600;
+    color: var(--color-gray-600);
+}
 
-    &:hover {
-        background-color: $ff-grey-50;
-    }
+.ff-expert-tool-call--section-header:hover {
+    background-color: var(--color-gray-50);
+}
 
-    .ff-icon-small {
-        width: 0.75rem;
-        height: 0.75rem;
-        color: $ff-grey-400;
-        flex-shrink: 0;
-        transition: transform 0.2s ease;
+.ff-expert-tool-call--section-header .ff-icon-small {
+    width: 0.75rem;
+    height: 0.75rem;
+    color: var(--color-gray-400);
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
 
-        &.rotated {
-            transform: rotate(90deg);
-        }
-    }
+.ff-expert-tool-call--section-header .ff-icon-small.rotated {
+    transform: rotate(90deg);
 }
 
 .ff-expert-tool-call--section-label {
@@ -305,37 +305,35 @@ export default {
 }
 
 .ff-expert-tool-call--section-duration {
-    color: $ff-grey-400;
+    color: var(--color-gray-400);
     font-weight: 400;
 }
 
-.ff-expert-tool-call--code {
-    pre {
-        margin: 0;
-        padding: 0.75rem;
-        background-color: $ff-grey-100;
-        border-radius: 0.375rem;
-        overflow-x: auto;
+.ff-expert-tool-call--code pre {
+    margin: 0;
+    padding: 0.75rem;
+    background-color: var(--color-gray-100);
+    border-radius: 0.375rem;
+    overflow-x: auto;
+}
 
-        code {
-            font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
-            font-size: 0.8125rem;
-            color: $ff-grey-800;
-            white-space: pre-wrap;
-            word-break: break-word;
-            border: none;
-            background: transparent;
-            padding: 0;
-        }
-    }
+.ff-expert-tool-call--code pre code {
+    font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+    font-size: 0.8125rem;
+    color: var(--color-gray-800);
+    white-space: pre-wrap;
+    word-break: break-word;
+    border: none;
+    background: transparent;
+    padding: 0;
+}
 
-    // When inside a section, remove border-radius top and add border
-    .ff-expert-tool-call--section & {
-        border-top: 1px solid $ff-grey-200;
+/* When inside a section, remove border-radius top and add border */
+.ff-expert-tool-call--section .ff-expert-tool-call--code {
+    border-top: 1px solid var(--color-gray-200);
+}
 
-        pre {
-            border-radius: 0;
-        }
-    }
+.ff-expert-tool-call--section .ff-expert-tool-call--code pre {
+    border-radius: 0;
 }
 </style>

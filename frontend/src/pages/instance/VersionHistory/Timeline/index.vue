@@ -155,16 +155,10 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-#visual-timeline {
-    .timeline {
-        border: 1px solid var(--ff-grey-300);
-        border-radius: 3px;
-        overflow: auto;
-
-        li {
-
-        }
-    }
+<style scoped>
+#visual-timeline .timeline {
+    border: 1px solid var(--color-gray-300);
+    border-radius: 3px;
+    overflow: auto;
 }
 </style>

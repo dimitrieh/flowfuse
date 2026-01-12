@@ -99,79 +99,75 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 #tables-list {
     display: flex;
     flex-direction: column;
     max-width: 20%;
     min-width: 250px;
+}
 
-    .header {
-        border-bottom: 1px solid var(--ff-color-border);
-        padding-bottom: 15px;
-        margin-bottom: 15px;
+#tables-list .header {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
 
-        .ff-data-table--search {
-            min-width: 10px;
-        }
-    }
+#tables-list .header .ff-data-table--search {
+    min-width: 10px;
+}
 
-    .list {
-        .item {
-            display: flex;
-            gap: 5px;
-            line-height: 2;
-            align-items: center;
-            transition: ease-in-out .3s;
-            cursor: pointer;
+#tables-list .list .item {
+    display: flex;
+    gap: 5px;
+    line-height: 2;
+    align-items: center;
+    transition: ease-in-out .3s;
+    cursor: pointer;
+}
 
-            &:hover, &.active {
-                color: var(--ff-indigo-50)0;
-                background-color: var(--ff-grey-100);
-            }
+#tables-list .list .item:hover,
+#tables-list .list .item.active {
+    color: var(--color-indigo-50)0;
+    background-color: var(--color-gray-100);
+}
 
-            &:hover {
-                .icon-toggle {
-                    .ff-icon:first-child {
-                        display: none;
-                    }
-                    .ff-icon:last-child {
-                        display: inline-block;
-                    }
-                }
-            }
+#tables-list .list .item:hover .icon-toggle .ff-icon:first-child {
+    display: none;
+}
 
-            .icon-toggle {
-                width: 24px;
-                .ff-icon:first-child {
-                    display: inline-block;
-                }
-                .ff-icon:last-child {
-                    display: none;
-                }
+#tables-list .list .item:hover .icon-toggle .ff-icon:last-child {
+    display: inline-block;
+}
 
-                .edit {
-                    &:hover {
-                        transform: scale(1.4);
-                    }
-                }
-            }
-        }
-    }
+#tables-list .list .item .icon-toggle {
+    width: 24px;
+}
 
-    .empty-state {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        justify-content: center;
-        color: var(--ff-grey-400);
-        line-height: 1.6;
+#tables-list .list .item .icon-toggle .ff-icon:first-child {
+    display: inline-block;
+}
 
-        .cta {
-            cursor: pointer;
-            color: var(--ff-indigo-50)0;
-        }
-    }
+#tables-list .list .item .icon-toggle .ff-icon:last-child {
+    display: none;
+}
+
+#tables-list .list .item .icon-toggle .edit:hover {
+    transform: scale(1.4);
+}
+
+#tables-list .empty-state {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    color: var(--color-gray-400);
+    line-height: 1.6;
+}
+
+#tables-list .empty-state .cta {
+    cursor: pointer;
+    color: var(--color-indigo-50)0;
 }
 </style>

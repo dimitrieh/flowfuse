@@ -78,7 +78,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .status-wrapper {
   display: flex;
   justify-content: center;

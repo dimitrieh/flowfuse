@@ -36,36 +36,36 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .ff-icon-link {
-display: flex;
-justify-content: space-between;
-align-items: center;
-position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
 
-border-radius: var(--ff-unit-sm);
-border: 1px solid var(--ff-grey-300);
+    border-radius: var(--spacing-sm);
+    border: 1px solid var(--color-gray-300);
 
-height: 28px;
-padding: var(--ff-unit-sm) 5px;
+    height: 28px;
+    padding: var(--spacing-sm) 5px;
 
-font-size: var(--ff-funit-sm);
-line-height: 20px;
-
-svg {
-  margin-right: 5px;
+    font-size: var(--font-size-sm);
+    line-height: 20px;
 }
 
-&:hover {
-  cursor: pointer;
-  border-color: var(--ff-blue-600);
-
-  color: var(--ff-blue-600);;
-  background-color: var(--ff-grey-50);
-
-  .ff-icon {
-      color: var(--ff-blue-600);
-  }
+.ff-icon-link svg {
+    margin-right: 5px;
 }
+
+.ff-icon-link:hover {
+    cursor: pointer;
+    border-color: var(--color-blue-600);
+
+    color: var(--color-blue-600);
+    background-color: var(--color-gray-50);
+}
+
+.ff-icon-link:hover .ff-icon {
+    color: var(--color-blue-600);
 }
 </style>

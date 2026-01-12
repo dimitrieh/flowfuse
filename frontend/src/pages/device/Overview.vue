@@ -290,22 +290,18 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.ff-device-overview {
-    h1 {
-        border-bottom: none;
-        margin-bottom: 12px;
-    }
+<style>
+.ff-device-overview h1 {
+    border-bottom: none;
+    margin-bottom: 12px;
 }
-.ff-device-overview-audit {
-    .ff-accordion {
-        margin-bottom: 12px;
-    }
-    .ff-accordion:last-child {
-        margin-bottom: 0;
-    }
-    .ff-accordion--content {
-        background-color: white;
-    }
+.ff-device-overview-audit .ff-accordion {
+    margin-bottom: 12px;
+}
+.ff-device-overview-audit .ff-accordion:last-child {
+    margin-bottom: 0;
+}
+.ff-device-overview-audit .ff-accordion--content {
+    background-color: white;
 }
 </style>

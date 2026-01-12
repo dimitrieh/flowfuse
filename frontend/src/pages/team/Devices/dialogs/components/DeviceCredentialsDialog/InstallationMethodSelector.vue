@@ -29,34 +29,34 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .installation-method-selector {
     display: flex;
     gap: 50px;
     margin-bottom: 15px;
     position: relative;
+}
 
-    .ff-method-option {
-        flex: 1;
-        text-align: center;
-        border-bottom: 2px solid var(--ff-color-border);
-        padding-bottom: 5px;
-        cursor: pointer;
-        transition: ease-in-out .3s;
+.installation-method-selector .ff-method-option {
+    flex: 1;
+    text-align: center;
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 5px;
+    cursor: pointer;
+    transition: ease-in-out .3s;
+}
 
-        &.active {
-            border-color: var(--ff-indigo-50)0;
-        }
+.installation-method-selector .ff-method-option.active {
+    border-color: var(--color-indigo-500);
+}
 
-        &:first-of-type:after {
-            content: 'or';
-            position: absolute;
-            top: 5%;
-            left: 49%;
-            font-style: italic;
-            font-size: var(--ff-funit-sm);
-            color: var(--ff-grey-50)0;
-        }
-    }
+.installation-method-selector .ff-method-option:first-of-type:after {
+    content: 'or';
+    position: absolute;
+    top: 5%;
+    left: 49%;
+    font-style: italic;
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
 }
 </style>

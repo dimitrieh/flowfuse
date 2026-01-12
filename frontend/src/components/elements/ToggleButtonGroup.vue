@@ -88,72 +88,72 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .ff-toggle-group {
     display: flex;
     gap: 15px;
     align-items: center;
+}
 
-    .title {
-        color: var(--ff-black);
-        font-weight: 400;
-    }
+.ff-toggle-group .title {
+    color: var(--color-black);
+    font-weight: 400;
+}
 
-    .toggle {
-        border: 1px solid var(--ff-blue-800);
-        display: flex;
-        border-radius: 5px;
+.ff-toggle-group .toggle {
+    border: 1px solid var(--color-blue-800);
+    display: flex;
+    border-radius: 5px;
+}
 
-        .inner-wrapper {
-            display: grid;
-            grid-template-columns: repeat(var(--button-count), 1fr);
-            border-radius: 4px;
-            border: 1px solid transparent;
-            position: relative;
+.ff-toggle-group .toggle .inner-wrapper {
+    display: grid;
+    grid-template-columns: repeat(var(--button-count), 1fr);
+    border-radius: 4px;
+    border: 1px solid transparent;
+    position: relative;
+}
 
-            .indicator {
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                background: var(--ff-indigo-700);
-                border-radius: 4px;
-                transition: transform 0.2s ease;
-                z-index: 0;
-            }
+.ff-toggle-group .toggle .inner-wrapper .indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--color-indigo-700);
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+    z-index: 0;
+}
 
-            a {
-                padding: 5px 10px;
-                border-radius: 4px;
-                transition: color 0.2s ease;
-                position: relative;
-                z-index: 1;
-                text-align: center;
+.ff-toggle-group .toggle .inner-wrapper a {
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: color 0.2s ease;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
 
-                &.router-link-active {
-                    background: var(--ff-blue-800);
-                    color: var(--ff-white);
-                }
-            }
+.ff-toggle-group .toggle .inner-wrapper a.router-link-active {
+    background: var(--color-blue-800);
+    color: var(--color-white);
+}
 
-            .ff-btn {
-                background: transparent;
-                color: var(--ff-grey-500);
-                border-color: transparent;
-                position: relative;
-                z-index: 1;
-                border-radius: 4px;
+.ff-toggle-group .toggle .inner-wrapper .ff-btn {
+    background: transparent;
+    color: var(--color-gray-500);
+    border-color: transparent;
+    position: relative;
+    z-index: 1;
+    border-radius: 4px;
+}
 
-                &:focus-visible {
-                    outline: 2px solid var(--ff-indigo-700);
-                    outline-offset: 1px;
-                }
+.ff-toggle-group .toggle .inner-wrapper .ff-btn:focus-visible {
+    outline: 2px solid var(--color-indigo-700);
+    outline-offset: 1px;
+}
 
-                &.active {
-                    color: var(--ff-white);
-                }
-            }
-        }
-    }
+.ff-toggle-group .toggle .inner-wrapper .ff-btn.active {
+    color: var(--color-white);
 }
 </style>

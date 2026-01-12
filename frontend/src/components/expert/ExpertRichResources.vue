@@ -79,7 +79,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .ff-expert-rich-resources {
     display: flex;
     flex-direction: column;
@@ -88,87 +88,85 @@ export default {
 
 .resources-header {
     margin-bottom: 1rem;
+}
 
-    .resources-title {
-        font-size: 1.125rem; // text-lg
-        font-weight: 600; // font-semibold
-        color: #111827; // text-gray-900
-        margin: 0 0 0.5rem 0; // mb-2
-        line-height: 1.3;
-    }
+.resources-header .resources-title {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600; /* font-semibold */
+    color: #111827; /* text-gray-900 */
+    margin: 0 0 0.5rem 0; /* mb-2 */
+    line-height: 1.3;
+}
 
-    .resources-content {
-        color: #374151; // text-gray-700
-        margin: 0;
-        line-height: 1.5;
-        font-size: 1rem;
-    }
+.resources-header .resources-content {
+    color: #374151; /* text-gray-700 */
+    margin: 0;
+    line-height: 1.5;
+    font-size: 1rem;
 }
 
 .section-title {
-    font-size: 1rem; // text-base
-    font-weight: 500; // font-medium
-    color: #111827; // text-gray-900
-    margin: 0.5rem 0 0.75rem 0; // mt-2 mb-3
+    font-size: 1rem; /* text-base */
+    font-weight: 500; /* font-medium */
+    color: #111827; /* text-gray-900 */
+    margin: 0.5rem 0 0.75rem 0; /* mt-2 mb-3 */
 }
 
-.resources-list {
-    .resources-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
+.resources-list .resources-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
 
-    .resource-card {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.5rem;
-        padding: 0.75rem;
-        background-color: white;
-        border: 1px solid var(--ff-grey-200);
-        border-radius: 0.5rem;
-        text-decoration: none;
-        color: var(--ff-grey-900);
-        transition: all 0.2s ease;
+.resources-list .resource-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background-color: white;
+    border: 1px solid var(--color-gray-200);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: var(--color-gray-900);
+    transition: all 0.2s ease;
+}
 
-        &:hover {
-            border-color: var(--ff-indigo-300);
-            background-color: var(--ff-grey-50);
-        }
-    }
+.resources-list .resource-card:hover {
+    border-color: var(--color-indigo-300);
+    background-color: var(--color-gray-50);
+}
 
-    .resource-icon {
-        flex-shrink: 0;
-        width: 1rem;
-        height: 1rem;
-        margin-top: 0.125rem;
-        object-fit: contain;
-    }
+.resources-list .resource-icon {
+    flex-shrink: 0;
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0.125rem;
+    object-fit: contain;
+}
 
-    .resource-info {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 0.25rem;
-        min-width: 0;
-    }
+.resources-list .resource-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
+}
 
-    .resource-title {
-        font-size: 0.875rem;
-        font-weight: 500;
-        color: var(--ff-grey-900);
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
+.resources-list .resource-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-gray-900);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 
-    .resource-url {
-        font-size: 0.75rem;
-        color: var(--ff-grey-50)0;
-        margin: 0;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
+.resources-list .resource-url {
+    font-size: 0.75rem;
+    color: var(--color-gray-500);
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 </style>

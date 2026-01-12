@@ -83,62 +83,61 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 .versions-list.ff-accordion {
     margin: 0;
+}
 
-    button {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        background: var(--ff-white);
-        gap: 15px;
-        border: none;
-        border-bottom: 1px solid var(--ff-grey-300);
+.versions-list.ff-accordion button {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    background: var(--color-white);
+    gap: 15px;
+    border: none;
+    border-bottom: 1px solid var(--color-gray-300);
+}
 
-        .version {
-            grid-column-start: 2;
-            display: flex;
-            justify-content: flex-start;
-            span {
-                color: var(--ff-black);
-                font-weight: 500;
-            }
-        }
+.versions-list.ff-accordion button .version {
+    grid-column-start: 2;
+    display: flex;
+    justify-content: flex-start;
+}
 
-        .counter {
-            grid-column-start: 3;
-            grid-column-end: 6;
-            display: flex;
-            justify-content: flex-start;
-            gap: 2px;
-        }
+.versions-list.ff-accordion button .version span {
+    color: var(--color-black);
+    font-weight: 500;
+}
 
-        .toggle {
-            grid-column-start: 12;
-            display: flex;
-            justify-content: flex-end;
-        }
-    }
+.versions-list.ff-accordion button .counter {
+    grid-column-start: 3;
+    grid-column-end: 6;
+    display: flex;
+    justify-content: flex-start;
+    gap: 2px;
+}
 
-    &:last-child button {
-        border-bottom: none;
-    }
+.versions-list.ff-accordion button .toggle {
+    grid-column-start: 12;
+    display: flex;
+    justify-content: flex-end;
+}
 
-    .instances-list {
-        .ff-show-more {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-            justify-content: center;
-            color: var(--ff-grey-50)0;
-            line-height: 30px;
-            cursor: pointer;
-            transition: ease-in-out .3s;
+.versions-list.ff-accordion:last-child button {
+    border-bottom: none;
+}
 
-            &:hover {
-                    color: var(--ff-color-action)
-            }
-        }
-    }
+.versions-list.ff-accordion .instances-list .ff-show-more {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gray-500);
+    line-height: 30px;
+    cursor: pointer;
+    transition: ease-in-out .3s;
+}
+
+.versions-list.ff-accordion .instances-list .ff-show-more:hover {
+    color: var(--color-action);
 }
 </style>
